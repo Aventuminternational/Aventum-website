@@ -15,8 +15,8 @@
       description: (document.querySelector('meta[name="description"]') || {}).content || ''
     },
     cn: {
-      title: 'Aventum International | 巴西 ICUMSA 45 白砂糖经纪 · 对接中国进口商',
-      description: 'Aventum International 总部位于阿姆斯特丹，为中国进口商对接巴西 ICUMSA 45 精制白砂糖供应商。标准条款为巴西港口 FOB，亦可按需报指定目的港 CIF 价格。'
+      title: 'Aventum International | 巴西 ICUMSA 45 白砂糖经纪',
+      description: 'Aventum International 总部位于阿姆斯特丹，为中国及其他市场的进口商对接巴西 ICUMSA 45 精制白砂糖供应商。标准条款为巴西港口 FOB，亦可按需报指定目的港 CIF 价格。'
     }
   };
   // Privacy page provides its own titles
@@ -46,7 +46,11 @@
 
   function currentLang() { return root.lang === 'zh-CN' ? 'cn' : 'en'; }
 
+  var langLock = root.hasAttribute('data-lang-lock');
+
   function setLang(lang) {
+    // The static Chinese page (/zh/) only contains Chinese text: switching to English opens the main page
+    if (langLock && lang !== 'cn') { location.href = '/?lang=en' + location.hash; return; }
     var isCn = lang === 'cn';
     root.lang = isCn ? 'zh-CN' : 'en';
 
@@ -81,7 +85,7 @@
     if (toggle) toggle.setAttribute('aria-label', MSG[lang][toggle.getAttribute('aria-expanded') === 'true' ? 'closeMenu' : 'openMenu']);
 
     try { localStorage.setItem('aventum-lang', lang); } catch (e) {}
-    try {
+    if (!langLock) try {
       var url = new URL(location.href);
       if (isCn) url.searchParams.set('lang', 'zh'); else url.searchParams.delete('lang');
       history.replaceState(null, '', url.pathname + url.search + url.hash);
@@ -92,7 +96,12 @@
   window.setLang = setLang;
 
   document.querySelectorAll('.lang-btn').forEach(function (b) {
-    b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    b.addEventListener('click', function () {
+      if (!langLock && b.dataset.lang === 'cn' && document.body.hasAttribute('data-zh-page')) {
+        location.href = '/zh/' + location.hash; return;
+      }
+      setLang(b.dataset.lang);
+    });
   });
   setLang(currentLang());
 
@@ -169,31 +178,70 @@
   /* ------------------------------------------------------------------
      Hero video: two clips alternate; skipped for reduced motion / data saver
      ------------------------------------------------------------------ */
-  var video = document.getElementById('hero-video');
+  var media = document.getElementById('hero-media');
+  var vids = media ? media.querySelectorAll('.hero-video') : [];
   var saveData = navigator.connection && navigator.connection.saveData;
-  if (video && !reduceMotion && !saveData) {
-    var sources = (video.dataset.sources || '').split(',');
-    var idx = 0, heroVisible = true;
-    var play = function () { var p = video.play(); if (p && p.catch) p.catch(function () {}); };
-    video.muted = true;
-    video.src = sources[0];
-    video.preload = 'auto';
-    play();
-    video.addEventListener('ended', function () {
-      idx = (idx + 1) % sources.length;
-      video.src = sources[idx];
-      play();
+  if (vids.length === 2 && !reduceMotion && !saveData) {
+    var sources = (media.dataset.sources || '').split(',');
+    var FADE = 1.6; // seconds, matches the CSS opacity transition
+    var cur = 0, clip = 0, fading = false, heroVisible = true;
+    var play = function (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+    var load = function (v, src) { if (v.getAttribute('src') !== src) { v.src = src; v.preload = 'auto'; } };
+
+    var crossfade = function () {
+      if (fading) return;
+      fading = true;
+      var from = vids[cur], to = vids[1 - cur];
+      try { to.currentTime = 0; } catch (e) {}
+      play(to);
+      to.classList.add('is-active');
+      from.classList.remove('is-active');
+      setTimeout(function () {
+        from.pause();
+        clip = (clip + 1) % sources.length;
+        cur = 1 - cur;
+        load(from, sources[(clip + 1) % sources.length]); // preload the clip after next
+        fading = false;
+      }, FADE * 1000);
+    };
+
+    Array.prototype.forEach.call(vids, function (v) {
+      v.muted = true;
+      v.addEventListener('timeupdate', function () {
+        if (v === vids[cur] && v.duration && v.duration - v.currentTime < FADE + 0.15) crossfade();
+      });
+      v.addEventListener('ended', function () { if (v === vids[cur]) crossfade(); });
     });
+    load(vids[0], sources[0]);
+    load(vids[1], sources[1 % sources.length]);
+    play(vids[0]);
+
     // Some mobile browsers only allow playback after a user gesture
     ['touchstart', 'click'].forEach(function (evt) {
-      document.addEventListener(evt, function () { if (video.paused && heroVisible) play(); }, { once: true, passive: true });
+      document.addEventListener(evt, function () { if (vids[cur].paused && heroVisible) play(vids[cur]); }, { once: true, passive: true });
     });
     if (hasIO) {
       new IntersectionObserver(function (entries) {
         heroVisible = entries[0].isIntersecting;
-        if (heroVisible) play(); else video.pause();
-      }).observe(video);
+        if (heroVisible) play(vids[cur]); else vids[cur].pause();
+      }).observe(media);
     }
+  }
+
+  // Hero content eases out as the page scrolls
+  var heroContent = document.querySelector('.hero-content');
+  if (heroContent && !reduceMotion) {
+    var ticking = false;
+    var onScroll = function () {
+      ticking = false;
+      var h = window.innerHeight || 1;
+      var p = Math.min(Math.max(window.scrollY / (h * 0.7), 0), 1);
+      heroContent.style.opacity = String(1 - p * 0.85);
+      heroContent.style.transform = p ? 'translate3d(0,' + (p * -40).toFixed(1) + 'px,0)' : '';
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+    }, { passive: true });
   }
 
   /* ------------------------------------------------------------------

@@ -38,8 +38,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" media="print" id="font-css">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap"></noscript>
 
-<link rel="stylesheet" href="styles.css">
-<script src="lang-init.js"></script>
+<link rel="stylesheet" href="styles.css?v=559e41b6">
+<script src="lang-init.js?v=16438702"></script>
 
 <script type="application/ld+json">
 {
@@ -148,6 +148,7 @@
         <li><a href="#route"><span class="lang-en">Route</span><span class="lang-cn">航线</span></a></li>
         <li><a href="#spec"><span class="lang-en">Specification</span><span class="lang-cn">规格</span></a></li>
         <li><a href="#process"><span class="lang-en">Process</span><span class="lang-cn">流程</span></a></li>
+        <li><a href="#faq"><span class="lang-en">FAQ</span><span class="lang-cn">常见问题</span></a></li>
       </ul>
     </nav>
 
@@ -156,7 +157,7 @@
         <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" lang="en" aria-label="English">EN</button>
         <button type="button" class="lang-btn" data-lang="cn" aria-pressed="false" lang="zh-CN" aria-label="中文（简体）">中文</button>
       </div>
-      <a class="btn btn-primary header-cta" href="#contact"><span class="lang-en">Contact us</span><span class="lang-cn">联系我们</span></a>
+      <a class="btn btn-primary header-cta" href="#contact"><span class="lang-en">Request a quote</span><span class="lang-cn">立即询价</span></a>
       <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" data-aria-en="Open menu" data-aria-cn="打开菜单" aria-label="Open menu"><span></span></button>
     </div>
   </div>
@@ -187,22 +188,28 @@
   </div>
 
   <div class="wrap hero-content">
-    <p class="hero-tag hero-anim d1"><span class="pulse-dot" aria-hidden="true"></span><span class="lang-en">Commodity brokerage · Amsterdam · Brazil · Global markets</span><span class="lang-cn">大宗商品经纪 · 阿姆斯特丹 · 巴西 · 全球市场</span></p>
+    <p class="hero-kicker hero-anim d1">
+      <span class="lang-en">Commodity brokerage</span><span class="lang-cn">大宗商品经纪</span>
+      <span class="kicker-line" aria-hidden="true"></span>
+      <span class="mono"><span class="lang-en">Amsterdam · Brazil · Global markets</span><span class="lang-cn">阿姆斯特丹 · 巴西 · 全球市场</span></span>
+    </p>
     <h1 id="hero-title" class="hero-anim d2">
       <span class="lang-en">Brazilian sugar, <em>brokered with clarity.</em></span>
       <span class="lang-cn">巴西白砂糖，<em>透明可靠的经纪服务。</em></span>
     </h1>
-    <p class="hero-sub hero-anim d3">
-      <span class="lang-en">We connect importers in China and other markets with Brazilian suppliers of Icumsa 45 white refined sugar. Clear roles, written agreements, and independent quality inspection at the loading port as agreed in the contract.</span>
-      <span class="lang-cn">我们为中国及其他市场的进口商对接巴西 ICUMSA 45 精制白砂糖供应商。角色清晰、协议书面化，并按合同约定在装货港进行独立质量检验。</span>
-    </p>
-    <div class="hero-cta hero-anim d4">
-      <a href="#contact" class="btn btn-primary"><span class="lang-en">Request a quote</span><span class="lang-cn">立即询价</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="#spec" class="btn btn-ghost"><span class="lang-en">View specification</span><span class="lang-cn">查看规格</span></a>
+    <div class="hero-bottom">
+      <p class="hero-sub hero-anim d3">
+        <span class="lang-en">We connect importers in China and other markets with Brazilian suppliers of Icumsa 45 white refined sugar. Clear roles, written agreements, and independent quality inspection at the loading port as agreed in the contract.</span>
+        <span class="lang-cn">我们为中国及其他市场的进口商对接巴西 ICUMSA 45 精制白砂糖供应商。角色清晰、协议书面化，并按合同约定在装货港进行独立质量检验。</span>
+      </p>
+      <div class="hero-cta hero-anim d4">
+        <a href="#contact" class="btn btn-primary"><span class="lang-en">Request a quote</span><span class="lang-cn">立即询价</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#spec" class="btn btn-ghost"><span class="lang-en">View specification</span><span class="lang-cn">查看规格</span></a>
+      </div>
     </div>
   </div>
 
-  <div class="hero-facts hero-anim d4">
+  <div class="hero-bar hero-anim d4">
     <div class="wrap">
       <dl>
         <div><dt><span class="lang-en">Product</span><span class="lang-cn">产品</span></dt><dd><span class="lang-en">Icumsa 45 white sugar</span><span class="lang-cn">ICUMSA 45 白砂糖</span></dd></div>
@@ -212,87 +219,97 @@
       </dl>
     </div>
   </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <ul class="ticker-list">
+        <li>ICUMSA 45</li>
+        <li><span class="lang-en">Polarisation ≥ 99.80°</span><span class="lang-cn">旋光度 ≥ 99.80°</span></li>
+        <li><span class="lang-en">Moisture ≤ 0.04%</span><span class="lang-cn">水分 ≤ 0.04%</span></li>
+        <li><span class="lang-en">FOB Santos / Paranaguá</span><span class="lang-cn">桑托斯 / 巴拉那瓜 FOB</span></li>
+        <li><span class="lang-en">CIF named port on request</span><span class="lang-cn">可报指定港 CIF</span></li>
+        <li><span class="lang-en">L/C preferred</span><span class="lang-cn">优先信用证</span></li>
+        <li><span class="lang-en">Trial shipments by arrangement</span><span class="lang-cn">可安排试单</span></li>
+        <li><span class="lang-en">Up to 50,000+ MT per month</span><span class="lang-cn">每月最高 50,000+ 吨</span></li>
+      </ul>
+      <ul class="ticker-list">
+        <li>ICUMSA 45</li>
+        <li><span class="lang-en">Polarisation ≥ 99.80°</span><span class="lang-cn">旋光度 ≥ 99.80°</span></li>
+        <li><span class="lang-en">Moisture ≤ 0.04%</span><span class="lang-cn">水分 ≤ 0.04%</span></li>
+        <li><span class="lang-en">FOB Santos / Paranaguá</span><span class="lang-cn">桑托斯 / 巴拉那瓜 FOB</span></li>
+        <li><span class="lang-en">CIF named port on request</span><span class="lang-cn">可报指定港 CIF</span></li>
+        <li><span class="lang-en">L/C preferred</span><span class="lang-cn">优先信用证</span></li>
+        <li><span class="lang-en">Trial shipments by arrangement</span><span class="lang-cn">可安排试单</span></li>
+        <li><span class="lang-en">Up to 50,000+ MT per month</span><span class="lang-cn">每月最高 50,000+ 吨</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- ============ WHY AVENTUM ============ -->
 <section class="section section-light" id="why" aria-labelledby="why-title">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal"><span class="eyebrow-num">01</span><span class="lang-en">Why Aventum</span><span class="lang-cn">为何选择我们</span></p>
+    <div class="sec-head">
+      <p class="sec-label reveal"><span class="sec-idx">01</span><span class="lang-en">Why Aventum</span><span class="lang-cn">为何选择我们</span></p>
+      <div class="sec-title">
         <h2 id="why-title" class="reveal"><span class="lang-en">A transparent link between Brazil and your market.</span><span class="lang-cn">连接巴西与您所在市场的透明纽带。</span></h2>
+        <p class="lead reveal d1"><span class="lang-en">Fraud and unreliable counterparties are the biggest risk in agricultural commodity trade. Our answer is not bigger promises. It is clear roles, written agreements and documents you can check.</span><span class="lang-cn">欺诈和不可靠的交易对手是农产品贸易中最大的风险。我们的应对方式不是更大的承诺，而是清晰的角色分工、书面协议以及可供核查的文件。</span></p>
       </div>
-      <p class="lead reveal d1"><span class="lang-en">Fraud and unreliable counterparties are the biggest risk in agricultural commodity trade. Our answer is not bigger promises. It is clear roles, written agreements and documents you can check.</span><span class="lang-cn">欺诈和不可靠的交易对手是农产品贸易中最大的风险。我们的应对方式不是更大的承诺，而是清晰的角色分工、书面协议以及可供核查的文件。</span></p>
     </div>
 
-    <div class="why-grid">
-      <article class="card reveal">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></div>
+    <ol class="pillars">
+      <li class="pillar reveal">
+        <span class="pillar-idx">01</span>
         <h3><span class="lang-en">Direct supplier relationship</span><span class="lang-cn">直接对接供应商</span></h3>
         <p><span class="lang-en">We work directly with our supply partner in Brazil, so you know who is on the other side of the deal. Supplier documentation is shared at the appropriate contract stage.</span><span class="lang-cn">我们与巴西供应合作伙伴直接合作，让您清楚交易的另一方是谁。供应商相关文件将在合同的相应阶段提供。</span></p>
-      </article>
-      <article class="card reveal d1">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></svg></div>
+      </li>
+      <li class="pillar reveal d1">
+        <span class="pillar-idx">02</span>
         <h3><span class="lang-en">Independent intermediary</span><span class="lang-cn">独立中间方</span></h3>
         <p><span class="lang-en">We are a broker. We don't own the cargo and we don't trade on our own account. Our role is to bring buyer and supplier together and keep the deal on track until the cargo arrives as agreed.</span><span class="lang-cn">我们是经纪方：不拥有货物，也不进行自营交易。我们的职责是撮合买卖双方，并全程跟进，直至货物按约定交付。</span></p>
-      </article>
-      <article class="card reveal d2">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+      </li>
+      <li class="pillar reveal d2">
+        <span class="pillar-idx">03</span>
         <h3><span class="lang-en">Netherlands-based</span><span class="lang-cn">立足荷兰</span></h3>
         <p><span class="lang-en">Based in Amsterdam. One fixed point of contact who stays involved from your first enquiry to final delivery.</span><span class="lang-cn">总部位于阿姆斯特丹。由固定联系人负责，从您的首次询价到最终交货全程跟进。</span></p>
-      </article>
-      <article class="card reveal d3">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7.5 15h9"/></svg></div>
+      </li>
+      <li class="pillar reveal d3">
+        <span class="pillar-idx">04</span>
         <h3><span class="lang-en">Start with a trial shipment</span><span class="lang-cn">先从试单开始</span></h3>
         <p><span class="lang-en">Check quality, documents and logistics with a trial shipment before you commit to monthly volumes. Size and terms are agreed together.</span><span class="lang-cn">在确定月度供应量之前，可先通过试单验证质量、单据和物流。试单数量及条款由双方协商确定。</span></p>
-      </article>
-    </div>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- ============ WHY BRAZIL ============ -->
-<section class="section section-dark" id="brazil" aria-labelledby="brazil-title">
+<section class="section section-image" id="brazil" aria-labelledby="brazil-title">
+  <img class="section-bg" src="img-harvest.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal"><span class="eyebrow-num">02</span><span class="lang-en">Why Brazil</span><span class="lang-cn">为何选择巴西</span></p>
+    <div class="sec-head">
+      <p class="sec-label reveal"><span class="sec-idx">02</span><span class="lang-en">Why Brazil</span><span class="lang-cn">为何选择巴西</span></p>
+      <div class="sec-title">
         <h2 id="brazil-title" class="reveal"><span class="lang-en">The world's leading sugar export base.</span><span class="lang-cn">全球领先的食糖出口基地。</span></h2>
       </div>
-      <p class="lead reveal d1"><span class="lang-en">Brazil supplies roughly 40% of the world's sugar exports, backed by large-scale cane production and established export ports.</span><span class="lang-cn">巴西约占全球食糖出口量的 40%，拥有大规模甘蔗种植与成熟的出口港口体系。</span></p>
     </div>
 
-    <div class="brazil-stats">
-      <div class="stat reveal">
-        <p class="stat-num"><span class="accent">#</span>1</p>
-        <p class="stat-label"><span class="lang-en">World's largest sugar exporter</span><span class="lang-cn">全球最大食糖出口国</span></p>
+    <div class="brazil-grid">
+      <div class="bigstat reveal">
+        <p class="bigstat-num">~<span data-count="40">40</span><span class="pct">%</span></p>
+        <p class="bigstat-label"><span class="lang-en">of the world's sugar exports come from Brazil, backed by large-scale cane production and established export ports.</span><span class="lang-cn">的全球食糖出口来自巴西，依托大规模甘蔗种植与成熟的出口港口体系。</span></p>
       </div>
-      <div class="stat reveal d1">
-        <p class="stat-num">~<span data-count="40">40</span><span class="accent">%</span></p>
-        <p class="stat-label"><span class="lang-en">Share of global sugar exports</span><span class="lang-cn">全球食糖出口占比</span></p>
-      </div>
-      <div class="stat reveal d2">
-        <p class="stat-num is-text"><span class="lang-en">Santos &amp; Paranaguá</span><span class="lang-cn">桑托斯港与巴拉那瓜港</span></p>
-        <p class="stat-label"><span class="lang-en">Main export ports</span><span class="lang-cn">主要出口港</span></p>
-      </div>
+      <dl class="stat-rows">
+        <div class="reveal d1"><dt><span class="lang-en">Global rank</span><span class="lang-cn">全球排名</span></dt><dd><span class="lang-en">#1 sugar exporter</span><span class="lang-cn">全球第一大食糖出口国</span></dd></div>
+        <div class="reveal d2"><dt><span class="lang-en">Main export ports</span><span class="lang-cn">主要出口港</span></dt><dd><span class="lang-en">Santos &amp; Paranaguá</span><span class="lang-cn">桑托斯港与巴拉那瓜港</span></dd></div>
+        <div class="reveal d3"><dt><span class="lang-en">Centre-South crush</span><span class="lang-cn">中南部压榨季</span></dt><dd><span class="lang-en">April to November</span><span class="lang-cn">4 月至 11 月</span></dd></div>
+      </dl>
     </div>
 
-    <ul class="fact-list">
-      <li class="fact reveal">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
-        <p><span class="lang-en">The Centre-South crush typically runs from April to November. Export shipments from stock usually continue throughout the year.</span><span class="lang-cn">中南部压榨季通常为每年 4 月至 11 月，出口装运一般依托库存全年进行。</span></p>
-      </li>
-      <li class="fact reveal d1">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v14M5 12H3a9 9 0 0 0 18 0h-2M8 10h8"/></svg></div>
-        <p><span class="lang-en">Deep-water ports at Santos and Paranaguá, with established bulk and container routes to Asia, the Middle East, Africa and Europe.</span><span class="lang-cn">桑托斯港和巴拉那瓜港均为深水港，至亚洲、中东、非洲及欧洲的散货及集装箱航线成熟。</span></p>
-      </li>
-      <li class="fact reveal">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 13l2 2 4-4"/></svg></div>
-        <p><span class="lang-en">Food-grade product, shipped with quality and phytosanitary documentation. Compliance with the destination country's standards is confirmed in each contract.</span><span class="lang-cn">食品级产品，随附质量及植物检疫文件。是否符合目的国相关标准，将在每份合同中逐项确认。</span></p>
-      </li>
-      <li class="fact reveal d1">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
-        <p><span class="lang-en">A large, competitive supply base that suits long-term contracts as well as trial orders.</span><span class="lang-cn">供应基础庞大且具有竞争力，既适合长期合同，也适合试单。</span></p>
-      </li>
+    <ul class="notes">
+      <li class="reveal"><span class="note-label"><span class="lang-en">Season</span><span class="lang-cn">季节</span></span><p><span class="lang-en">Export shipments from stock usually continue throughout the year.</span><span class="lang-cn">出口装运一般依托库存全年进行。</span></p></li>
+      <li class="reveal d1"><span class="note-label"><span class="lang-en">Ports</span><span class="lang-cn">港口</span></span><p><span class="lang-en">Deep-water ports with established bulk and container routes to Asia, the Middle East, Africa and Europe.</span><span class="lang-cn">深水港，至亚洲、中东、非洲及欧洲的散货及集装箱航线成熟。</span></p></li>
+      <li class="reveal d2"><span class="note-label"><span class="lang-en">Quality</span><span class="lang-cn">质量</span></span><p><span class="lang-en">Food-grade product, shipped with quality and phytosanitary documentation. Compliance with the destination country's standards is confirmed in each contract.</span><span class="lang-cn">食品级产品，随附质量及植物检疫文件。是否符合目的国相关标准，将在每份合同中逐项确认。</span></p></li>
+      <li class="reveal d3"><span class="note-label"><span class="lang-en">Supply</span><span class="lang-cn">供应</span></span><p><span class="lang-en">A large, competitive supply base that suits long-term contracts as well as trial orders.</span><span class="lang-cn">供应基础庞大且具有竞争力，既适合长期合同，也适合试单。</span></p></li>
     </ul>
   </div>
 </section>
@@ -300,144 +317,176 @@
 <!-- ============ PRODUCTS ============ -->
 <section class="section section-light" id="products" aria-labelledby="products-title">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal"><span class="eyebrow-num">03</span><span class="lang-en">Products</span><span class="lang-cn">产品</span></p>
-        <h2 id="products-title" class="reveal"><span class="lang-en">Icumsa 45 first. <em>More on request.</em></span><span class="lang-cn">以 ICUMSA 45 为核心，<em>其他品类按需提供。</em></span></h2>
+    <div class="sec-head">
+      <p class="sec-label reveal"><span class="sec-idx">03</span><span class="lang-en">Products</span><span class="lang-cn">产品</span></p>
+      <div class="sec-title">
+        <h2 id="products-title" class="reveal"><span class="lang-en">Icumsa 45 first. More on request.</span><span class="lang-cn">以 ICUMSA 45 为核心，其他品类按需提供。</span></h2>
+        <p class="lead reveal d1"><span class="lang-en">Our focus is Icumsa 45 white refined cane sugar. Through our network in Brazil we can also source other agricultural commodities on request, subject to supplier confirmation.</span><span class="lang-cn">我们的核心产品是 ICUMSA 45 精制白砂糖（甘蔗糖）。通过在巴西的合作网络，我们也可按需采购其他农产品，具体以供应商确认为准。</span></p>
       </div>
-      <p class="lead reveal d1"><span class="lang-en">Our focus is Icumsa 45 white refined cane sugar. Through our network in Brazil we can also source other agricultural commodities on request, subject to supplier confirmation.</span><span class="lang-cn">我们的核心产品是 ICUMSA 45 精制白砂糖（甘蔗糖）。通过在巴西的合作网络，我们也可按需采购其他农产品，具体以供应商确认为准。</span></p>
     </div>
 
-    <div class="products-grid">
-      <article class="card product-featured reveal">
-        <span class="badge badge-accent"><span class="lang-en">Primary product</span><span class="lang-cn">核心产品</span></span>
+    <article class="feature reveal">
+      <div class="feature-media">
+        <img src="img-fields.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Aerial view of farmland in Brazil" data-alt-en="Aerial view of farmland in Brazil" data-alt-cn="巴西农田航拍">
+        <span class="feature-tag mono"><span class="lang-en">Origin: Brazil</span><span class="lang-cn">产地：巴西</span></span>
+      </div>
+      <div class="feature-body">
+        <p class="feature-kicker"><span class="dot" aria-hidden="true"></span><span class="lang-en">Primary product</span><span class="lang-cn">核心产品</span></p>
         <h3><span class="lang-en">Icumsa 45 white refined sugar</span><span class="lang-cn">ICUMSA 45 精制白砂糖</span></h3>
         <p><span class="lang-en">White refined cane sugar of Brazilian origin, food grade. Available capacity of up to 50,000+ MT per month, with trial shipments by arrangement.</span><span class="lang-cn">巴西原产精制白砂糖（甘蔗糖），食品级。可供应能力每月最高 50,000+ 吨，可协商安排试单。</span></p>
-        <ul class="chips">
-          <li><span class="lang-en">FOB Brazilian port</span><span class="lang-cn">巴西港口 FOB</span></li>
-          <li><span class="lang-en">CIF named port on request</span><span class="lang-cn">可报指定港 CIF</span></li>
-          <li><span class="lang-en">50 kg bags or bulk</span><span class="lang-cn">50 公斤袋装或散装</span></li>
-        </ul>
-        <a class="btn btn-primary" href="#spec"><span class="lang-en">View specification</span><span class="lang-cn">查看规格</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </article>
+        <dl class="mini-spec">
+          <div><dt><span class="lang-en">Colour</span><span class="lang-cn">色值</span></dt><dd>≤ 45 IU</dd></div>
+          <div><dt><span class="lang-en">Polarisation</span><span class="lang-cn">旋光度</span></dt><dd>≥ 99.80°</dd></div>
+          <div><dt><span class="lang-en">Packaging</span><span class="lang-cn">包装</span></dt><dd><span class="lang-en">50 kg bags or bulk</span><span class="lang-cn">50 公斤袋装或散装</span></dd></div>
+          <div><dt><span class="lang-en">Terms</span><span class="lang-cn">条款</span></dt><dd><span class="lang-en">FOB · CIF named port</span><span class="lang-cn">FOB · CIF 指定港</span></dd></div>
+        </dl>
+        <div class="feature-cta">
+          <a class="btn btn-dark" href="#spec"><span class="lang-en">Full specification</span><span class="lang-cn">完整规格</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="text-link" href="#contact" data-product="Icumsa 45 sugar"><span class="lang-en">Request a quote</span><span class="lang-cn">立即询价</span></a>
+        </div>
+      </div>
+    </article>
 
-      <article class="card product-card reveal d1">
-        <span class="badge badge-muted"><span class="lang-en">On request</span><span class="lang-cn">按需提供</span></span>
-        <h3><span class="lang-en">Soybeans</span><span class="lang-cn">大豆</span></h3>
-        <p><span class="lang-en">Brazilian soybeans through our expanding network. Grade, volume and availability on request.</span><span class="lang-cn">通过我们不断扩展的网络供应巴西大豆。等级、数量及供货情况请咨询。</span></p>
-      </article>
-      <article class="card product-card reveal d2">
-        <span class="badge badge-muted"><span class="lang-en">On request</span><span class="lang-cn">按需提供</span></span>
-        <h3><span class="lang-en">Maize / corn</span><span class="lang-cn">玉米</span></h3>
-        <p><span class="lang-en">Brazilian yellow maize, bulk or containerised. Specification and availability on request.</span><span class="lang-cn">巴西黄玉米，散装或集装箱运输。规格及供货情况请咨询。</span></p>
-      </article>
-      <article class="card product-card reveal d1">
-        <span class="badge badge-muted"><span class="lang-en">On request</span><span class="lang-cn">按需提供</span></span>
-        <h3><span class="lang-en">Green coffee</span><span class="lang-cn">生咖啡豆</span></h3>
-        <p><span class="lang-en">Brazilian Arabica and Robusta (Conilon) green coffee. Lots and availability on request.</span><span class="lang-cn">巴西阿拉比卡及罗布斯塔（科尼伦）生咖啡豆。批次及供货情况请咨询。</span></p>
-      </article>
-      <article class="card product-card reveal d2">
-        <span class="badge badge-muted"><span class="lang-en">Ask us</span><span class="lang-cn">欢迎咨询</span></span>
-        <h3><span class="lang-en">Other categories</span><span class="lang-cn">其他品类</span></h3>
-        <p><span class="lang-en">Looking for something else from Brazil? Tell us what you need and we will check it with our network.</span><span class="lang-cn">需要其他巴西产品？请告诉我们您的需求，我们将与合作网络核实。</span></p>
-      </article>
+    <div class="more">
+      <p class="more-label reveal"><span class="lang-en">Also available on request</span><span class="lang-cn">亦可按需提供</span></p>
+      <ul class="more-list">
+        <li class="reveal"><a href="#contact" data-product="Soybeans">
+          <span class="more-name"><span class="lang-en">Soybeans</span><span class="lang-cn">大豆</span></span>
+          <span class="more-desc"><span class="lang-en">Brazilian soybeans through our expanding network. Grade, volume and availability on request.</span><span class="lang-cn">通过我们不断扩展的网络供应巴西大豆。等级、数量及供货情况请咨询。</span></span>
+          <span class="more-tag"><span class="lang-en">On request</span><span class="lang-cn">按需提供</span></span>
+          <span class="more-arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li class="reveal"><a href="#contact" data-product="Maize / corn">
+          <span class="more-name"><span class="lang-en">Maize / corn</span><span class="lang-cn">玉米</span></span>
+          <span class="more-desc"><span class="lang-en">Brazilian yellow maize, bulk or containerised. Specification and availability on request.</span><span class="lang-cn">巴西黄玉米，散装或集装箱运输。规格及供货情况请咨询。</span></span>
+          <span class="more-tag"><span class="lang-en">On request</span><span class="lang-cn">按需提供</span></span>
+          <span class="more-arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li class="reveal"><a href="#contact" data-product="Green coffee">
+          <span class="more-name"><span class="lang-en">Green coffee</span><span class="lang-cn">生咖啡豆</span></span>
+          <span class="more-desc"><span class="lang-en">Brazilian Arabica and Robusta (Conilon) green coffee. Lots and availability on request.</span><span class="lang-cn">巴西阿拉比卡及罗布斯塔（科尼伦）生咖啡豆。批次及供货情况请咨询。</span></span>
+          <span class="more-tag"><span class="lang-en">On request</span><span class="lang-cn">按需提供</span></span>
+          <span class="more-arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li class="reveal"><a href="#contact" data-product="Other">
+          <span class="more-name"><span class="lang-en">Other categories</span><span class="lang-cn">其他品类</span></span>
+          <span class="more-desc"><span class="lang-en">Looking for something else from Brazil? Tell us what you need and we will check it with our network.</span><span class="lang-cn">需要其他巴西产品？请告诉我们您的需求，我们将与合作网络核实。</span></span>
+          <span class="more-tag"><span class="lang-en">Ask us</span><span class="lang-cn">欢迎咨询</span></span>
+          <span class="more-arrow" aria-hidden="true">→</span>
+        </a></li>
+      </ul>
+      <p class="products-note reveal"><span class="lang-en">We only confirm what our suppliers have confirmed in writing.</span><span class="lang-cn">我们只确认供应商已书面确认的内容。</span></p>
     </div>
-    <p class="products-note reveal"><span class="lang-en">We only confirm what our suppliers have confirmed in writing.</span><span class="lang-cn">我们只确认供应商已书面确认的内容。</span></p>
   </div>
 </section>
 
 <!-- ============ ROUTE ============ -->
 <section class="section section-dark" id="route" aria-labelledby="route-title">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal"><span class="eyebrow-num">04</span><span class="lang-en">Route</span><span class="lang-cn">航线</span></p>
+    <div class="sec-head">
+      <p class="sec-label reveal"><span class="sec-idx">04</span><span class="lang-en">Route</span><span class="lang-cn">航线</span></p>
+      <div class="sec-title">
         <h2 id="route-title" class="reveal"><span class="lang-en">From a Brazilian port to yours.</span><span class="lang-cn">从巴西港口，到您的港口。</span></h2>
+        <p class="lead reveal d1"><span class="lang-en">Cargo is loaded at a Brazilian port, FOB as standard. On request we quote CIF to a named destination port, for example CIF Shanghai Port or CIF Jebel Ali. Aventum coordinates from Amsterdam.</span><span class="lang-cn">货物在巴西港口装船，标准条款为 FOB。如有需要，我们可报指定目的港的 CIF 价格，例如 CIF 上海港或 CIF 杰贝阿里港。Aventum 在阿姆斯特丹负责全程协调。</span></p>
       </div>
-      <p class="lead reveal d1"><span class="lang-en">Cargo is loaded at a Brazilian port, FOB as standard. On request we quote CIF to a named destination port, for example CIF Shanghai Port or CIF Jebel Ali. Aventum coordinates from Amsterdam.</span><span class="lang-cn">货物在巴西港口装船，标准条款为 FOB。如有需要，我们可报指定目的港的 CIF 价格，例如 CIF 上海港或 CIF 杰贝阿里港。Aventum 在阿姆斯特丹负责全程协调。</span></p>
     </div>
 
-    <figure class="reveal">
+    <figure class="voyage reveal">
       <div class="map-frame" id="map-frame">
         <picture>
           <source srcset="world-map.webp" type="image/webp">
-          <img class="map-img" src="world-map.png" width="1661" height="866" loading="lazy" decoding="async" alt="World map showing an example sea route from Brazil to China, coordinated from Amsterdam" data-alt-en="World map showing an example sea route from Brazil to China, coordinated from Amsterdam" data-alt-cn="世界地图：显示从巴西到中国的示例海运航线，由阿姆斯特丹协调">
+          <img class="map-img" id="map-img" src="world-map.png" width="1661" height="866" decoding="async" alt="World map showing an example sea route from Brazil to China, coordinated from Amsterdam" data-alt-en="World map showing an example sea route from Brazil to China, coordinated from Amsterdam" data-alt-cn="世界地图：显示从巴西到中国的示例海运航线，由阿姆斯特丹协调">
         </picture>
         <canvas id="map-canvas" aria-hidden="true"></canvas>
+        <div class="map-hud" aria-hidden="true">
+          <span class="mono"><span class="lang-en">Example route</span><span class="lang-cn">示例航线</span></span>
+          <span class="mono map-hud-route"><span class="lang-en">Brazil → China</span><span class="lang-cn">巴西 → 中国</span></span>
+        </div>
         <button type="button" class="map-replay" id="map-replay" data-aria-en="Replay animation" data-aria-cn="重新播放动画" aria-label="Replay animation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></button>
       </div>
       <figcaption>
+        <ol class="voyage-steps" id="voyage-steps">
+          <li data-at="0">
+            <span class="vs-idx">01</span>
+            <strong><span class="lang-en">Loading port</span><span class="lang-cn">装货港</span></strong>
+            <span class="vs-desc"><span class="lang-en">Santos or Paranaguá. FOB as standard: risk passes to the buyer once the cargo is on board.</span><span class="lang-cn">桑托斯港或巴拉那瓜港。标准条款为 FOB：货物装船后风险转移至买方。</span></span>
+          </li>
+          <li data-at="0.3">
+            <span class="vs-idx">02</span>
+            <strong><span class="lang-en">South Atlantic</span><span class="lang-cn">南大西洋</span></strong>
+            <span class="vs-desc"><span class="lang-en">Around the Cape of Good Hope into the Indian Ocean.</span><span class="lang-cn">绕过好望角，进入印度洋。</span></span>
+          </li>
+          <li data-at="0.68">
+            <span class="vs-idx">03</span>
+            <strong><span class="lang-en">Strait of Malacca</span><span class="lang-cn">马六甲海峡</span></strong>
+            <span class="vs-desc"><span class="lang-en">Into the South China Sea towards East Asian ports.</span><span class="lang-cn">进入南海，驶向东亚港口。</span></span>
+          </li>
+          <li data-at="0.98">
+            <span class="vs-idx">04</span>
+            <strong><span class="lang-en">Destination port</span><span class="lang-cn">目的港</span></strong>
+            <span class="vs-desc"><span class="lang-en">Ports in China and other markets, confirmed per contract. CIF to a named port on request, e.g. CIF Shanghai Port.</span><span class="lang-cn">中国及其他市场的港口，按合同确认。可按需报指定港 CIF，例如 CIF 上海港。</span></span>
+          </li>
+        </ol>
         <ul class="map-legend">
-          <li><span class="legend-line" aria-hidden="true"></span><span class="lang-en">Example route: Brazil to China</span><span class="lang-cn">示例航线：巴西至中国</span></li>
+          <li><span class="legend-line" aria-hidden="true"></span><span class="lang-en">Example sea route</span><span class="lang-cn">示例海运航线</span></li>
           <li><span class="legend-line coord" aria-hidden="true"></span><span class="lang-en">Coordination from Amsterdam</span><span class="lang-cn">阿姆斯特丹协调</span></li>
         </ul>
       </figcaption>
     </figure>
-
-    <ul class="route-terms">
-      <li class="reveal"><strong>FOB</strong><span class="desc"><span class="lang-en">Standard. Free on board at the Brazilian loading port.</span><span class="lang-cn">标准条款：巴西装货港船上交货。</span></span></li>
-      <li class="reveal d1"><strong><span class="lang-en">CIF named port</span><span class="lang-cn">CIF 指定港</span></strong><span class="desc"><span class="lang-en">On request, always quoted to a named destination port, e.g. CIF Shanghai Port.</span><span class="lang-cn">按需提供，始终按指定目的港报价，例如 CIF 上海港。</span></span></li>
-      <li class="reveal d2"><strong><span class="lang-en">Destination</span><span class="lang-cn">目的地</span></strong><span class="desc"><span class="lang-en">Ports in China and other markets, confirmed per contract.</span><span class="lang-cn">中国及其他市场的港口，按合同确认。</span></span></li>
-    </ul>
   </div>
 </section>
 
 <!-- ============ SPECIFICATION ============ -->
 <section class="section section-light" id="spec" aria-labelledby="spec-title">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal"><span class="eyebrow-num">05</span><span class="lang-en">Specification</span><span class="lang-cn">产品规格</span></p>
-        <h2 id="spec-title" class="reveal"><span class="lang-en">Icumsa 45: <em>typical specification.</em></span><span class="lang-cn">ICUMSA 45：<em>典型规格。</em></span></h2>
+    <div class="sec-head">
+      <p class="sec-label reveal"><span class="sec-idx">05</span><span class="lang-en">Specification</span><span class="lang-cn">产品规格</span></p>
+      <div class="sec-title">
+        <h2 id="spec-title" class="reveal"><span class="lang-en">Icumsa 45: typical specification.</span><span class="lang-cn">ICUMSA 45：典型规格。</span></h2>
+        <p class="lead reveal d1"><span class="lang-en">Typical values for Icumsa 45 white refined sugar. Final specification, packaging and inspection terms are confirmed by the supplier and fixed in the contract.</span><span class="lang-cn">以下为 ICUMSA 45 精制白砂糖的典型指标。最终规格、包装及检验条款由供应商确认，并写入合同。</span></p>
       </div>
-      <p class="lead reveal d1"><span class="lang-en">Typical values for Icumsa 45 white refined sugar. Final specification, packaging and inspection terms are confirmed by the supplier and fixed in the contract.</span><span class="lang-cn">以下为 ICUMSA 45 精制白砂糖的典型指标。最终规格、包装及检验条款由供应商确认，并写入合同。</span></p>
     </div>
 
-    <div class="spec-grid">
-      <div class="spec-sheet reveal">
-        <div class="spec-sheet-head"><span class="lang-en">Product data sheet</span><span class="lang-cn">产品数据表</span><span>ICUMSA 45</span></div>
-        <table class="spec-table">
-          <caption class="visually-hidden"><span class="lang-en">Typical specification of Icumsa 45 white refined sugar</span><span class="lang-cn">ICUMSA 45 精制白砂糖典型规格</span></caption>
-          <tbody>
-            <tr><th scope="row"><span class="lang-en">Origin</span><span class="lang-cn">产地</span></th><td><span class="lang-en">Brazil</span><span class="lang-cn">巴西</span></td></tr>
-            <tr><th scope="row"><span class="lang-en">Type</span><span class="lang-cn">类型</span></th><td><span class="lang-en">Icumsa 45 white refined cane sugar</span><span class="lang-cn">ICUMSA 45 精制白砂糖（甘蔗糖）</span></td></tr>
-            <tr><th scope="row"><span class="lang-en">Colour (ICUMSA)</span><span class="lang-cn">色值（ICUMSA）</span></th><td>≤ 45 IU</td></tr>
-            <tr><th scope="row"><span class="lang-en">Polarisation</span><span class="lang-cn">旋光度</span></th><td>≥ 99.80°</td></tr>
-            <tr><th scope="row"><span class="lang-en">Moisture</span><span class="lang-cn">水分</span></th><td>≤ 0.04%</td></tr>
-            <tr><th scope="row"><span class="lang-en">Ash</span><span class="lang-cn">灰分</span></th><td>≤ 0.04%</td></tr>
-            <tr><th scope="row"><span class="lang-en">Packaging</span><span class="lang-cn">包装</span></th><td><span class="lang-en">50 kg PP bags or bulk</span><span class="lang-cn">50 公斤 PP 编织袋或散装</span></td></tr>
-            <tr><th scope="row"><span class="lang-en">Monthly capacity</span><span class="lang-cn">月供应能力</span></th><td><span class="lang-en">Up to 50,000+ MT</span><span class="lang-cn">每月最高 50,000+ 吨</span><small><span class="lang-en">Available capacity, not a minimum order</span><span class="lang-cn">此为可供应能力，并非最低起订量</span></small></td></tr>
-            <tr><th scope="row"><span class="lang-en">Trial shipment</span><span class="lang-cn">试单</span></th><td><span class="lang-en">Available, by arrangement</span><span class="lang-cn">可安排，数量协商</span></td></tr>
-            <tr><th scope="row"><span class="lang-en">Payment</span><span class="lang-cn">付款方式</span></th><td><span class="lang-en">L/C preferred; other terms negotiable</span><span class="lang-cn">优先信用证（L/C），其他方式可协商</span></td></tr>
-            <tr><th scope="row"><span class="lang-en">Inspection</span><span class="lang-cn">检验</span></th><td><span class="lang-en">Independent inspector (e.g. SGS) at the loading port</span><span class="lang-cn">装货港独立检验机构（如 SGS）</span><small><span class="lang-en">As agreed in the contract</span><span class="lang-cn">按合同约定</span></small></td></tr>
-            <tr><th scope="row"><span class="lang-en">Incoterms</span><span class="lang-cn">贸易术语</span></th><td><span class="lang-en">FOB Brazilian port (standard)</span><span class="lang-cn">巴西港口 FOB（标准）</span><small><span class="lang-en">CIF to a named destination port on request, e.g. CIF Shanghai Port</span><span class="lang-cn">可按需报指定目的港 CIF，例如 CIF 上海港</span></small></td></tr>
-          </tbody>
-        </table>
-        <ul class="chips">
-          <li><span class="lang-en">Brazil origin</span><span class="lang-cn">巴西原产</span></li>
-          <li><span class="lang-en">Food grade</span><span class="lang-cn">食品级</span></li>
-          <li><span class="lang-en">Independent inspection</span><span class="lang-cn">独立检验</span></li>
-          <li><span class="lang-en">Trial available</span><span class="lang-cn">可试单</span></li>
-        </ul>
+    <div class="keyfigs">
+      <div class="keyfig reveal">
+        <p class="keyfig-label"><span class="lang-en">Monthly capacity</span><span class="lang-cn">月供应能力</span></p>
+        <p class="keyfig-value"><span class="lang-en">50,000+ MT</span><span class="lang-cn">50,000+ 吨</span></p>
+        <p class="keyfig-note"><span class="lang-en">Available capacity, not a minimum order quantity. Volumes are agreed per contract.</span><span class="lang-cn">此为可供应能力，并非最低起订量。具体数量按合同约定。</span></p>
       </div>
+      <div class="keyfig reveal d1">
+        <p class="keyfig-label"><span class="lang-en">Trial shipment</span><span class="lang-cn">试单</span></p>
+        <p class="keyfig-value"><span class="lang-en">On request</span><span class="lang-cn">可协商</span></p>
+        <p class="keyfig-note"><span class="lang-en">Start with a smaller volume to verify quality, documents and logistics.</span><span class="lang-cn">可先小批量试单，验证质量、单据与物流。</span></p>
+      </div>
+      <div class="keyfig reveal d2">
+        <p class="keyfig-label"><span class="lang-en">Payment</span><span class="lang-cn">付款方式</span></p>
+        <p class="keyfig-value"><span class="lang-en">L/C preferred</span><span class="lang-cn">优先信用证</span></p>
+        <p class="keyfig-note"><span class="lang-en">A confirmed, irrevocable Letter of Credit, with payment against shipping documents. Other terms are negotiable.</span><span class="lang-cn">保兑不可撤销信用证，凭装运单据付款。其他付款方式可协商。</span></p>
+      </div>
+    </div>
 
-      <div class="spec-side">
-        <div class="card is-accent reveal d1">
-          <p class="card-label"><span class="lang-en">Monthly capacity</span><span class="lang-cn">月供应能力</span></p>
-          <p class="card-value"><span class="lang-en">50,000+ MT</span><span class="lang-cn">50,000+ 吨</span></p>
-          <p><span class="lang-en">Available capacity, not a minimum order quantity. Volumes are agreed per contract.</span><span class="lang-cn">此为可供应能力，并非最低起订量。具体数量按合同约定。</span></p>
-        </div>
-        <div class="card reveal d2">
-          <p class="card-label"><span class="lang-en">Trial shipment</span><span class="lang-cn">试单</span></p>
-          <p class="card-value"><span class="lang-en">On request</span><span class="lang-cn">可协商</span></p>
-          <p><span class="lang-en">Start with a smaller volume to verify quality, documents and logistics.</span><span class="lang-cn">可先小批量试单，验证质量、单据与物流。</span></p>
-        </div>
-        <div class="card reveal d3">
-          <p class="card-label"><span class="lang-en">Payment</span><span class="lang-cn">付款方式</span></p>
-          <p class="card-value"><span class="lang-en">L/C preferred</span><span class="lang-cn">优先信用证</span></p>
-          <p><span class="lang-en">Our preferred instrument is a confirmed, irrevocable Letter of Credit, with payment against shipping documents. Other terms are negotiable.</span><span class="lang-cn">我们优先采用保兑不可撤销信用证，凭装运单据付款。其他付款方式可协商。</span></p>
-        </div>
+    <div class="datasheet reveal">
+      <div class="datasheet-head">
+        <span><span class="lang-en">Product data sheet</span><span class="lang-cn">产品数据表</span></span>
+        <span class="mono">ICUMSA 45 · <span class="lang-en">Brazil</span><span class="lang-cn">巴西</span></span>
       </div>
+      <table class="spec-table">
+        <caption class="visually-hidden"><span class="lang-en">Typical specification of Icumsa 45 white refined sugar</span><span class="lang-cn">ICUMSA 45 精制白砂糖典型规格</span></caption>
+        <tbody>
+          <tr><th scope="row"><span class="lang-en">Origin</span><span class="lang-cn">产地</span></th><td><span class="lang-en">Brazil</span><span class="lang-cn">巴西</span></td></tr>
+          <tr><th scope="row"><span class="lang-en">Type</span><span class="lang-cn">类型</span></th><td><span class="lang-en">Icumsa 45 white refined cane sugar</span><span class="lang-cn">ICUMSA 45 精制白砂糖（甘蔗糖）</span></td></tr>
+          <tr><th scope="row"><span class="lang-en">Colour (ICUMSA)</span><span class="lang-cn">色值（ICUMSA）</span></th><td class="num">≤ 45 IU</td></tr>
+          <tr><th scope="row"><span class="lang-en">Polarisation</span><span class="lang-cn">旋光度</span></th><td class="num">≥ 99.80°</td></tr>
+          <tr><th scope="row"><span class="lang-en">Moisture</span><span class="lang-cn">水分</span></th><td class="num">≤ 0.04%</td></tr>
+          <tr><th scope="row"><span class="lang-en">Ash</span><span class="lang-cn">灰分</span></th><td class="num">≤ 0.04%</td></tr>
+          <tr><th scope="row"><span class="lang-en">Packaging</span><span class="lang-cn">包装</span></th><td><span class="lang-en">50 kg PP bags or bulk</span><span class="lang-cn">50 公斤 PP 编织袋或散装</span></td></tr>
+          <tr><th scope="row"><span class="lang-en">Monthly capacity</span><span class="lang-cn">月供应能力</span></th><td><span class="lang-en">Up to 50,000+ MT</span><span class="lang-cn">每月最高 50,000+ 吨</span><small><span class="lang-en">Available capacity, not a minimum order</span><span class="lang-cn">此为可供应能力，并非最低起订量</span></small></td></tr>
+          <tr><th scope="row"><span class="lang-en">Trial shipment</span><span class="lang-cn">试单</span></th><td><span class="lang-en">Available, by arrangement</span><span class="lang-cn">可安排，数量协商</span></td></tr>
+          <tr><th scope="row"><span class="lang-en">Payment</span><span class="lang-cn">付款方式</span></th><td><span class="lang-en">L/C preferred; other terms negotiable</span><span class="lang-cn">优先信用证（L/C），其他方式可协商</span></td></tr>
+          <tr><th scope="row"><span class="lang-en">Inspection</span><span class="lang-cn">检验</span></th><td><span class="lang-en">Independent inspector (e.g. SGS) at the loading port</span><span class="lang-cn">装货港独立检验机构（如 SGS）</span><small><span class="lang-en">As agreed in the contract</span><span class="lang-cn">按合同约定</span></small></td></tr>
+          <tr><th scope="row"><span class="lang-en">Incoterms</span><span class="lang-cn">贸易术语</span></th><td><span class="lang-en">FOB Brazilian port (standard)</span><span class="lang-cn">巴西港口 FOB（标准）</span><small><span class="lang-en">CIF to a named destination port on request, e.g. CIF Shanghai Port</span><span class="lang-cn">可按需报指定目的港 CIF，例如 CIF 上海港</span></small></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -445,34 +494,39 @@
 <!-- ============ PROCESS ============ -->
 <section class="section section-dark" id="process" aria-labelledby="process-title">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal"><span class="eyebrow-num">06</span><span class="lang-en">How it works</span><span class="lang-cn">合作流程</span></p>
-        <h2 id="process-title" class="reveal"><span class="lang-en">Clear roles, <em>step by step.</em></span><span class="lang-cn">角色清晰，<em>循序推进。</em></span></h2>
+    <div class="sec-head">
+      <p class="sec-label reveal"><span class="sec-idx">06</span><span class="lang-en">How it works</span><span class="lang-cn">合作流程</span></p>
+      <div class="sec-title">
+        <h2 id="process-title" class="reveal"><span class="lang-en">Clear roles, step by step.</span><span class="lang-cn">角色清晰，循序推进。</span></h2>
+        <p class="lead reveal d1"><span class="lang-en">Every stage is put in writing. Here is who does what, and how a deal moves from first enquiry to delivery at your port.</span><span class="lang-cn">每个环节均以书面形式确认。以下说明各方职责，以及一笔交易如何从首次询价推进到货物抵达您的港口。</span></p>
       </div>
-      <p class="lead reveal d1"><span class="lang-en">Every stage is put in writing. Here is who does what, and how a deal moves from first enquiry to delivery at your port.</span><span class="lang-cn">每个环节均以书面形式确认。以下说明各方职责，以及一笔交易如何从首次询价推进到货物抵达您的港口。</span></p>
     </div>
 
-    <h3 class="visually-hidden"><span class="lang-en">Roles</span><span class="lang-cn">各方职责</span></h3>
-    <div class="roles">
-      <article class="card role reveal">
-        <h3><small><span class="lang-en">Brazil</span><span class="lang-cn">巴西</span></small><span class="lang-en">Supplier</span><span class="lang-cn">供应商</span></h3>
+    <div class="flow reveal">
+      <article class="flow-node">
+        <span class="flow-dot" aria-hidden="true"></span>
+        <p class="flow-place mono"><span class="lang-en">Brazil</span><span class="lang-cn">巴西</span></p>
+        <h3><span class="lang-en">Supplier</span><span class="lang-cn">供应商</span></h3>
         <ul>
           <li><span class="lang-en">Production and product quality</span><span class="lang-cn">生产及产品质量</span></li>
           <li><span class="lang-en">Export documentation</span><span class="lang-cn">出口单据</span></li>
           <li><span class="lang-en">Loading at the Brazilian port (FOB)</span><span class="lang-cn">在巴西港口装船（FOB）</span></li>
         </ul>
       </article>
-      <article class="card role is-us reveal d1">
-        <h3><small><span class="lang-en">Amsterdam</span><span class="lang-cn">阿姆斯特丹</span></small>Aventum International</h3>
+      <article class="flow-node is-us">
+        <span class="flow-dot" aria-hidden="true"></span>
+        <p class="flow-place mono"><span class="lang-en">Amsterdam</span><span class="lang-cn">阿姆斯特丹</span></p>
+        <h3>Aventum International</h3>
         <ul>
           <li><span class="lang-en">Matching your requirements to supply</span><span class="lang-cn">匹配您的需求与货源</span></li>
           <li><span class="lang-en">Coordinating LOI, offer and contract</span><span class="lang-cn">协调意向书、报价及合同</span></li>
           <li><span class="lang-en">Following up inspection and documents</span><span class="lang-cn">跟进检验及单据</span></li>
         </ul>
       </article>
-      <article class="card role reveal d2">
-        <h3><small><span class="lang-en">Destination</span><span class="lang-cn">目的国</span></small><span class="lang-en">Importer</span><span class="lang-cn">进口商</span></h3>
+      <article class="flow-node">
+        <span class="flow-dot" aria-hidden="true"></span>
+        <p class="flow-place mono"><span class="lang-en">Destination</span><span class="lang-cn">目的国</span></p>
+        <h3><span class="lang-en">Importer</span><span class="lang-cn">进口商</span></h3>
         <ul>
           <li><span class="lang-en">Import licence and quota where required (in China: TRQ)</span><span class="lang-cn">进口许可证及配额（如需要；中国为关税配额 TRQ）</span></li>
           <li><span class="lang-en">Food-safety registration and import compliance (in China: GACC, Decree 280)</span><span class="lang-cn">食品安全注册及进口合规（中国：海关总署 GACC，第 280 号令）</span></li>
@@ -482,36 +536,35 @@
     </div>
     <p class="role-note reveal"><span class="lang-en">Aventum does not own the cargo. We act as an independent intermediary between buyer and supplier.</span><span class="lang-cn">Aventum 不拥有货物，我们作为买卖双方之间的独立中间方提供服务。</span></p>
 
-    <h3 class="visually-hidden"><span class="lang-en">Steps</span><span class="lang-cn">步骤</span></h3>
-    <ol class="steps">
-      <li class="step reveal">
-        <span class="step-num" aria-hidden="true">01</span>
-        <h4><span class="lang-en">Enquiry &amp; NDA</span><span class="lang-cn">询价与保密协议</span></h4>
+    <ol class="timeline" id="timeline">
+      <li class="tl-step reveal">
+        <span class="tl-idx">01</span>
+        <h3><span class="lang-en">Enquiry &amp; NDA</span><span class="lang-cn">询价与保密协议</span></h3>
         <p><span class="lang-en">Tell us the product, volume, destination port and preferred Incoterm. Where needed, both sides sign an NDA before details are exchanged.</span><span class="lang-cn">请告知产品、数量、目的港及首选贸易术语。如有需要，双方在交换详细信息前签署保密协议。</span></p>
       </li>
-      <li class="step reveal d1">
-        <span class="step-num" aria-hidden="true">02</span>
-        <h4><span class="lang-en">Letter of Intent (LOI)</span><span class="lang-cn">意向书（LOI）</span></h4>
+      <li class="tl-step reveal">
+        <span class="tl-idx">02</span>
+        <h3><span class="lang-en">Letter of Intent (LOI)</span><span class="lang-cn">意向书（LOI）</span></h3>
         <p><span class="lang-en">You send a formal LOI on company letterhead. We check it against supplier availability before anything else happens.</span><span class="lang-cn">您以公司抬头纸出具正式意向书。我们据此与供应商核对供货情况，再推进后续步骤。</span></p>
       </li>
-      <li class="step reveal d2">
-        <span class="step-num" aria-hidden="true">03</span>
-        <h4><span class="lang-en">Offer &amp; contract (SPA)</span><span class="lang-cn">报价与合同（SPA）</span></h4>
+      <li class="tl-step reveal">
+        <span class="tl-idx">03</span>
+        <h3><span class="lang-en">Offer &amp; contract (SPA)</span><span class="lang-cn">报价与合同（SPA）</span></h3>
         <p><span class="lang-en">The supplier confirms price and terms in a formal offer. Once agreed, the Sales &amp; Purchase Agreement fixes specification, volume, inspection, Incoterm and payment.</span><span class="lang-cn">供应商以正式报价确认价格和条款。双方达成一致后，签订买卖合同（SPA），明确规格、数量、检验、贸易术语及付款方式。</span></p>
       </li>
-      <li class="step reveal">
-        <span class="step-num" aria-hidden="true">04</span>
-        <h4><span class="lang-en">Payment instrument</span><span class="lang-cn">开立付款工具</span></h4>
+      <li class="tl-step reveal">
+        <span class="tl-idx">04</span>
+        <h3><span class="lang-en">Payment instrument</span><span class="lang-cn">开立付款工具</span></h3>
         <p><span class="lang-en">The importer opens the agreed payment instrument (L/C preferred), with payment against shipping documents.</span><span class="lang-cn">进口商开立约定的付款工具（优先信用证），凭装运单据付款。</span></p>
       </li>
-      <li class="step reveal d1">
-        <span class="step-num" aria-hidden="true">05</span>
-        <h4><span class="lang-en">Inspection &amp; shipment</span><span class="lang-cn">检验与装运</span></h4>
+      <li class="tl-step reveal">
+        <span class="tl-idx">05</span>
+        <h3><span class="lang-en">Inspection &amp; shipment</span><span class="lang-cn">检验与装运</span></h3>
         <p><span class="lang-en">Independent inspection at the loading port, then loading and departure. You receive the full set: commercial invoice, bill of lading, inspection report, certificate of origin, phytosanitary certificate and packing list.</span><span class="lang-cn">在装货港完成独立检验后装船启运。您将收到全套单据：商业发票、提单、检验报告、原产地证书、植物检疫证书及装箱单。</span></p>
       </li>
-      <li class="step reveal d2">
-        <span class="step-num" aria-hidden="true">06</span>
-        <h4><span class="lang-en">Delivery &amp; ongoing supply</span><span class="lang-cn">交货与持续供应</span></h4>
+      <li class="tl-step reveal">
+        <span class="tl-idx">06</span>
+        <h3><span class="lang-en">Delivery &amp; ongoing supply</span><span class="lang-cn">交货与持续供应</span></h3>
         <p><span class="lang-en">After a successful trial shipment, we move to regular monthly supply on agreed terms.</span><span class="lang-cn">试单顺利完成后，按约定条款转入定期月度供应。</span></p>
       </li>
     </ol>
@@ -521,40 +574,22 @@
 <!-- ============ DOCUMENTS ============ -->
 <section class="section section-light" id="documents" aria-labelledby="docs-title">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal"><span class="eyebrow-num">07</span><span class="lang-en">Documentation</span><span class="lang-cn">单据文件</span></p>
-        <h2 id="docs-title" class="reveal"><span class="lang-en">A complete document set, <em>every shipment.</em></span><span class="lang-cn">每批货物，<em>单据齐全。</em></span></h2>
+    <div class="sec-head">
+      <p class="sec-label reveal"><span class="sec-idx">07</span><span class="lang-en">Documentation</span><span class="lang-cn">单据文件</span></p>
+      <div class="sec-title">
+        <h2 id="docs-title" class="reveal"><span class="lang-en">A complete document set, every shipment.</span><span class="lang-cn">每批货物，单据齐全。</span></h2>
+        <p class="lead reveal d1"><span class="lang-en">The standard export package for customs clearance in the destination country and L/C presentation. The exact list is confirmed in the contract.</span><span class="lang-cn">用于目的国海关清关及信用证交单的标准出口单据。具体清单以合同为准。</span></p>
       </div>
-      <p class="lead reveal d1"><span class="lang-en">The standard export package for customs clearance in the destination country and L/C presentation. The exact list is confirmed in the contract.</span><span class="lang-cn">用于目的国海关清关及信用证交单的标准出口单据。具体清单以合同为准。</span></p>
     </div>
 
-    <ul class="docs-grid">
-      <li class="card doc reveal">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
-        <div><h3><span class="lang-en">Commercial invoice</span><span class="lang-cn">商业发票</span></h3><p><span class="lang-en">Basis for L/C settlement and customs valuation.</span><span class="lang-cn">信用证结算及海关估价的依据。</span></p></div>
-      </li>
-      <li class="card doc reveal d1">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 20c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M4 16l1.5-6h13L20 16"/><path d="M9 10V6h6v4"/></svg></div>
-        <div><h3><span class="lang-en">Bill of lading</span><span class="lang-cn">提单</span></h3><p><span class="lang-en">Issued by the carrier, confirming the cargo is on board.</span><span class="lang-cn">由承运人签发，确认货物已装船。</span></p></div>
-      </li>
-      <li class="card doc reveal d2">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M8 11l2 2 4-4"/></svg></div>
-        <div><h3><span class="lang-en">Inspection report</span><span class="lang-cn">检验报告</span></h3><p><span class="lang-en">Independent quality and quantity inspection at the loading port (e.g. SGS).</span><span class="lang-cn">装货港独立质量与数量检验（如 SGS）。</span></p></div>
-      </li>
-      <li class="card doc reveal">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
-        <div><h3><span class="lang-en">Certificate of origin</span><span class="lang-cn">原产地证书</span></h3><p><span class="lang-en">Confirms the Brazilian origin of the goods.</span><span class="lang-cn">证明货物为巴西原产。</span></p></div>
-      </li>
-      <li class="card doc reveal d1">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 19.32A1 1 0 0 0 4.69 21C8 20 16 19 17 8z"/><path d="M17 8l-5 5"/></svg></div>
-        <div><h3><span class="lang-en">Phytosanitary certificate</span><span class="lang-cn">植物检疫证书</span></h3><p><span class="lang-en">Issued by the Brazilian authorities where required for import.</span><span class="lang-cn">如进口需要，由巴西主管机关签发。</span></p></div>
-      </li>
-      <li class="card doc reveal d2">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M3 7l9 5 9-5"/></svg></div>
-        <div><h3><span class="lang-en">Packing list</span><span class="lang-cn">装箱单</span></h3><p><span class="lang-en">Cargo details, including weight and number of packages.</span><span class="lang-cn">货物明细，包括重量及件数。</span></p></div>
-      </li>
-    </ul>
+    <ol class="doclist">
+      <li class="reveal"><span class="doc-idx">01</span><div><h3><span class="lang-en">Commercial invoice</span><span class="lang-cn">商业发票</span></h3><p><span class="lang-en">Basis for L/C settlement and customs valuation.</span><span class="lang-cn">信用证结算及海关估价的依据。</span></p></div></li>
+      <li class="reveal d1"><span class="doc-idx">02</span><div><h3><span class="lang-en">Bill of lading</span><span class="lang-cn">提单</span></h3><p><span class="lang-en">Issued by the carrier, confirming the cargo is on board.</span><span class="lang-cn">由承运人签发，确认货物已装船。</span></p></div></li>
+      <li class="reveal"><span class="doc-idx">03</span><div><h3><span class="lang-en">Inspection report</span><span class="lang-cn">检验报告</span></h3><p><span class="lang-en">Independent quality and quantity inspection at the loading port (e.g. SGS).</span><span class="lang-cn">装货港独立质量与数量检验（如 SGS）。</span></p></div></li>
+      <li class="reveal d1"><span class="doc-idx">04</span><div><h3><span class="lang-en">Certificate of origin</span><span class="lang-cn">原产地证书</span></h3><p><span class="lang-en">Confirms the Brazilian origin of the goods.</span><span class="lang-cn">证明货物为巴西原产。</span></p></div></li>
+      <li class="reveal"><span class="doc-idx">05</span><div><h3><span class="lang-en">Phytosanitary certificate</span><span class="lang-cn">植物检疫证书</span></h3><p><span class="lang-en">Issued by the Brazilian authorities where required for import.</span><span class="lang-cn">如进口需要，由巴西主管机关签发。</span></p></div></li>
+      <li class="reveal d1"><span class="doc-idx">06</span><div><h3><span class="lang-en">Packing list</span><span class="lang-cn">装箱单</span></h3><p><span class="lang-en">Cargo details, including weight and number of packages.</span><span class="lang-cn">货物明细，包括重量及件数。</span></p></div></li>
+    </ol>
   </div>
 </section>
 
@@ -562,8 +597,8 @@
 <section class="section section-dark" id="faq" aria-labelledby="faq-title">
   <div class="wrap faq-grid">
     <div class="faq-intro">
-      <p class="eyebrow reveal"><span class="eyebrow-num">08</span><span class="lang-en">FAQ</span><span class="lang-cn">常见问题</span></p>
-      <h2 id="faq-title" class="reveal"><span class="lang-en">Questions buyers <em>often ask.</em></span><span class="lang-cn">买家<em>常见问题。</em></span></h2>
+      <p class="sec-label reveal"><span class="sec-idx">08</span><span class="lang-en">FAQ</span><span class="lang-cn">常见问题</span></p>
+      <h2 id="faq-title" class="reveal"><span class="lang-en">Questions buyers often ask.</span><span class="lang-cn">买家常见问题。</span></h2>
       <p class="lead reveal d1"><span class="lang-en">Can't find your answer? Email us at <a href="mailto:info@aventuminternational.com">info@aventuminternational.com</a>.</span><span class="lang-cn">没有找到答案？请发送邮件至 <a href="mailto:info@aventuminternational.com">info@aventuminternational.com</a>。</span></p>
     </div>
     <div class="faq-list">
@@ -600,10 +635,10 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="section section-dark" id="contact" aria-labelledby="contact-title">
+<section class="section section-contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap contact-grid">
     <div class="contact-intro">
-      <p class="eyebrow reveal"><span class="eyebrow-num">09</span><span class="lang-en">Contact</span><span class="lang-cn">联系我们</span></p>
+      <p class="sec-label reveal"><span class="sec-idx">09</span><span class="lang-en">Contact</span><span class="lang-cn">联系我们</span></p>
       <h2 id="contact-title" class="reveal"><span class="lang-en">Send us your requirements.</span><span class="lang-cn">请告诉我们您的需求。</span></h2>
       <p class="lead reveal d1"><span class="lang-en">Whether it is your first purchase from Brazil or you are looking for a long-term partner, we reply to every serious enquiry within 48 hours.</span><span class="lang-cn">无论您是首次从巴西采购，还是在寻找长期合作伙伴，我们都会在 48 小时内回复每一份正式询价。</span></p>
       <dl class="contact-list reveal d2">
@@ -691,9 +726,8 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" width="610" height="484" alt="Aventum International" loading="lazy">
-        <p><span class="lang-en">Brokerage in Brazilian agricultural commodities</span><span class="lang-cn">巴西农产品大宗商品经纪</span><br>
-        <span class="lang-en">Amsterdam, Netherlands</span><span class="lang-cn">荷兰阿姆斯特丹</span></p>
+        <p class="footer-statement"><span class="lang-en">Brokerage in Brazilian agricultural commodities, coordinated from Amsterdam.</span><span class="lang-cn">巴西农产品大宗商品经纪，由阿姆斯特丹统筹协调。</span></p>
+        <a class="btn btn-primary" href="#contact"><span class="lang-en">Request a quote</span><span class="lang-cn">立即询价</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="footer-col">
         <h2><span class="lang-en">Navigate</span><span class="lang-cn">导航</span></h2>
@@ -704,18 +738,19 @@
           <li><a href="#spec"><span class="lang-en">Specification</span><span class="lang-cn">规格</span></a></li>
           <li><a href="#process"><span class="lang-en">Process</span><span class="lang-cn">流程</span></a></li>
           <li><a href="#documents"><span class="lang-en">Documentation</span><span class="lang-cn">单据文件</span></a></li>
-      <li><a href="#faq"><span class="lang-en">FAQ</span><span class="lang-cn">常见问题</span></a></li>
+          <li><a href="#faq"><span class="lang-en">FAQ</span><span class="lang-cn">常见问题</span></a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h2><span class="lang-en">Contact</span><span class="lang-cn">联系</span></h2>
         <ul>
           <li><a href="mailto:info@aventuminternational.com">info@aventuminternational.com</a></li>
-          <li><a href="#contact"><span class="lang-en">Enquiry form</span><span class="lang-cn">询价表单</span></a></li>
+          <li><span class="lang-en">Amsterdam, Netherlands</span><span class="lang-cn">荷兰阿姆斯特丹</span></li>
           <li><a href="privacy.html" data-href-cn="privacy.html?lang=zh"><span class="lang-en">Privacy notice</span><span class="lang-cn">隐私声明</span></a></li>
         </ul>
       </div>
     </div>
+    <img class="footer-word" src="logo-word.png" width="813" height="159" alt="" loading="lazy">
     <div class="footer-bottom">
       <span>© <span id="year">2026</span> Aventum International. <span class="lang-en">All rights reserved.</span><span class="lang-cn">保留所有权利。</span></span>
       <span class="lang-en">Product information is indicative and subject to supplier confirmation and contract.</span><span class="lang-cn">产品信息仅供参考，以供应商确认及合同为准。</span>
@@ -725,6 +760,6 @@
 
 <button type="button" class="back-to-top" id="back-to-top" data-aria-en="Back to top" data-aria-cn="返回顶部" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg></button>
 
-<script src="main.js" defer></script>
+<script src="main.js?v=f494d7d8" defer></script>
 </body>
 </html>

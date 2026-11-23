@@ -276,27 +276,44 @@
   }
 
   /* ------------------------------------------------------------------
-     Route map (canvas): hubs with radar pulses, sea route drawn along
-     the Cape of Good Hope, dotted coordination lines from Amsterdam.
+     Voyage map (canvas): dot-matrix world map built from the land
+     silhouette, sea route via the Cape of Good Hope and Malacca, a ship
+     that lights up the coast it passes, coordination arcs from Amsterdam.
+     The stage list under the map follows the ship.
      ------------------------------------------------------------------ */
   (function () {
     var frame = document.getElementById('map-frame');
     var canvas = document.getElementById('map-canvas');
+    var img = document.getElementById('map-img');
     var replayBtn = document.getElementById('map-replay');
-    if (!frame || !canvas || !canvas.getContext) return;
+    var steps = Array.prototype.slice.call(document.querySelectorAll('#voyage-steps li'));
+    if (!frame || !canvas || !canvas.getContext || !img) return;
     var ctx = canvas.getContext('2d');
 
-    var GREEN = '50,255,100';
-    // Positions as fractions of the map image (1661 × 866)
+    var IMG_ASPECT = 1661 / 866;
+    var G = '50,255,100';
     var HUBS = {
-      br: { p: [0.322, 0.700], en: ['Brazil', 'Santos / Paranaguá'], cn: ['巴西', '桑托斯 / 巴拉那瓜'], pos: 'left' },
-      am: { p: [0.469, 0.218], en: ['Amsterdam', 'Aventum International'], cn: ['阿姆斯特丹', 'Aventum International'], pos: 'left' },
-      ch: { p: [0.822, 0.360], en: ['China', 'Destination port'], cn: ['中国', '目的港'], pos: 'right' }
+      br: { p: [0.322, 0.700], en: ['Brazil', 'Santos · Paranaguá'], cn: ['巴西', '桑托斯 · 巴拉那瓜'], side: 'left' },
+      am: { p: [0.469, 0.218], en: ['Amsterdam', 'Aventum International'], cn: ['阿姆斯特丹', 'Aventum International'], side: 'top' },
+      ch: { p: [0.822, 0.360], en: ['China', 'Destination port'], cn: ['中国', '目的港'], side: 'right' }
     };
+    var WAYPOINTS = [
+      { p: [0.515, 0.872], at: 0.36, en: 'Cape of Good Hope', cn: '好望角' },
+      { p: [0.778, 0.598], at: 0.72, en: 'Strait of Malacca', cn: '马六甲海峡' }
+    ];
     var ROUTE = [[0.322, 0.700], [0.40, 0.790], [0.515, 0.872], [0.62, 0.800], [0.715, 0.672], [0.778, 0.598], [0.816, 0.530], [0.838, 0.445], [0.836, 0.395], [0.822, 0.360]];
 
-    var W = 0, H = 0, dpr = 1, path = [], total = 0;
-    var running = false, rafId = 0, rings = { br: [], am: [], ch: [] };
+    var TRAVEL = 10000, HOLD = 3200, FADE = 900;
+    var W = 0, H = 0, dpr = 1, u0 = 0, uw = 1, spacing = 7;
+    var dots = [], path = [], cum = [], total = 0, staticLayer = null, alpha = null, AW = 0, AH = 0;
+    var running = false, visible = false, rafId = 0, startTs = 0, pausedAt = 0, done = false;
+    var font = getComputedStyle(document.body).fontFamily;
+    var mono = 'ui-monospace, "SF Mono", Menlo, Consolas, monospace';
+
+    function lang() { return document.documentElement.lang === 'zh-CN' ? 'cn' : 'en'; }
+    function X(u) { return (u - u0) / uw * W; }
+    function Y(v) { return v * H; }
+    function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
 
     function catmull(pts, segs) {
       var out = [];
@@ -314,216 +331,304 @@
       return out;
     }
 
+    // Land mask sampled once from the silhouette image
+    function buildAlpha() {
+      AW = 900; AH = Math.round(AW / IMG_ASPECT);
+      var c = document.createElement('canvas'); c.width = AW; c.height = AH;
+      var x = c.getContext('2d');
+      x.drawImage(img, 0, 0, AW, AH);
+      try { alpha = x.getImageData(0, 0, AW, AH).data; } catch (e) { alpha = null; }
+    }
+    function land(u, v) {
+      if (!alpha || u < 0 || u > 1 || v < 0 || v > 1) return false;
+      var i = ((Math.min(AH - 1, Math.floor(v * AH)) * AW) + Math.min(AW - 1, Math.floor(u * AW))) * 4 + 3;
+      return alpha[i] > 90;
+    }
+
     function resize() {
       var r = frame.getBoundingClientRect();
       if (!r.width) return;
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = r.width; H = r.height;
+      W = r.width; H = r.height; dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      path = catmull(ROUTE, 24).map(function (q) { return [q[0] * W, q[1] * H]; });
-      total = 0;
-      for (var i = 1; i < path.length; i++) total += Math.hypot(path[i][0] - path[i - 1][0], path[i][1] - path[i - 1][1]);
-    }
+      // Narrow frames show the part of the map that holds the route
+      var a = W / H;
+      uw = Math.min(1, a / IMG_ASPECT);
+      u0 = Math.min(Math.max(0.585 - uw / 2, 0), 1 - uw);
+      spacing = Math.max(4.5, Math.min(8, W / 165));
 
-    function pointAt(frac) { // point at a fraction of the route length
-      var target = frac * total, acc = 0;
+      path = catmull(ROUTE, 24).map(function (p) { return [X(p[0]), Y(p[1])]; });
+      cum = [0]; total = 0;
       for (var i = 1; i < path.length; i++) {
-        var seg = Math.hypot(path[i][0] - path[i - 1][0], path[i][1] - path[i - 1][1]);
-        if (acc + seg >= target) {
-          var k = seg ? (target - acc) / seg : 0;
-          return { i: i, x: path[i - 1][0] + (path[i][0] - path[i - 1][0]) * k, y: path[i - 1][1] + (path[i][1] - path[i - 1][1]) * k };
+        total += Math.hypot(path[i][0] - path[i - 1][0], path[i][1] - path[i - 1][1]);
+        cum.push(total);
+      }
+
+      dots = [];
+      if (alpha) {
+        for (var y = spacing / 2; y < H; y += spacing) {
+          for (var x = spacing / 2; x < W; x += spacing) {
+            if (land(u0 + x / W * uw, y / H)) dots.push(x, y);
+          }
         }
-        acc += seg;
       }
-      var last = path[path.length - 1];
-      return { i: path.length - 1, x: last[0], y: last[1] };
-    }
-
-    function ease(t) { t = Math.max(0, Math.min(1, t)); return 1 - Math.pow(1 - t, 3); }
-    function hubXY(k) { return [HUBS[k].p[0] * W, HUBS[k].p[1] * H]; }
-
-    function drawLabel(k, alpha) {
-      if (alpha <= 0) return;
-      var h = HUBS[k], xy = hubXY(k), lang = currentLang();
-      var small = W < 560;
-      var fs1 = Math.round(Math.max(11, Math.min(15, W * 0.0135)));
-      var fs2 = Math.round(fs1 * 0.82);
-      var family = '"DM Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif';
-      var l1 = h[lang][0], l2 = small ? '' : h[lang][1];
-      ctx.save();
-      ctx.globalAlpha = alpha;
-      ctx.font = '600 ' + fs1 + 'px ' + family;
-      var w1 = ctx.measureText(l1).width;
-      ctx.font = '400 ' + fs2 + 'px ' + family;
-      var w2 = l2 ? ctx.measureText(l2).width : 0;
-      var pad = small ? 6 : 9;
-      var bw = Math.max(w1, w2) + pad * 2;
-      var bh = l2 ? fs1 + fs2 + pad * 2 + 4 : fs1 + pad * 2;
-      var gap = small ? 10 : 16;
-      var pos = small && k === 'ch' ? 'top' : h.pos;
-      var bx, by;
-      if (pos === 'left') { bx = xy[0] - bw - gap; by = xy[1] - bh / 2; }
-      else if (pos === 'right') { bx = xy[0] + gap; by = xy[1] - bh / 2; }
-      else { bx = xy[0] - bw / 2; by = xy[1] - bh - gap; }
-      bx = Math.max(4, Math.min(W - bw - 4, bx));
-      by = Math.max(4, Math.min(H - bh - 4, by));
-      ctx.fillStyle = 'rgba(8,8,8,.88)';
-      ctx.strokeStyle = 'rgba(' + GREEN + ',.35)';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      if (ctx.roundRect) ctx.roundRect(bx, by, bw, bh, 6); else ctx.rect(bx, by, bw, bh);
-      ctx.fill(); ctx.stroke();
-      ctx.textBaseline = 'alphabetic';
-      ctx.fillStyle = '#fff';
-      ctx.font = '600 ' + fs1 + 'px ' + family;
-      ctx.fillText(l1, bx + pad, by + pad + fs1 * 0.9);
-      if (l2) {
-        ctx.fillStyle = 'rgba(255,255,255,.6)';
-        ctx.font = '400 ' + fs2 + 'px ' + family;
-        ctx.fillText(l2, bx + pad, by + pad + fs1 + 4 + fs2 * 0.9);
+      staticLayer = document.createElement('canvas');
+      staticLayer.width = canvas.width; staticLayer.height = canvas.height;
+      var s = staticLayer.getContext('2d');
+      s.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var rad = spacing * 0.24;
+      for (var k = 0; k < dots.length; k += 2) {
+        // dots fade slightly towards the edges for depth
+        var dx = (dots[k] / W - 0.55), dy = (dots[k + 1] / H - 0.45);
+        var fall = Math.max(0.35, 1 - Math.sqrt(dx * dx + dy * dy) * 0.9);
+        s.fillStyle = 'rgba(255,255,255,' + (0.2 * fall).toFixed(3) + ')';
+        s.beginPath(); s.arc(dots[k], dots[k + 1], rad, 0, 6.2832); s.fill();
       }
-      ctx.restore();
+      if (dots.length) frame.classList.add('has-dots');
+      if (!running) draw(done || reduceMotion ? 1 : 0, 0, performance.now());
     }
 
-    function drawDot(k, alpha) {
-      var xy = hubXY(k);
-      ctx.save(); ctx.globalAlpha = alpha;
-      ctx.beginPath(); ctx.arc(xy[0], xy[1], 11, 0, Math.PI * 2); ctx.fillStyle = 'rgba(' + GREEN + ',.14)'; ctx.fill();
-      ctx.beginPath(); ctx.arc(xy[0], xy[1], 4.5, 0, Math.PI * 2); ctx.fillStyle = 'rgb(' + GREEN + ')'; ctx.fill();
-      ctx.restore();
+    function pointAt(d) {
+      if (d <= 0) return path[0];
+      if (d >= total) return path[path.length - 1];
+      var lo = 0, hi = cum.length - 1;
+      while (hi - lo > 1) { var mid = (lo + hi) >> 1; if (cum[mid] < d) lo = mid; else hi = mid; }
+      var f = (d - cum[lo]) / (cum[hi] - cum[lo] || 1);
+      return [path[lo][0] + (path[hi][0] - path[lo][0]) * f, path[lo][1] + (path[hi][1] - path[lo][1]) * f];
     }
 
-    function drawCoord(from, to, prog) {
-      if (prog <= 0) return;
-      var a = hubXY(from), b = hubXY(to);
-      var mx = (a[0] + b[0]) / 2, my = Math.min(a[1], b[1]) - H * 0.06;
-      ctx.save();
-      ctx.setLineDash([2, 5]);
-      ctx.strokeStyle = 'rgba(255,255,255,.45)';
-      ctx.lineWidth = 1.3;
-      ctx.beginPath();
-      var steps = 40, n = Math.round(steps * prog);
-      for (var i = 0; i <= n; i++) {
-        var t = i / steps;
-        var x = (1 - t) * (1 - t) * a[0] + 2 * (1 - t) * t * mx + t * t * b[0];
-        var y = (1 - t) * (1 - t) * a[1] + 2 * (1 - t) * t * my + t * t * b[1];
-        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-      ctx.restore();
-    }
-
-    function drawRoute(prog) {
-      if (prog <= 0) return;
-      var end = pointAt(prog);
-      ctx.save();
-      ctx.strokeStyle = 'rgba(' + GREEN + ',.9)';
-      ctx.lineWidth = 2;
-      ctx.setLineDash([7, 5]);
-      ctx.lineCap = 'round';
+    function strokeRoute(upTo) {
       ctx.beginPath();
       ctx.moveTo(path[0][0], path[0][1]);
-      for (var i = 1; i < end.i; i++) ctx.lineTo(path[i][0], path[i][1]);
-      ctx.lineTo(end.x, end.y);
+      for (var i = 1; i < path.length && cum[i] <= upTo; i++) ctx.lineTo(path[i][0], path[i][1]);
+      var e = pointAt(upTo); ctx.lineTo(e[0], e[1]);
+    }
+
+    function label(x, y, title, sub, side, a) {
+      var fs = W < 520 ? 11 : 13;
+      ctx.save();
+      ctx.globalAlpha = a;
+      ctx.font = '600 ' + fs + 'px ' + font;
+      var tw = ctx.measureText(title).width;
+      ctx.font = (fs - 3) + 'px ' + mono;
+      var sw = sub ? ctx.measureText(sub.toUpperCase()).width : 0;
+      var bw = Math.max(tw, sw), gap = 14, lx, ly;
+      if (side === 'left') { lx = x - gap - bw; ly = y + 4; }
+      else if (side === 'right') { lx = x + gap; ly = y + 4; }
+      else { lx = x - bw / 2; ly = y - gap - (sub ? fs + 2 : 0); }
+      // flip to the other side when a label would run off the canvas
+      if (side === 'right' && lx + bw > W - 8) lx = x - gap - bw;
+      if (side === 'left' && lx < 8) lx = x + gap;
+      lx = Math.max(8, Math.min(W - bw - 8, lx));
+      ly = Math.max(fs + 6, Math.min(H - (sub ? fs + 4 : 4), ly));
+      ctx.textAlign = 'left';
+      ctx.fillStyle = '#fff';
+      ctx.font = '600 ' + fs + 'px ' + font;
+      ctx.fillText(title, lx, ly);
+      if (sub) {
+        ctx.fillStyle = 'rgba(255,255,255,.5)';
+        ctx.font = (fs - 3) + 'px ' + mono;
+        ctx.fillText(sub.toUpperCase(), lx, ly + fs + 1);
+      }
+      ctx.restore();
+    }
+
+    function hub(key, now, color, a) {
+      var h = HUBS[key], x = X(h.p[0]), y = Y(h.p[1]);
+      var ph = ((now / 2600) + (key === 'ch' ? 0.5 : key === 'am' ? 0.25 : 0)) % 1;
+      ctx.save();
+      ctx.globalAlpha = a;
+      if (!reduceMotion) {
+        ctx.strokeStyle = 'rgba(' + color + ',' + (0.5 * (1 - ph)).toFixed(3) + ')';
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.arc(x, y, 5 + ph * 22, 0, 6.2832); ctx.stroke();
+      }
+      ctx.fillStyle = 'rgba(' + color + ',.18)';
+      ctx.beginPath(); ctx.arc(x, y, 9, 0, 6.2832); ctx.fill();
+      ctx.fillStyle = 'rgb(' + color + ')';
+      ctx.beginPath(); ctx.arc(x, y, 3.6, 0, 6.2832); ctx.fill();
+      ctx.restore();
+      var t = h[lang()];
+      label(x, y, t[0], t[1], h.side, a);
+    }
+
+    function arc(from, to, now, a) {
+      var x1 = X(from[0]), y1 = Y(from[1]), x2 = X(to[0]), y2 = Y(to[1]);
+      var cx = (x1 + x2) / 2, cy = Math.min(y1, y2) - Math.abs(x2 - x1) * 0.18;
+      ctx.save();
+      ctx.globalAlpha = a;
+      ctx.setLineDash([3, 6]);
+      ctx.lineDashOffset = reduceMotion ? 0 : -now / 60;
+      ctx.strokeStyle = 'rgba(255,255,255,.32)';
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.quadraticCurveTo(cx, cy, x2, y2); ctx.stroke();
+      ctx.restore();
+    }
+
+    // p: route progress 0..1, fade: 0..1 fade-out of the travelled line
+    function draw(p, fade, now) {
+      if (!W) return;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      if (staticLayer) { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(staticLayer, 0, 0); ctx.restore(); }
+
+      var head = pointAt(p * total), lineA = 1 - fade;
+
+      // coast lit up around the ship
+      if (p > 0 && p < 1 && dots.length) {
+        var R = spacing * 9, rad = spacing * 0.3;
+        for (var k = 0; k < dots.length; k += 2) {
+          var dx = dots[k] - head[0], dy = dots[k + 1] - head[1];
+          if (dx > R || dx < -R || dy > R || dy < -R) continue;
+          var d = Math.sqrt(dx * dx + dy * dy);
+          if (d > R) continue;
+          ctx.fillStyle = 'rgba(' + G + ',' + (0.75 * (1 - d / R)).toFixed(3) + ')';
+          ctx.beginPath(); ctx.arc(dots[k], dots[k + 1], rad, 0, 6.2832); ctx.fill();
+        }
+      }
+
+      arc(HUBS.am.p, HUBS.br.p, now, 1);
+      arc(HUBS.am.p, HUBS.ch.p, now, 1);
+
+      // full route, faint
+      ctx.save();
+      ctx.setLineDash([1.5, 5]);
+      ctx.strokeStyle = 'rgba(255,255,255,.22)';
+      ctx.lineWidth = 1.2;
+      strokeRoute(total);
       ctx.stroke();
       ctx.restore();
-      return end;
-    }
 
-    function drawShip(frac) {
-      var p = pointAt(frac);
-      ctx.save();
-      var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 14);
-      g.addColorStop(0, 'rgba(' + GREEN + ',.55)'); g.addColorStop(1, 'rgba(' + GREEN + ',0)');
-      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, 14, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(p.x, p.y, 2.6, 0, Math.PI * 2); ctx.fill();
-      ctx.restore();
-    }
-
-    // Timeline (ms)
-    var T = { labels: 300, labelDur: 900, radar: 500, coord: 900, coordDur: 1400, route: 1300, routeDur: 3200, calm: 4800, calmDur: 3000, ship: 4700, shipLoop: 7000 };
-
-    function render(e) {
-      ctx.clearRect(0, 0, W, H);
-      var labelA = ease((e - T.labels) / T.labelDur);
-      var calm = ease((e - T.calm) / T.calmDur);
-      var scale = Math.max(0.45, Math.min(1, W / 1100));
-      var interval = 420 + calm * 680, maxR = (54 - calm * 22) * scale, dur = 1800 + calm * 900, baseA = 0.75 - calm * 0.33;
-
-      if (e > T.radar) {
-        Object.keys(rings).forEach(function (k) {
-          var list = rings[k], last = list.length ? list[list.length - 1].t : -1e9;
-          if (e - last > interval) list.push({ t: e, dur: dur, maxR: maxR, a: baseA });
-          rings[k] = list.filter(function (r) { return e - r.t < r.dur; });
-        });
+      // travelled route
+      if (p > 0 && lineA > 0) {
+        var grad = ctx.createLinearGradient(path[0][0], path[0][1], head[0], head[1]);
+        grad.addColorStop(0, 'rgba(' + G + ',.15)');
+        grad.addColorStop(1, 'rgba(' + G + ',1)');
+        ctx.save();
+        ctx.globalAlpha = lineA;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        ctx.strokeStyle = 'rgba(' + G + ',.12)'; ctx.lineWidth = 7;
+        strokeRoute(p * total); ctx.stroke();
+        ctx.strokeStyle = grad; ctx.lineWidth = 2;
+        strokeRoute(p * total); ctx.stroke();
+        ctx.restore();
       }
-      Object.keys(rings).forEach(function (k) {
-        var xy = hubXY(k);
-        rings[k].forEach(function (r) {
-          var age = (e - r.t) / r.dur;
-          ctx.beginPath(); ctx.arc(xy[0], xy[1], 7 + age * r.maxR, 0, Math.PI * 2);
-          ctx.strokeStyle = 'rgba(' + GREEN + ',' + ((1 - age) * r.a).toFixed(3) + ')';
-          ctx.lineWidth = 1.3; ctx.stroke();
-        });
+
+      // waypoints
+      WAYPOINTS.forEach(function (w) {
+        var wa = Math.max(0, Math.min(1, (p - w.at) / 0.06)) * lineA;
+        if (reduceMotion) wa = 1;
+        if (wa <= 0) return;
+        var x = X(w.p[0]), y = Y(w.p[1]);
+        ctx.save();
+        ctx.globalAlpha = wa;
+        ctx.strokeStyle = 'rgba(255,255,255,.6)'; ctx.lineWidth = 1;
+        var below = y + 34 < H, dir = below ? 1 : -1;
+        ctx.beginPath(); ctx.moveTo(x, y + 5 * dir); ctx.lineTo(x, y + 14 * dir); ctx.stroke();
+        ctx.fillStyle = 'rgba(255,255,255,.75)';
+        ctx.font = (W < 520 ? 8 : 10) + 'px ' + mono;
+        var t = w[lang()].toUpperCase(), tw = ctx.measureText(t).width;
+        ctx.fillText(t, Math.max(6, Math.min(W - tw - 6, x - tw / 2)), below ? y + 26 : y - 19);
+        ctx.restore();
       });
 
-      var cp = ease((e - T.coord) / T.coordDur);
-      drawCoord('am', 'br', cp);
-      drawCoord('am', 'ch', cp);
-      drawRoute(ease((e - T.route) / T.routeDur));
-      if (e > T.ship) drawShip(((e - T.ship) % T.shipLoop) / T.shipLoop);
+      hub('am', now, '255,255,255', 1);
+      hub('br', now, G, 1);
+      hub('ch', now, G, 1);
 
-      if (labelA > 0) { drawDot('br', labelA); drawDot('am', labelA); drawDot('ch', labelA); }
-      drawLabel('br', labelA); drawLabel('am', labelA); drawLabel('ch', labelA);
+      // ship
+      if (p > 0 && p < 1) {
+        var g = ctx.createRadialGradient(head[0], head[1], 0, head[0], head[1], 22);
+        g.addColorStop(0, 'rgba(' + G + ',.55)'); g.addColorStop(1, 'rgba(' + G + ',0)');
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(head[0], head[1], 22, 0, 6.2832); ctx.fill();
+        ctx.fillStyle = '#eafff0';
+        ctx.beginPath(); ctx.arc(head[0], head[1], 3.2, 0, 6.2832); ctx.fill();
+      }
 
-      if (replayBtn && e > T.calm && !replayBtn.classList.contains('is-visible')) replayBtn.classList.add('is-visible');
+      // stage list
+      var cur = -1;
+      steps.forEach(function (li, i) {
+        var on = p >= parseFloat(li.dataset.at || 0) && (p > 0 || i === 0) && lineA > 0.2;
+        li.classList.toggle('is-active', on);
+        if (on) cur = i;
+      });
+      steps.forEach(function (li, i) { li.classList.toggle('is-current', i === cur); });
     }
 
-    // Elapsed time only advances while the map is on screen, so it resumes where it left off
-    var elapsed = 0, lastTs = null;
-    function loop(ts) {
+    function loop(now) {
       if (!running) return;
-      if (lastTs !== null) elapsed += Math.min(ts - lastTs, 100);
-      lastTs = ts;
-      render(elapsed);
+      var t = now - startTs, p, fade = 0;
+      if (t < TRAVEL) p = ease(t / TRAVEL);
+      else if (t < TRAVEL + HOLD) { p = 1; if (!done) { done = true; if (replayBtn) replayBtn.classList.add('is-visible'); } }
+      else if (t < TRAVEL + HOLD + FADE) { p = 1; fade = (t - TRAVEL - HOLD) / FADE; }
+      else { startTs = now; p = 0; }
+      draw(p, fade, now);
       rafId = requestAnimationFrame(loop);
     }
-    function start(fromZero) {
-      if (fromZero) { elapsed = 0; rings = { br: [], am: [], ch: [] }; if (replayBtn) replayBtn.classList.remove('is-visible'); }
-      if (running) return;
-      running = true; lastTs = null; rafId = requestAnimationFrame(loop);
+    function start() {
+      if (running || reduceMotion) return;
+      running = true;
+      var now = performance.now();
+      startTs = pausedAt ? now - pausedAt : now;
+      rafId = requestAnimationFrame(loop);
     }
     function stop() {
-      running = false; cancelAnimationFrame(rafId);
+      if (!running) return;
+      running = false;
+      pausedAt = performance.now() - startTs;
+      cancelAnimationFrame(rafId);
     }
 
-    function drawStatic() { // reduced motion: final state, no animation
-      rings = { br: [], am: [], ch: [] };
-      ctx.clearRect(0, 0, W, H);
-      drawCoord('am', 'br', 1); drawCoord('am', 'ch', 1); drawRoute(1);
-      ['br', 'am', 'ch'].forEach(function (k) { drawDot(k, 1); drawLabel(k, 1); });
+    function init() {
+      buildAlpha();
+      resize();
+      if (reduceMotion) { draw(1, 0, 0); steps.forEach(function (li) { li.classList.add('is-active'); }); return; }
+      if (hasIO) {
+        new IntersectionObserver(function (en) {
+          visible = en[0].isIntersecting;
+          if (visible) start(); else stop();
+        }, { threshold: 0.25 }).observe(frame);
+      } else start();
     }
 
-    resize();
-    var started = false;
-    window.addEventListener('resize', function () { resize(); if (reduceMotion) drawStatic(); });
-    document.addEventListener('langchange', function () {
-      if (reduceMotion || !hasIO) drawStatic();
-      else if (started && !running) render(elapsed);
-    });
-    var img = frame.querySelector('img');
-    if (img && !img.complete) img.addEventListener('load', function () { resize(); if (reduceMotion) drawStatic(); });
+    if (img.complete && img.naturalWidth) init();
+    else img.addEventListener('load', init, { once: true });
 
-    if (reduceMotion || !hasIO) { drawStatic(); return; }
-
-    new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) { resize(); if (!started) { started = true; start(true); } else start(false); }
-      else stop();
-    }, { threshold: 0.35 }).observe(frame);
-
-    if (replayBtn) replayBtn.addEventListener('click', function () { stop(); start(true); });
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(resize, 150); });
+    document.addEventListener('langchange', function () { if (!running) draw(done || reduceMotion ? 1 : 0, 0, performance.now()); });
+    if (replayBtn) replayBtn.addEventListener('click', function () { pausedAt = 0; startTs = performance.now(); if (!running && visible) start(); });
   })();
+
+  /* ------------------------------------------------------------------
+     Process timeline: the line fills as you scroll through the steps
+     ------------------------------------------------------------------ */
+  (function () {
+    var tl = document.getElementById('timeline');
+    if (!tl) return;
+    var items = tl.querySelectorAll('.tl-step');
+    if (reduceMotion) { tl.style.setProperty('--tl-progress', 1); items.forEach(function (s) { s.classList.add('is-passed'); }); return; }
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var vh = window.innerHeight, mark = vh * 0.62, r = tl.getBoundingClientRect();
+      var p = Math.min(Math.max((mark - r.top) / r.height, 0), 1);
+      tl.style.setProperty('--tl-progress', p.toFixed(4));
+      items.forEach(function (s) { s.classList.toggle('is-passed', s.getBoundingClientRect().top + 40 < mark); });
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  /* Product links preselect the product in the enquiry form */
+  document.querySelectorAll('[data-product]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var sel = document.getElementById('f-product');
+      if (sel) sel.value = a.dataset.product;
+    });
+  });
+
 
   /* ------------------------------------------------------------------
      Contact form (Formspree, posted with fetch; action URL is the single source)

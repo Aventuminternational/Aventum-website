@@ -1,0 +1,69 @@
+# Netlify configuration for aventuminternational.com
+# Static site: no build step, publish the repository root.
+[build]
+  publish = "."
+
+# Send the .nl domain and www variants to the canonical .com domain.
+# (Harmless if a domain is not attached to this Netlify site.)
+[[redirects]]
+  from = "https://aventuminternational.nl/*"
+  to = "https://aventuminternational.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.aventuminternational.nl/*"
+  to = "https://aventuminternational.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.aventuminternational.com/*"
+  to = "https://aventuminternational.com/:splat"
+  status = 301
+  force = true
+
+# Security headers for every response
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://formspree.io; form-action https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+
+# HTML: always revalidate so content updates show immediately
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# CSS / JS: short cache (file names are not fingerprinted)
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Media and images: cache for a week
+[[headers]]
+  for = "/*.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

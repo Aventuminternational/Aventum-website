@@ -2,1336 +2,620 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#000000">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aventum International — Brazilian Agricultural Commodities</title>
-<meta name="description" content="Aventum International is a certified commodity broker connecting Brazilian Icumsa 45 sugar and agricultural products with Chinese importers. Transparent brokerage, verified supply.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aventum International | Brazilian Icumsa 45 Sugar Brokerage for China</title>
+<meta name="description" content="Amsterdam-based brokerage connecting Brazilian suppliers of Icumsa 45 white refined sugar with Chinese importers. FOB Brazilian port as standard, CIF to a named destination port on request.">
+<meta name="theme-color" content="#0a0a0a">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://aventuminternational.com/">
-<meta property="og:title" content="Aventum International — Brazilian Agricultural Commodities">
-<meta property="og:description" content="Certified commodity broker connecting Brazilian Icumsa 45 sugar and agricultural products with Chinese importers. Transparent brokerage, no surprises.">
-<meta property="og:url" content="https://aventuminternational.com/">
+<link rel="alternate" hreflang="en" href="https://aventuminternational.com/">
+<link rel="alternate" hreflang="zh-CN" href="https://aventuminternational.com/?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://aventuminternational.com/">
+
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://aventuminternational.com/logo.png">
 <meta property="og:site_name" content="Aventum International">
+<meta property="og:url" content="https://aventuminternational.com/">
+<meta property="og:title" content="Aventum International | Brazilian sugar, brokered with clarity">
+<meta property="og:description" content="Amsterdam-based brokerage connecting Brazilian suppliers of Icumsa 45 white refined sugar with Chinese importers. FOB Brazil as standard, CIF to a named port on request.">
+<meta property="og:image" content="https://aventuminternational.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aventum International: Brazilian sugar, brokered with clarity">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Aventum International — Brazilian Agricultural Commodities">
-<meta name="twitter:description" content="Certified commodity broker connecting Brazilian Icumsa 45 sugar and agricultural products with Chinese importers.">
-<meta name="twitter:image" content="https://aventuminternational.com/logo.png">
+<meta name="twitter:title" content="Aventum International | Brazilian sugar, brokered with clarity">
+<meta name="twitter:description" content="Amsterdam-based brokerage connecting Brazilian suppliers of Icumsa 45 white refined sugar with Chinese importers.">
+<meta name="twitter:image" content="https://aventuminternational.com/og-image.png">
+
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="hero-poster.jpg" as="image" fetchpriority="high">
+
+<!-- Fonts load without blocking rendering (Google Fonts is unreliable from mainland China) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preload" href="logo.png" as="image">
-  <link rel="preload" href="world-map.png" as="image">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --navy:#0a0a0a;--navy-mid:#1a1a1a;--accent:#0a0a0a;--accent-pale:#f5f5f3;
-  --black:#0A0A0A;--gray-mid:#6b6b6b;--gray-light:#f5f5f3;
-  --border:#e8e8e6;--white:#FFFFFF;
-}
-html{scroll-behavior:smooth}
-html,body{max-width:100%;overflow-x:hidden}body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black);font-size:15px;line-height:1.7;overflow-x:hidden}
-
-
-nav
-.logo{font-family:'DM Sans',sans-serif;font-size:1.3rem;font-weight:600;color:var(--white);letter-spacing:0.02em;text-decoration:none}
-.logo span{font-weight:300;font-style:italic;color:rgba(255,255,255,0.4);font-size:0.85em}
-.nav-right{display:flex;align-items:center;gap:2.5rem}
-nav ul{list-style:none;display:flex;gap:2.5rem;align-items:center}
-nav a{text-decoration:none;color:rgba(255,255,255,0.5);font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:400;transition:color 0.2s}
-nav a:hover{opacity:0.7}
-.nav-cta{padding:0.55rem 1.4rem;background:transparent;color:var(--white)!important;border:1px solid rgba(255,255,255,0.4);border-radius:999px}
-.nav-cta:hover{background:rgba(255,255,255,0.1)!important;border-color:var(--white)!important}
-.lang-switch{display:flex;align-items:center;gap:0.5rem}
-.lang-pipe{color:#fff;opacity:0.4;font-size:0.8rem;line-height:1}
-.lang-btn{padding:0;font-size:0.72rem;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border:none;background:transparent;color:#fff;font-family:'DM Sans',sans-serif;transition:color 0.2s}
-.lang-btn.active{color:#fff;font-weight:500}
-
-
-
-
-
-@keyframes trustScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-.hero{min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding:5rem 0;position:relative;background:#000;overflow:hidden}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.45}
-.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 60%,rgba(0,0,0,1) 100%)}
-.hero::after{display:none}
-.hero-content{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:2;padding:0 4rem}
-.hero-tag{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.75rem;display:flex;align-items:center;gap:0.75rem;font-weight:500;opacity:0;transform:translateY(16px);animation:fadeUp 0.7s 0.1s ease forwards}
-.hero-tag::before{content:'';display:block;width:28px;height:1.5px;background:var(--accent)}
-.hero h1{font-family:'DM Sans',sans-serif;font-size:clamp(2.6rem,4.8vw,4.4rem);font-weight:600;line-height:1.1;color:var(--white);margin-bottom:1rem;opacity:0;transform:translateY(16px);animation:fadeUp 0.7s 0.2s ease forwards}
-.hero h1 em{font-style:italic;color:rgba(255,255,255,0.75);font-weight:300}
-.hero-sub{font-size:clamp(0.95rem,1.4vw,1.15rem);color:rgba(255,255,255,0.65);margin-bottom:2.75rem;font-weight:300;max-width:520px;opacity:0;transform:translateY(16px);animation:fadeUp 0.7s 0.3s ease forwards}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4.5rem;opacity:0;transform:translateY(16px);animation:fadeUp 0.7s 0.4s ease forwards}
-.btn-primary{padding:1rem 2.5rem;background:var(--navy);color:var(--white);border:none;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;text-decoration:none;display:inline-block;border-radius:999px}
-.btn-primary:hover{background:var(--navy-mid)}
-.btn-outline{padding:1rem 2.5rem;background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;border-radius:999px}
-.btn-outline:hover{background:rgba(255,255,255,0.15);color:var(--white)}
-
-
-
-
-.section-wrap{max-width:1100px;margin:0 auto;padding:6rem 4rem}
-.section-tag{font-size:0.67rem;letter-spacing:0.2em;text-transform:uppercase;color:#32ff64;margin-bottom:1rem;font-weight:500}
-h2{font-family:'DM Sans',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:1.25rem}
-.brazil-bg h2,.spec-bg h2{color:#ffffff}
-.lead{font-size:0.97rem;color:var(--gray-mid);max-width:580px;margin-bottom:3.5rem;font-weight:300;line-height:1.85}
-
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}
-.reveal-delay-3{transition-delay:0.3s}.reveal-delay-4{transition-delay:0.4s}
-
-.stats-bg{background:#111;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08)}
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;padding:4.5rem 4rem;max-width:1100px;margin:0 auto;align-items:stretch}
-.stat-big{font-family:'DM Sans',sans-serif;font-size:2.4rem;font-weight:600;color:#fff;line-height:1;height:3.5rem;display:block;padding-bottom:0;white-space:nowrap}
-.stat-big-label{font-size:0.68rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.6rem;font-weight:400;display:block}
-.stats-row .reveal{display:flex;flex-direction:column;align-items:center}
-
-.why-bg{background:#f5f5f3}
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.why-card{background:#141414;padding:2.25rem 1.75rem;border:1px solid rgba(255,255,255,0.08);border-radius:12px;transition:box-shadow 0.25s,transform 0.25s}
-.why-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.4);transform:translateY(-3px)}
-.why-num{font-family:'DM Sans',sans-serif;font-size:3.5rem;font-weight:200;color:rgba(255,255,255,0.06);line-height:1;margin-bottom:1rem;letter-spacing:-0.02em}
-.why-card h3{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:0.25rem}
-.why-card p{font-size:0.86rem;color:rgba(255,255,255,0.4);line-height:1.75;font-weight:300}
-
-
-.map-section{background:#0a0a0a;border-top:none;border-bottom:none}
-.map-container{position:relative;width:100%;margin-top:3rem;background:#0a0a0a;border:1px solid #32ff64;border-radius:12px;overflow:hidden}
-#world-map-svg{width:100%;height:auto;display:block}
-.map-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;fill:var(--navy);letter-spacing:0.04em}
-.map-label-sub{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:300;fill:var(--gray-mid);letter-spacing:0.03em}
-.route-line{stroke:var(--navy);stroke-width:1.5;fill:none;stroke-dasharray:4 3;stroke-linecap:round}
-.route-dot{fill:var(--navy)}
-.route-dot-ring{fill:none;stroke:var(--navy);stroke-width:1;opacity:0.3}
-
-
-.brazil-bg{background:#0a0a0a}
-.brazil-bg .section-tag{color:#32ff64}
-.brazil-bg h2{color:var(--white)}
-.brazil-bg .lead{color:rgba(255,255,255,0.5)}
-.brazil-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
-.brazil-stat{border:1px solid rgba(255,255,255,0.1);padding:1.75rem;border-radius:12px}
-.brazil-stat-num{font-family:'DM Sans',sans-serif;font-size:2.4rem;font-weight:600;color:var(--white);line-height:1;margin-bottom:0.4rem}
-.brazil-stat-label{font-size:0.72rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.09em}
-.brazil-facts{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.brazil-fact{display:flex;align-items:flex-start;gap:0.75rem;padding:1.1rem 1.25rem;border:1px solid rgba(255,255,255,0.07);border-radius:10px}
-.brazil-fact-icon{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.brazil-fact p{font-size:0.83rem;color:rgba(255,255,255,0.5);line-height:1.65;font-weight:300}
-
-.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:1rem}
-.product-card{background:#141414;padding:1.75rem;border:1px solid rgba(255,255,255,0.08);border-radius:12px;transition:background 0.2s,box-shadow 0.2s;display:flex;flex-direction:column}
-.product-card:hover{background:#111;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
-.product-card.featured{background:var(--navy)}
-.product-card.featured h4{color:#fff}.product-card.featured p{color:rgba(255,255,255,0.3)}
-.product-card.featured .pcn{color:rgba(255,255,255,0.4)}
-.badge-featured{display:inline-flex;align-self:flex-start;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:#32ff64;background:transparent;border:1px solid #32ff64;padding:0.18rem 0.55rem;border-radius:999px;font-weight:500}
-.product-card h4{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:600;color:#ffffff;margin-bottom:0}
-.pcn{font-size:0.76rem;color:rgba(255,255,255,0.3);margin-bottom:0.7rem}
-.product-card p{font-size:0.82rem;color:rgba(255,255,255,0.3);line-height:1.7;font-weight:300}
-
-.spec-bg{background:#f5f5f3}
-.spec-bg .section-tag{color:#32ff64}
-.spec-bg h2{color:var(--white)}
-.spec-bg .lead{color:rgba(255,255,255,0.5)}
-.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.spec-table{width:100%;border-collapse:collapse}
-.spec-table tr{border-bottom:1px solid rgba(255,255,255,0.07)}
-.spec-table tr:last-child{border-bottom:none}
-.spec-table td{padding:0.9rem 0;font-size:0.86rem}
-.spec-table td:first-child{color:rgba(255,255,255,0.4);width:45%;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.07em;font-weight:400}
-.spec-table td:last-child{color:var(--white);font-weight:400}
-.cert-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.75rem}
-.badge{padding:0.3rem 0.85rem;border:1px solid rgba(255,255,255,0.18);font-size:0.68rem;color:rgba(255,255,255,0.55);letter-spacing:0.07em;text-transform:uppercase;border-radius:2px}
-.vol-cards{display:flex;flex-direction:column;gap:0.85rem}
-.vol-card{padding:1.4rem;border:1px solid rgba(255,255,255,0.1);border-radius:10px}
-.vol-card.highlight{border-color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.05)}
-.vol-label{font-size:0.66rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:0.45rem}
-.vol-num{font-family:'DM Sans',sans-serif;font-size:1.9rem;font-weight:600;color:var(--white);line-height:1}
-
-.docs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
-.doc-card{padding:1.75rem 1.5rem;border:1px solid var(--border);border-radius:12px;text-align:center;transition:border-color 0.2s,box-shadow 0.2s}
-.doc-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(27,79,168,0.08)}
-.doc-icon{display:flex;justify-content:center;align-items:center;margin-bottom:0.75rem;height:24px}
-.doc-card h4{font-size:0.82rem;font-weight:500;color:var(--navy);margin-bottom:0.25rem}
-.doc-card .doc-cn{font-size:0.72rem;color:var(--accent);margin-bottom:0.4rem}
-.doc-card p{font-size:0.76rem;color:var(--gray-mid);line-height:1.6;font-weight:300}
-
-.process-steps{display:flex;flex-direction:column;margin-top:3rem}
-.step{display:grid;grid-template-columns:3.5rem 1fr;gap:2rem;padding:2.25rem 0;border-bottom:1px solid var(--border);align-items:start}
-.step:last-child{border-bottom:none}
-.step-num{font-family:'DM Sans',sans-serif;font-size:2.5rem;font-weight:200;color:rgba(0,0,0,0.12);line-height:1;padding-top:0.15rem;letter-spacing:-0.02em}
-.step h4{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:0.2rem}
-.step .cn{font-size:0.76rem;color:var(--accent);margin-bottom:0.45rem}
-.step p{font-size:0.86rem;color:var(--gray-mid);font-weight:300;line-height:1.75}
-
-.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
-.contact-info h2{margin-bottom:1rem}
-.contact-info p{color:var(--gray-mid);font-size:0.92rem;font-weight:300;line-height:1.85;margin-bottom:2rem}
-.contact-detail{margin-bottom:1.1rem}
-.contact-detail-label{font-size:0.63rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gray-mid);margin-bottom:0.2rem;font-weight:500}
-.contact-detail-val{font-size:0.88rem;color:var(--navy);font-weight:400}
-.form-card{background:var(--white);border:1px solid var(--border);padding:2.25rem;border-radius:12px}
-.form-group{margin-bottom:1.1rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-label{display:block;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-mid);margin-bottom:0.35rem;font-weight:500}
-select option{background:#1a1a1a;color:#fff}
-input,select,textarea{width:100%;background:#1a1a1a;border:1px solid rgba(255,255,255,0.12);color:#fff;font-family:'DM Sans',sans-serif;font-size:0.86rem;padding:0.7rem 0.9rem;outline:none;border-radius:8px;transition:border-color 0.2s,background 0.2s;font-weight:300}
-input:focus,select:focus,textarea:focus{border-color:#32ff64;background:#222;color:#fff}
-select option{background:white}
-textarea{height:100px;resize:vertical}
-.form-submit{margin-top:1.25rem}
-.form-submit button{width:100%;padding:0.95rem;background:var(--navy);color:var(--white);border:none;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:999px;transition:background 0.2s}
-.form-submit button:hover{background:var(--navy-mid)}
-.form-note{font-size:0.7rem;color:var(--gray-mid);margin-top:0.65rem;text-align:center}
-
-footer{background:#0a0a0a;padding:2.75rem 4rem;border-top:1px solid rgba(255,255,255,0.08)}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
-.footer-logo{font-family:'DM Sans',sans-serif;font-size:1.15rem;color:var(--white);font-weight:600}
-.footer-logo span{font-style:italic;font-weight:400;opacity:0.5;font-size:0.85em}
-.footer-info{font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:0.25rem}
-.footer-links{display:flex;gap:2rem;margin-bottom:0.6rem;justify-content:flex-end}
-.footer-links a{font-size:0.7rem;color:rgba(255,255,255,0.35);text-decoration:none;text-transform:uppercase;letter-spacing:0.08em;transition:color 0.2s}
-.footer-links a:hover{color:rgba(255,255,255,0.7)}
-.lang-cn{display:none}
-@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
-
-.back-to-top{position:fixed;bottom:2rem;right:2rem;width:42px;height:42px;background:#32ff64;border:none;border-radius:999px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:opacity 0.3s,transform 0.3s;z-index:99}
-.back-to-top.visible{opacity:1;transform:translateY(0)}
-.back-to-top:hover{background:var(--navy-mid)}
-.back-to-top svg{stroke:#0a0a0a}
-
-.map-tip{background:white!important;border:1px solid #E2E6ED!important;box-shadow:none!important;padding:4px 8px!important;border-radius:3px!important;font-family:'DM Sans',sans-serif!important}
-
-.back-to-top.visible{opacity:1;transform:translateY(0)}
-.back-to-top:hover{background:var(--navy-mid)}
-.back-to-top svg{stroke:#0a0a0a}
-
-
-.section-tag{color:#32ff64 !important}
-
-
-.why-bg h2{color:#0a0a0a}
-.why-bg .lead{color:#6b6b6b}
-.why-bg .why-card{background:#fff;border:1px solid #e8e8e8}
-.why-bg .why-num{color:rgba(0,0,0,0.08)}
-.why-bg .why-card h3{color:#0a0a0a}
-.why-bg .why-card p{color:#6b6b6b}
-
-#products h2{color:#0a0a0a}
-#products .lead{color:#6b6b6b}
-#products .product-card{background:#fff;border:1px solid #e8e8e8}
-#products .product-card h4{color:#0a0a0a !important}
-#products .product-card p{color:#6b6b6b !important}
-#products .products-note{color:#6b6b6b}
-
-.spec-bg h2{color:#0a0a0a}
-.spec-bg .lead{color:#6b6b6b}
-.spec-bg .section-tag{color:#32ff64}
-.spec-bg .spec-table td{color:#0a0a0a}
-.spec-bg .spec-table tr{border-color:#e8e8e8}
-.spec-bg .vol-card{background:#fff;border:1px solid #e8e8e8}
-.spec-bg .vol-label{color:#6b6b6b}
-.spec-bg .vol-num{color:#0a0a0a}
-.spec-bg .vol-card p{color:rgba(0,0,0,0.6)}
-.spec-bg .cert-badges .badge{color:#0a0a0a;border-color:#0a0a0a}
-
-#process h2{color:#0a0a0a}
-#process .lead{color:#6b6b6b}
-#process .section-tag{color:#32ff64}
-#process .step{border-bottom:1px solid #e8e8e8}
-#process .step-num{color:rgba(0,0,0,0.1)}
-#process .step h4{color:#0a0a0a}
-#process .step p{color:#6b6b6b}
-
-
-.brazil-bg h2{color:#fff}
-.brazil-bg .lead{color:rgba(255,255,255,0.45)}
-
-.map-section h2{color:#fff}
-.map-section .lead{color:rgba(255,255,255,0.45)}
-.map-section .section-tag{color:#32ff64}
-
-#documents h2{color:#fff}
-#documents .lead{color:rgba(255,255,255,0.45)}
-#documents .section-tag{color:#32ff64}
-#documents .doc-card{background:#141414;border:1px solid rgba(255,255,255,0.08)}
-#documents .doc-title{color:#fff}
-#documents .doc-desc{color:rgba(255,255,255,0.4)}
-#documents .doc-card h4{color:#fff;font-size:0.88rem;font-weight:600}
-#documents .doc-card p{color:rgba(255,255,255,0.45);font-size:0.78rem}
-#documents .doc-icon svg{stroke:rgba(255,255,255,0.6)}
-#documents .doc-card:hover{border-color:rgba(255,255,255,0.2);background:#1a1a1a}
-
-
-
-#process h2{color:#0a0a0a}
-#process .lead{color:#6b6b6b}
-#process .step{border-bottom:1px solid #e8e8e8}
-#process .step-num{color:rgba(0,0,0,0.1)}
-#process .step h4{color:#0a0a0a}
-#process .step p{color:#6b6b6b}
-
-
-
-
-#contact .section-tag{color:#32ff64}
-#contact h2{color:#fff}
-#contact .contact-info p{color:rgba(255,255,255,0.45)}
-#contact .contact-detail-label{color:rgba(255,255,255,0.4)}
-#contact .contact-detail-val{color:#fff}
-#contact .form-card{background:#000;border:1px solid rgba(255,255,255,0.08)}
-#contact .form-card label{color:rgba(255,255,255,0.55)}
-#contact .form-card input,#contact .form-card select,#contact .form-card textarea{background:#1a1a1a;border:1px solid rgba(255,255,255,0.12);color:#fff}
-#contact .form-card input::placeholder,#contact .form-card textarea::placeholder{color:rgba(255,255,255,0.3)}
-#contact .form-submit button{background:#32ff64;color:#0a0a0a}
-#contact .form-submit button:hover{background:#28e056}
-
-
-.custom-select{position:relative;width:100%}
-.custom-select select{display:none}
-.cs-trigger{width:100%;background:#1a1a1a;border:1px solid rgba(255,255,255,0.12);color:#fff;font-family:'DM Sans',sans-serif;font-size:0.86rem;padding:0.7rem 2.5rem 0.7rem 0.9rem;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none}
-.cs-trigger::after{content:'▾';font-size:0.75rem;color:rgba(255,255,255,0.5);margin-left:8px;flex-shrink:0}
-.cs-dropdown{position:absolute;top:calc(100% + 4px);left:0;right:0;background:#1a1a1a;border:1px solid rgba(255,255,255,0.15);border-radius:8px;overflow:hidden;z-index:100;display:none}
-.cs-dropdown.open{display:block}
-.cs-option{padding:0.7rem 0.9rem;color:#fff;font-size:0.86rem;cursor:pointer;transition:background 0.15s}
-.cs-option:hover,.cs-option.selected{background:#32ff64;color:#0a0a0a}
-
-
-@media(max-width:1024px){
-  .section-wrap{padding:4rem 2.5rem}
-  .why-grid,.products-grid{grid-template-columns:repeat(2,1fr)}
-  .spec-grid{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:repeat(2,1fr)}
-}
-
-
-@media(max-width:768px){
-
-  
-  .hero > div[style*="position:absolute"][style*="grid"]{
-    grid-template-columns:1fr auto !important;
-    padding:1.2rem 1.5rem !important;
-  }
-  .hero > div[style*="position:absolute"][style*="grid"] > div:nth-child(2){
-    display:none !important;
-  }
-
-  
-  .hero{padding:3rem 0}
-  .hero-content{padding:0 1.5rem}
-  .hero h1{font-size:clamp(2rem,8vw,3rem)}
-  .hero-cta{flex-direction:column;align-items:flex-start}
-  .hero-cta .btn-primary,.hero-cta .btn-outline{width:100%;text-align:center}
-
-  
-  img[alt="Aventum International"]{height:90px !important}
-
-  
-  .section-wrap > div[style*="grid-template-columns:repeat(4"]{
-    grid-template-columns:repeat(2,1fr) !important;
-    gap:1.5rem !important;
-    padding:2.5rem 1.5rem !important;
-    max-width:100% !important;
-    margin:0 !important;
-  }
-  
-  div[style*="padding:4rem 4rem"]{
-    padding:2.5rem 1.5rem !important;
-    grid-template-columns:repeat(2,1fr) !important;
-  }
-
-  
-  .section-wrap{padding:3rem 1.5rem}
-
-  
-  .why-grid{grid-template-columns:1fr}
-  .products-grid{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:1fr}
-  .spec-grid{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-
-  
-  .form-row{grid-template-columns:1fr !important}
-
-  
-  #map-scene{margin:0 -1.5rem}
-  .map-container{border-radius:0 !important;border-left:none !important;border-right:none !important}
-
-  
-  .vol-cards{grid-template-columns:1fr}
-
-  
-  .brazil-stats{grid-template-columns:repeat(2,1fr)}
-  .brazil-facts{grid-template-columns:1fr}
-
-  
-  footer{padding:2rem 1.5rem}
-  .footer-grid{grid-template-columns:1fr;gap:2rem}
-  .footer-links{flex-direction:column;gap:0.75rem}
-
-  
-  .back-to-top{bottom:1.5rem;right:1.5rem;width:38px;height:38px}
-
-  
-  .cs-dropdown{border-radius:8px}
-
-  
-  h2{font-size:clamp(1.6rem,6vw,2.5rem)}
-}
-
-
-@media(max-width:480px){
-  .section-wrap{padding:2.5rem 1.2rem}
-  .brazil-stats{grid-template-columns:1fr}
-  .why-grid,.products-grid{grid-template-columns:1fr}
-  img[alt="Aventum International"]{height:75px !important}
-  .hero h1{font-size:clamp(1.8rem,7vw,2.5rem)}
-}
-
-
-@media(max-width:768px){
-  
-  *{max-width:100%;box-sizing:border-box}
-  
-  
-  div[style*="grid-template-columns:repeat(4,1fr)"]{
-    grid-template-columns:repeat(2,1fr) !important;
-  }
-  
-  
-  .hero-content,.hero > div{
-    padding-left:1.5rem !important;
-    padding-right:1.5rem !important;
-    max-width:100% !important;
-  }
-  
-  
-  canvas,video,img{max-width:100% !important}
-  
-  
-  #map-scene{overflow:hidden;width:100% !important}
-}
-
-@media(max-width:768px){
-  .doc-card{padding:1.25rem 1rem !important}
-}
-@media(max-width:480px){
-}
-
-@media(max-width:768px){
-  
-    grid-template-columns:repeat(2,1fr) !important;
-    gap:1rem !important;
-  }
-  
-  
-  .footer-links{
-    display:flex !important;
-    flex-direction:row !important;
-    flex-wrap:wrap !important;
-    gap:0.75rem 1.5rem !important;
-    justify-content:flex-start !important;
-    margin-top:1.5rem !important;
-  }
-  .footer-links a{
-    font-size:0.7rem !important;
-  }
-  
-  
-  .footer-grid{
-    display:flex !important;
-    flex-direction:column !important;
-    gap:1.5rem !important;
-  }
-  
-  
-  .map-container{
-    border-left:1px solid #32ff64 !important;
-    border-right:1px solid #32ff64 !important;
-    border-radius:8px !important;
-    margin:0 !important;
-    overflow:hidden !important;
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" media="print" id="font-css">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap"></noscript>
+
+<link rel="stylesheet" href="styles.css">
+<script src="lang-init.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Aventum International",
+  "url": "https://aventuminternational.com/",
+  "logo": "https://aventuminternational.com/logo.png",
+  "image": "https://aventuminternational.com/og-image.png",
+  "email": "info@aventuminternational.com",
+  "description": "Amsterdam-based brokerage connecting Brazilian suppliers of Icumsa 45 white refined sugar and other agricultural commodities with Chinese importers.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Amsterdam",
+    "addressCountry": "NL"
+  },
+  "areaServed": ["CN", "BR"],
+  "knowsLanguage": ["en", "zh-CN"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "info@aventuminternational.com",
+    "availableLanguage": ["English", "Chinese"]
   }
 }
-
-@media(max-width:768px){
-  .footer-right{text-align:left !important}
-  .footer-inner{flex-direction:column !important;gap:2rem !important}
-}
-
-
-
-@media(max-width:768px){
-  .doc-card{flex-direction:column !important;text-align:center !important;padding:1.5rem !important}
-  .doc-icon{margin-bottom:0.75rem !important}
-}
-
-@media(max-width:768px){
-  .hero{min-height:100svh !important;padding:2rem 0 !important}
-}
-
-@media(max-width:768px){
-  .hero{
-    min-height:100svh !important;
-    padding-top:0 !important;
-    padding-bottom:0 !important;
-  }
-  .hero-video{
-    position:absolute !important;
-    top:0 !important;
-    left:0 !important;
-    width:100% !important;
-    height:100% !important;
-    object-fit:cover !important;
-  }
-  .hero-content{
-    padding:0 1.5rem !important;
-    padding-top:180px !important;
-  }
-}
-
-@media(max-width:768px){
-    display:flex !important;
-    flex-direction:column !important;
-    gap:0.75rem !important;
-  }
-    width:100% !important;
-    flex-direction:row !important;
-    align-items:flex-start !important;
-    gap:1rem !important;
-    padding:1.25rem !important;
-    text-align:left !important;
-    box-sizing:border-box !important;
-  }
-    flex-shrink:0 !important;
-    margin-bottom:0 !important;
-    width:36px !important;
-  }
-    font-size:0.9rem !important;
-    margin-bottom:0.3rem !important;
-    text-align:left !important;
-  }
-    font-size:0.78rem !important;
-    text-align:left !important;
-    margin:0 !important;
-    line-height:1.5 !important;
-  }
-}
-
-@media(min-width:769px){
-}
-@media(max-width:768px){
-}
-
-@media(max-width:768px){
-}
-
-@media screen and (max-width:768px){
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:0.75rem !important;
-  }
-}
-@media screen and (min-width:769px){
-    display:grid !important;
-    grid-template-columns:repeat(3,1fr) !important;
-    gap:1.25rem !important;
-  }
-}
-
-
-
-.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-@media(max-width:768px){.doc-grid{grid-template-columns:1fr !important;gap:0.75rem !important}}
-@media(min-width:769px){.doc-grid{grid-template-columns:repeat(3,1fr) !important}}
-
-
-@media(max-width:768px){.docs-grid{grid-template-columns:1fr !important;gap:0.75rem !important}}
-@media(min-width:769px){.docs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}}
-
-
-@media(max-width:768px){
-  .footer-right{text-align:left !important}
-  .footer-right .footer-info{text-align:left !important;margin-top:1.5rem !important}
-  .footer-links{margin-bottom:0.5rem !important}
-}
-</style>
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main"><span class="lang-en">Skip to content</span><span class="lang-cn">跳至正文</span></a>
 
-
-
-
-</div>
-
-<div class="hero">
-  <!-- Floating nav inside hero -->
-  <div style="position:absolute;top:0;left:0;right:0;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:flex-start;padding:1.8rem 3rem;pointer-events:none">
-    <a href="#" style="display:block;text-decoration:none;pointer-events:all">
-      <img src="logo.png" style="height:160px;width:auto;display:block" alt="Aventum International"/>
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Aventum International, back to top">
+      <img class="brand-mark" src="logo-mark.png" width="188" height="177" alt="">
+      <img class="brand-word" src="logo-word.png" width="813" height="159" alt="">
     </a>
-    <div style="display:flex;gap:2.5rem;align-items:center;padding-top:0.6rem;pointer-events:all">
-      <a href="#why" style="text-decoration:none;color:#fff;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500"><span class="lang-en">Why Us</span><span class="lang-cn">为何选择</span></a>
-      <a href="#products" style="text-decoration:none;color:#fff;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500"><span class="lang-en">Products</span><span class="lang-cn">产品</span></a>
-      <a href="#route" style="text-decoration:none;color:#fff;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500"><span class="lang-en">Route</span><span class="lang-cn">航线</span></a>
-      <a href="#documents" style="text-decoration:none;color:#fff;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500"><span class="lang-en">Documentation</span><span class="lang-cn">文件</span></a>
-      <a href="#process" style="text-decoration:none;color:#fff;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500"><span class="lang-en">Process</span><span class="lang-cn">流程</span></a>
-    </div>
-    <div style="display:flex;justify-content:flex-end;align-items:center;gap:0.5rem;padding-top:0.6rem;pointer-events:all">
-      <button class="lang-btn active" id="btn-en" onclick="setLang('en')" style="color:#fff;font-size:0.82rem;font-weight:500;letter-spacing:0.06em;background:none;border:none;cursor:pointer">EN</button>
-      <span style="color:#fff;opacity:0.4">|</span>
-      <button class="lang-btn" id="btn-cn" onclick="setLang('cn')" style="color:#fff;font-size:0.82rem;letter-spacing:0.06em;background:none;border:none;cursor:pointer">中文</button>
+
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="#why"><span class="lang-en">Why Aventum</span><span class="lang-cn">为何选择我们</span></a></li>
+        <li><a href="#products"><span class="lang-en">Products</span><span class="lang-cn">产品</span></a></li>
+        <li><a href="#route"><span class="lang-en">Route</span><span class="lang-cn">航线</span></a></li>
+        <li><a href="#spec"><span class="lang-en">Specification</span><span class="lang-cn">规格</span></a></li>
+        <li><a href="#process"><span class="lang-en">Process</span><span class="lang-cn">流程</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language / 语言">
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" lang="en" aria-label="English">EN</button>
+        <button type="button" class="lang-btn" data-lang="cn" aria-pressed="false" lang="zh-CN" aria-label="中文（简体）">中文</button>
+      </div>
+      <a class="btn btn-primary header-cta" href="#contact"><span class="lang-en">Contact us</span><span class="lang-cn">联系我们</span></a>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" data-aria-en="Open menu" data-aria-cn="打开菜单" aria-label="Open menu"><span></span></button>
     </div>
   </div>
-  <video class="hero-video" id="heroVideo" autoplay muted playsinline preload="metadata" webkit-playsinline x5-playsinline x5-video-player-type="h5" x5-video-player-fullscreen="true">
-    <source src="hero-video-1.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-tag">
-      <span class="lang-en">Verified Commodity Broker · Amsterdam · Brazil</span>
-      <span class="lang-cn">认证大宗商品经纪商 · 阿姆斯特丹 · 巴西</span>
-    </div>
-    <h1>
-      <span class="lang-en">Brazilian Agricultural<br><em>Commodities</em>,<br>Done Right.</span>
-      <span class="lang-cn">巴西农产品<br><em>专业经纪</em><br>值得信赖</span>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="Mobile">
+    <ul>
+      <li><a href="#why"><span class="lang-en">Why Aventum</span><span class="lang-cn">为何选择我们</span></a></li>
+      <li><a href="#products"><span class="lang-en">Products</span><span class="lang-cn">产品</span></a></li>
+      <li><a href="#route"><span class="lang-en">Route</span><span class="lang-cn">航线</span></a></li>
+      <li><a href="#spec"><span class="lang-en">Specification</span><span class="lang-cn">规格</span></a></li>
+      <li><a href="#process"><span class="lang-en">Process</span><span class="lang-cn">流程</span></a></li>
+      <li><a href="#documents"><span class="lang-en">Documentation</span><span class="lang-cn">单据文件</span></a></li>
+    </ul>
+    <a class="btn btn-primary" href="#contact"><span class="lang-en">Request a quote</span><span class="lang-cn">立即询价</span></a>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <video class="hero-video" id="hero-video" muted playsinline webkit-playsinline preload="none" poster="hero-poster.jpg" aria-hidden="true" tabindex="-1" data-sources="hero-video-1.mp4,hero-video-2.mp4"></video>
+
+  <div class="wrap hero-content">
+    <p class="hero-tag hero-anim d1"><span class="pulse-dot" aria-hidden="true"></span><span class="lang-en">Commodity brokerage · Amsterdam · Brazil · China</span><span class="lang-cn">大宗商品经纪 · 阿姆斯特丹 · 巴西 · 中国</span></p>
+    <h1 id="hero-title" class="hero-anim d2">
+      <span class="lang-en">Brazilian sugar, <em>brokered with clarity.</em></span>
+      <span class="lang-cn">巴西食糖，<em>透明可靠的经纪服务。</em></span>
     </h1>
-    <div class="hero-sub">
-      <span class="lang-en">Certified supply. Transparent brokerage. No surprises.</span>
-      <span class="lang-cn">认证供应 · 透明经纪 · 无任何隐患</span>
-    </div>
-    <div class="hero-cta">
-      <a href="#contact" class="btn-primary"><span class="lang-en">Request a Quote</span><span class="lang-cn">立即询价</span></a>
-      <a href="#products" class="btn-outline"><span class="lang-en">View Products</span><span class="lang-cn">查看产品</span></a>
-
-    </div>
-  </div>
-</div>
-
-<!-- STATS -->
-<div style="background:#000;border:none">
-  <div style="max-width:1100px;margin:0 auto;padding:4rem 4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:left">
-    <div class="reveal">
-      <div class="stat-big" data-target="50000" data-suffix="+ MT">0</div>
-      <div style="font-size:0.65rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.75rem"><span class="lang-en">Monthly Capacity</span><span class="lang-cn">月度供应量</span></div>
-    </div>
-    <div class="reveal reveal-delay-1">
-      <div class="stat-big" data-target="100" data-suffix="%">0</div>
-      <div style="font-size:0.65rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.75rem"><span class="lang-en">SGS Inspected</span><span class="lang-cn">SGS检验</span></div>
-    </div>
-    <div class="reveal reveal-delay-2">
-      <div class="stat-big" data-target="40" data-suffix="%">0</div>
-      <div style="font-size:0.65rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.75rem"><span class="lang-en">Global Sugar Exports</span><span class="lang-cn">全球蔗糖出口</span></div>
-    </div>
-    <div class="reveal reveal-delay-3">
-      <div class="stat-big" data-target="48" data-suffix="h">0</div>
-      <div style="font-size:0.65rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.75rem"><span class="lang-en">Response</span><span class="lang-cn">回复时间</span></div>
+    <p class="hero-sub hero-anim d3">
+      <span class="lang-en">We connect Chinese importers with Brazilian suppliers of Icumsa 45 white refined sugar. Clear roles, written agreements, and independent quality inspection at the loading port as agreed in the contract.</span>
+      <span class="lang-cn">我们为中国进口商对接巴西 ICUMSA 45 精制白砂糖供应商。角色清晰、协议书面化，并按合同约定在装货港进行独立质量检验。</span>
+    </p>
+    <div class="hero-cta hero-anim d4">
+      <a href="#contact" class="btn btn-primary"><span class="lang-en">Request a quote</span><span class="lang-cn">立即询价</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#spec" class="btn btn-ghost"><span class="lang-en">View specification</span><span class="lang-cn">查看规格</span></a>
     </div>
   </div>
-</div>
 
-<!-- WHY US -->
-<div class="why-bg" id="why">
-  <div class="section-wrap">
-    <div class="section-tag reveal"><span class="lang-en">Why Aventum</span><span class="lang-cn">为何选择我们</span></div>
-    <h2 class="reveal"><span class="lang-en">The trusted link between<br>Brazil and China.</span><span class="lang-cn">连接巴西与中国<br>的可信纽带</span></h2>
-    <p class="lead reveal"><span class="lang-en">Fraud and unreliable suppliers are the number one risk in agricultural commodity trade. We solve that with a verified, long-term supply network in Brazil — and full transparency throughout every step.</span><span class="lang-cn">农产品贸易中最大的风险是欺诈和不可靠的供应商。我们通过在巴西建立经过核实的长期供应网络来解决这一问题，并在每一步保持完全透明。</span></p>
+  <div class="hero-facts hero-anim d4">
+    <div class="wrap">
+      <dl>
+        <div><dt><span class="lang-en">Product</span><span class="lang-cn">产品</span></dt><dd><span class="lang-en">Icumsa 45 white sugar</span><span class="lang-cn">ICUMSA 45 白砂糖</span></dd></div>
+        <div><dt><span class="lang-en">Standard terms</span><span class="lang-cn">标准条款</span></dt><dd><span class="lang-en">FOB Brazilian port</span><span class="lang-cn">巴西港口 FOB</span></dd></div>
+        <div><dt><span class="lang-en">Monthly capacity</span><span class="lang-cn">月供应能力</span></dt><dd><span class="lang-en">Up to <strong>50,000+ MT</strong></span><span class="lang-cn">最高 <strong>50,000+ 吨</strong></span></dd></div>
+        <div><dt><span class="lang-en">Trial shipment</span><span class="lang-cn">试单</span></dt><dd><span class="lang-en">By arrangement</span><span class="lang-cn">可协商安排</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY AVENTUM ============ -->
+<section class="section section-light" id="why" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal"><span class="eyebrow-num">01</span><span class="lang-en">Why Aventum</span><span class="lang-cn">为何选择我们</span></p>
+        <h2 id="why-title" class="reveal"><span class="lang-en">A transparent link between Brazil and China.</span><span class="lang-cn">连接巴西与中国的透明纽带。</span></h2>
+      </div>
+      <p class="lead reveal d1"><span class="lang-en">Fraud and unreliable counterparties are the biggest risk in agricultural commodity trade. Our answer is not bigger promises. It is clear roles, written agreements and documents you can check.</span><span class="lang-cn">欺诈和不可靠的交易对手是农产品贸易中最大的风险。我们的应对方式不是更大的承诺，而是清晰的角色分工、书面协议以及可供核查的文件。</span></p>
+    </div>
+
     <div class="why-grid">
-      <div class="why-card reveal">
-        <div class="why-num">1</div>
-        <h3><span class="lang-en">Verified Supplier Network</span><span class="lang-cn">经过核实的供应商网络</span></h3>
-        <p><span class="lang-en">Our Brazilian supply partners have established production capacity and provide full documentation upon formal purchase order submission.</span><span class="lang-cn">我们的巴西供应合作伙伴具备成熟的生产能力，并在收到正式采购订单后提供完整文件。</span></p>
-      </div>
-      <div class="why-card reveal reveal-delay-1">
-        <div class="why-num">2</div>
-        <h3><span class="lang-en">No Counterparty Risk</span><span class="lang-cn">无对手方风险</span></h3>
-        <p><span class="lang-en">We operate on a transparent commission basis. Our incentive is entirely aligned with your successful delivery — nothing more, nothing less.</span><span class="lang-cn">我们以透明佣金为基础运营，我们的利益完全与您的成功交货一致。</span></p>
-      </div>
-      <div class="why-card reveal reveal-delay-2">
-        <div class="why-num">3</div>
-        <h3><span class="lang-en">European Registered Entity</span><span class="lang-cn">欧洲注册企业</span></h3>
-        <p><span class="lang-en">Aventum International is registered in the Netherlands (Chamber of Commerce), providing a legally accountable, transparent structure for international trade.</span><span class="lang-cn">Aventum International在荷兰注册(商会)，为国际贸易提供合法、透明的企业结构。</span></p>
-      </div>
-      <div class="why-card reveal reveal-delay-3">
-        <div class="why-num">4</div>
-        <h3><span class="lang-en">Trial Order Available</span><span class="lang-cn">可提供试单</span></h3>
-        <p><span class="lang-en">Start with a trial shipment to verify quality and logistics before committing to long-term volumes. Volume and terms negotiable — contact us to discuss.</span><span class="lang-cn">从试单开始，在承诺长期量之前验证质量。数量和条款可协商，欢迎联系我们洽谈。</span></p>
-      </div>
+      <article class="card reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></div>
+        <h3><span class="lang-en">Direct supplier relationship</span><span class="lang-cn">直接对接供应商</span></h3>
+        <p><span class="lang-en">We work directly with our supply partner in Brazil, so you know who is on the other side of the deal. Supplier documentation is shared at the appropriate contract stage.</span><span class="lang-cn">我们与巴西供应合作伙伴直接合作，让您清楚交易的另一方是谁。供应商相关文件将在合同的相应阶段提供。</span></p>
+      </article>
+      <article class="card reveal d1">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3 3 0 0 0-3-1.5c-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2a3.2 3.2 0 0 1-3-1.6M12 6.5V8m0 8v1.5"/></svg></div>
+        <h3><span class="lang-en">Transparent commission model</span><span class="lang-cn">透明的佣金模式</span></h3>
+        <p><span class="lang-en">We are a broker. We don't own the cargo and we don't trade on our own account. We earn a commission as intermediary, so our interest is a shipment that arrives as agreed.</span><span class="lang-cn">我们是经纪方：不拥有货物，也不进行自营交易。我们作为中间方收取佣金，因此我们的利益在于货物按约定顺利交付。</span></p>
+      </article>
+      <article class="card reveal d2">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <h3><span class="lang-en">Netherlands-based</span><span class="lang-cn">立足荷兰</span></h3>
+        <p><span class="lang-en">Based in Amsterdam. One fixed point of contact who stays involved from your first enquiry to final delivery.</span><span class="lang-cn">总部位于阿姆斯特丹。由固定联系人负责，从您的首次询价到最终交货全程跟进。</span></p>
+      </article>
+      <article class="card reveal d3">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7.5 15h9"/></svg></div>
+        <h3><span class="lang-en">Start with a trial shipment</span><span class="lang-cn">先从试单开始</span></h3>
+        <p><span class="lang-en">Check quality, documents and logistics with a trial shipment before you commit to monthly volumes. Size and terms are agreed together.</span><span class="lang-cn">在确定月度供应量之前，可先通过试单验证质量、单据和物流。试单数量及条款由双方协商确定。</span></p>
+      </article>
     </div>
   </div>
-</div>
+</section>
 
-<!-- WHY BRAZIL -->
-<div class="brazil-bg">
-  <div class="section-wrap">
-    <div class="section-tag reveal"><span class="lang-en">Why Brazil</span><span class="lang-cn">为何选择巴西</span></div>
-    <h2 class="reveal"><span class="lang-en">The world's most reliable<br>agricultural supply base.</span><span class="lang-cn">全球最可靠的<br>农产品供应基地</span></h2>
-    <p class="lead reveal"><span class="lang-en">Brazil is not just a supplier — it is the dominant force in global agricultural commodity exports. Our direct access to this supply base is your competitive advantage.</span><span class="lang-cn">巴西不仅仅是一个供应商，它是全球农产品出口的主导力量。我们对这一供应基地的直接访问是您的竞争优势。</span></p>
-    <div class="brazil-stats reveal">
-      <div class="brazil-stat">
-        <div class="brazil-stat-num">#1</div>
-        <div class="brazil-stat-label"><span class="lang-en">World's largest sugar exporter</span><span class="lang-cn">全球最大蔗糖出口国</span></div>
+<!-- ============ WHY BRAZIL ============ -->
+<section class="section section-dark" id="brazil" aria-labelledby="brazil-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal"><span class="eyebrow-num">02</span><span class="lang-en">Why Brazil</span><span class="lang-cn">为何选择巴西</span></p>
+        <h2 id="brazil-title" class="reveal"><span class="lang-en">The world's leading sugar export base.</span><span class="lang-cn">全球领先的食糖出口基地。</span></h2>
       </div>
-      <div class="brazil-stat">
-        <div class="brazil-stat-num" data-target="40" data-suffix="%">0</div>
-        <div class="brazil-stat-label"><span class="lang-en">Of global sugar exports from Brazil</span><span class="lang-cn">全球蔗糖出口量占比</span></div>
+      <p class="lead reveal d1"><span class="lang-en">Brazil supplies roughly 40% of the world's sugar exports, backed by large-scale cane production and established export ports.</span><span class="lang-cn">巴西约占全球食糖出口量的 40%，拥有大规模甘蔗种植与成熟的出口港口体系。</span></p>
+    </div>
+
+    <div class="brazil-stats">
+      <div class="stat reveal">
+        <p class="stat-num"><span class="accent">#</span>1</p>
+        <p class="stat-label"><span class="lang-en">World's largest sugar exporter</span><span class="lang-cn">全球最大食糖出口国</span></p>
       </div>
-      <div class="brazil-stat">
-        <div class="brazil-stat-num" data-target="35" data-suffix="M MT">0</div>
-        <div class="brazil-stat-label"><span class="lang-en">Annual sugar production capacity</span><span class="lang-cn">年产糖量</span></div>
+      <div class="stat reveal d1">
+        <p class="stat-num">~<span data-count="40">40</span><span class="accent">%</span></p>
+        <p class="stat-label"><span class="lang-en">Share of global sugar exports</span><span class="lang-cn">全球食糖出口占比</span></p>
+      </div>
+      <div class="stat reveal d2">
+        <p class="stat-num is-text"><span class="lang-en">Santos &amp; Paranaguá</span><span class="lang-cn">桑托斯港与巴拉那瓜港</span></p>
+        <p class="stat-label"><span class="lang-en">Main export ports</span><span class="lang-cn">主要出口港</span></p>
       </div>
     </div>
-    <div class="brazil-facts reveal">
-      <div class="brazil-fact">
-        <div class="brazil-fact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.66" y2="6.34"/><line x1="6.34" y1="17.66" x2="4.93" y2="19.07"/></svg></div>
-        <p><span class="lang-en">Year-round tropical climate enables continuous harvesting — no seasonal gaps in supply.</span><span class="lang-cn">全年热带气候确保持续收获，供应无季节性中断。</span></p>
+
+    <ul class="fact-list">
+      <li class="fact reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+        <p><span class="lang-en">The Centre-South crush typically runs from April to November. Export shipments from stock usually continue throughout the year.</span><span class="lang-cn">中南部压榨季通常为每年 4 月至 11 月，出口装运一般依托库存全年进行。</span></p>
+      </li>
+      <li class="fact reveal d1">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v14M5 12H3a9 9 0 0 0 18 0h-2M8 10h8"/></svg></div>
+        <p><span class="lang-en">Deep-water ports at Santos and Paranaguá, with established bulk and container routes to Chinese ports.</span><span class="lang-cn">桑托斯港和巴拉那瓜港均为深水港，至中国各港口的散货及集装箱航线成熟。</span></p>
+      </li>
+      <li class="fact reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 13l2 2 4-4"/></svg></div>
+        <p><span class="lang-en">Food-grade product, shipped with quality and phytosanitary documentation. Compliance with Chinese standards is confirmed in each contract.</span><span class="lang-cn">食品级产品，随附质量及植物检疫文件。是否符合中国相关标准，将在每份合同中逐项确认。</span></p>
+      </li>
+      <li class="fact reveal d1">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+        <p><span class="lang-en">A large, competitive supply base that suits long-term contracts as well as trial orders.</span><span class="lang-cn">供应基础庞大且具有竞争力，既适合长期合同，也适合试单。</span></p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section section-light" id="products" aria-labelledby="products-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal"><span class="eyebrow-num">03</span><span class="lang-en">Products</span><span class="lang-cn">产品</span></p>
+        <h2 id="products-title" class="reveal"><span class="lang-en">Icumsa 45 first. <em>More on request.</em></span><span class="lang-cn">以 ICUMSA 45 为核心，<em>其他品类按需提供。</em></span></h2>
       </div>
-      <div class="brazil-fact">
-        <div class="brazil-fact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M4 15l1-9h14l1 9"/><path d="M12 6V2"/><path d="M8 6h8"/></svg></div>
-        <p><span class="lang-en">Major deep-water ports (Santos, Paranaguá) with direct shipping lanes to Chinese ports.</span><span class="lang-cn">主要深水港（桑托斯港）直达中国各港口，航线成熟。</span></p>
-      </div>
-      <div class="brazil-fact">
-        <div class="brazil-fact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg></div>
-        <p><span class="lang-en">Full HACCP, food-grade and phytosanitary compliance — meets all Chinese import requirements.</span><span class="lang-cn">完全符合HACCP、食品级及植物检疫要求，满足中国进口标准。</span></p>
-      </div>
-      <div class="brazil-fact">
-        <div class="brazil-fact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></div>
-        <p><span class="lang-en">Record 2025/26 harvest season — prices at multi-year lows, ideal timing for long-term contracts.</span><span class="lang-cn">2025/26年度创纪录大丰收，价格处于多年低位，签订长期合同的理想时机。</span></p>
-      </div>
+      <p class="lead reveal d1"><span class="lang-en">Our focus is Icumsa 45 white refined cane sugar. Through our network in Brazil we can also source other agricultural commodities on request, subject to supplier confirmation.</span><span class="lang-cn">我们的核心产品是 ICUMSA 45 精制白砂糖（甘蔗糖）。通过在巴西的合作网络，我们也可按需采购其他农产品，具体以供应商确认为准。</span></p>
     </div>
-  </div>
-</div>
 
-<!-- PRODUCTS -->
-<div id="products" style="background:#f5f5f3">
-  <div class="section-wrap">
-    <div class="section-tag reveal"><span class="lang-en">Our Products</span><span class="lang-cn">我们的产品</span></div>
-    <h2 class="reveal"><span class="lang-en">Brazilian Commodities,<br>Direct to Your Port.</span><span class="lang-cn">巴西大宗商品<br>直达您的港口</span></h2>
-    <p class="lead reveal"><span class="lang-en">We source high-demand Brazilian agricultural commodities for importers across Asia. Our primary focus is Icumsa 45 white refined sugar, with an expanding supply network across multiple categories.</span><span class="lang-cn">我们为亚洲进口商采购巴西高需求农产品。主要产品为45号白砂糖，同时在多个品类拓展供应网络。</span></p>
-    <div class="products-grid reveal">
-      <div class="product-card featured">
-        <h4 style="color:#fff">Icumsa 45 Sugar</h4>
-        <div class="badge-featured" style="margin-top:0.4rem;margin-bottom:0.4rem">Primary Product</div>
-        <p style="margin-top:0.6rem;color:rgba(255,255,255,0.3)"><span class="lang-en">White refined cane sugar, Brazil origin. Food-grade, SGS inspected. 50,000+ MT monthly, trial volume on request.</span><span class="lang-cn">巴西产白砂糖，食品级，SGS检验。月供50,000吨以上，试单量可协商。</span></p>
-      </div>
-      <div class="product-card">
-        <h4 style="color:#fff">Soybeans</h4>
-        <div style="height:1.65rem;margin-top:0.4rem;margin-bottom:0.4rem"></div>
-        <p style="color:rgba(255,255,255,0.3)"><span class="lang-en">Brazilian non-GMO and conventional soybeans. World's largest supply source, direct.</span><span class="lang-cn">巴西非转基因及常规大豆，全球最大产地直接供货。</span></p>
-      </div>
-      <div class="product-card">
-        <h4 style="color:#fff">Maize / Corn</h4>
-        <div style="height:1.65rem;margin-top:0.4rem;margin-bottom:0.4rem"></div>
-        <p style="color:rgba(255,255,255,0.3)"><span class="lang-en">Yellow maize from Brazil's Mato Grosso region. Consistent quality, bulk and containerised.</span><span class="lang-cn">巴西马托格罗索州黄玉米，品质稳定，散装及集装箱均可。</span></p>
-      </div>
-      <div class="product-card">
-        <h4 style="color:#fff">Coffee</h4>
-        <div style="height:1.65rem;margin-top:0.4rem;margin-bottom:0.4rem"></div>
-        <p style="color:rgba(255,255,255,0.3)"><span class="lang-en">Arabica and Robusta green coffee beans. Brazil is the world's largest producer — sourced direct.</span><span class="lang-cn">阿拉比卡和罗布斯塔生咖啡豆，巴西直接采购。</span></p>
-      </div>
+    <div class="products-grid">
+      <article class="card product-featured reveal">
+        <span class="badge badge-accent"><span class="lang-en">Primary product</span><span class="lang-cn">核心产品</span></span>
+        <h3><span class="lang-en">Icumsa 45 white refined sugar</span><span class="lang-cn">ICUMSA 45 精制白砂糖</span></h3>
+        <p><span class="lang-en">White refined cane sugar of Brazilian origin, food grade. Available capacity of up to 50,000+ MT per month, with trial shipments by arrangement.</span><span class="lang-cn">巴西原产精制白砂糖（甘蔗糖），食品级。可供应能力每月最高 50,000+ 吨，可协商安排试单。</span></p>
+        <ul class="chips">
+          <li><span class="lang-en">FOB Brazilian port</span><span class="lang-cn">巴西港口 FOB</span></li>
+          <li><span class="lang-en">CIF named port on request</span><span class="lang-cn">可报指定港 CIF</span></li>
+          <li><span class="lang-en">50 kg bags or bulk</span><span class="lang-cn">50 公斤袋装或散装</span></li>
+        </ul>
+        <a class="btn btn-primary" href="#spec"><span class="lang-en">View specification</span><span class="lang-cn">查看规格</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="card product-card reveal d1">
+        <span class="badge badge-muted"><span class="lang-en">On request</span><span class="lang-cn">按需提供</span></span>
+        <h3><span class="lang-en">Soybeans</span><span class="lang-cn">大豆</span></h3>
+        <p><span class="lang-en">Brazilian soybeans through our expanding network. Grade, volume and availability on request.</span><span class="lang-cn">通过我们不断扩展的网络供应巴西大豆。等级、数量及供货情况请咨询。</span></p>
+      </article>
+      <article class="card product-card reveal d2">
+        <span class="badge badge-muted"><span class="lang-en">On request</span><span class="lang-cn">按需提供</span></span>
+        <h3><span class="lang-en">Maize / corn</span><span class="lang-cn">玉米</span></h3>
+        <p><span class="lang-en">Brazilian yellow maize, bulk or containerised. Specification and availability on request.</span><span class="lang-cn">巴西黄玉米，散装或集装箱运输。规格及供货情况请咨询。</span></p>
+      </article>
+      <article class="card product-card reveal d1">
+        <span class="badge badge-muted"><span class="lang-en">On request</span><span class="lang-cn">按需提供</span></span>
+        <h3><span class="lang-en">Green coffee</span><span class="lang-cn">生咖啡豆</span></h3>
+        <p><span class="lang-en">Brazilian Arabica and Robusta (Conilon) green coffee. Lots and availability on request.</span><span class="lang-cn">巴西阿拉比卡及罗布斯塔（科尼伦）生咖啡豆。批次及供货情况请咨询。</span></p>
+      </article>
+      <article class="card product-card reveal d2">
+        <span class="badge badge-muted"><span class="lang-en">Ask us</span><span class="lang-cn">欢迎咨询</span></span>
+        <h3><span class="lang-en">Other categories</span><span class="lang-cn">其他品类</span></h3>
+        <p><span class="lang-en">Looking for something else from Brazil? Tell us what you need and we will check it with our network.</span><span class="lang-cn">需要其他巴西产品？请告诉我们您的需求，我们将与合作网络核实。</span></p>
+      </article>
     </div>
-    <p style="font-size:0.78rem;color:var(--gray-mid);margin-top:0.85rem" class="reveal"><span class="lang-en">Additional categories available on request.</span><span class="lang-cn">更多品类可按需提供，欢迎联系洽谈。</span></p>
+    <p class="products-note reveal"><span class="lang-en">We only confirm what our suppliers have confirmed in writing.</span><span class="lang-cn">我们只确认供应商已书面确认的内容。</span></p>
   </div>
-</div>
+</section>
 
-<!-- WORLD MAP -->
-<div class="map-section" id="route">
-  <div class="section-wrap">
-    <div class="section-tag reveal"><span class="lang-en">Our Route</span><span class="lang-cn">我们的航线</span></div>
-    <h2 class="reveal"><span class="lang-en">From Brazil to China,<br>every shipment.</span><span class="lang-cn">从巴西到中国<br>每批货物</span></h2>
-    <p class="lead reveal" style="margin-bottom:0"><span class="lang-en">Direct supply from Brazilian ports to major Chinese ports. FOB delivery — other Incoterms negotiable on request.</span><span class="lang-cn">从巴西港口直接供货至中国主要港口，FOB交货，其他贸易条款可协商。</span></p>
-    <div class="map-container reveal" id="map-outer">
-      <div id="map-scene" style="position:relative;width:100%;z-index:1">
-  <div id="map-card" style="position:relative;border-radius:12px;overflow:hidden;transition:transform 1.2s cubic-bezier(0.16,1,0.3,1),box-shadow 1.2s ease">
-    <img src="world-map.png" style="display:block;width:100%;height:auto;filter:brightness(0.45)" alt="World map" loading="lazy"/>
-    
-    <canvas id="map-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:2"></canvas>
-    <button id="map-replay" onclick="mapReplay()" title="Replay" style="position:absolute;bottom:12px;right:12px;z-index:10;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.25);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;display:none;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='rgba(0,0,0,0.85)'" onmouseout="this.style.background='rgba(0,0,0,0.6)'">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-    </button>
-  </div>
-</div>
-
-<script>
-var mapAnimating = false;
-var mapGen = 0;
-var GREEN = '#32ff64';
-var GREENA = 'rgba(50,255,100,';
-
-function mapRunAnimation(){
-  mapGen++;
-  var myGen = mapGen;
-  mapAnimating = true;
-
-  var card     = document.getElementById('map-card');
-  var canvas   = document.getElementById('map-canvas');
-  var scene    = document.getElementById('map-scene');
-  var replay   = document.getElementById('map-replay');
-  replay.style.display = 'none';
-
-  var dpr = window.devicePixelRatio || 1;
-  var W = card.offsetWidth;
-  var H = card.offsetHeight;
-  canvas.width = W * dpr; canvas.height = H * dpr;
-  canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
-  var ctx = canvas.getContext('2d');
-  ctx.scale(dpr, dpr);
-  ctx.clearRect(0,0,W,H);
-
-  function pt(xp,yp){ return [W*xp, H*yp]; }
-  var BR = pt(0.285, 0.620);
-  var AM = pt(0.475, 0.228);
-  var CH = pt(0.800, 0.435);
-
-  // SPOTLIGHT: inject overlay as sibling before map-scene
-  var ov = document.createElement('div');
-  ov.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0);z-index:9990;pointer-events:none;transition:background 1.2s ease';
-  scene.parentNode.insertBefore(ov, scene);
-  scene.style.position = 'relative';
-  scene.style.zIndex = '9995';
-
-  // Step 1: dim page (card stays at its permanent dark tint)
-  setTimeout(function(){
-    ov.style.background = 'rgba(0,0,0,0.78)';
-    card.style.boxShadow = '0 20px 60px rgba(0,0,0,0.5)';
-  }, 50);
-
-  function ease(t){ return 1-Math.pow(1-Math.min(1,t),3); }
-  function easeLinear(t){ return Math.min(1,t); }
-
-  // Timeline (ms)
-  var T_LABELS    = 800;    // city labels fade in
-  var T_LDUR      = 1400;   // label fade-in duration
-  var T_RADAR     = 1900;   // radar starts (after labels settle)
-  var T_LINE      = 3200;   // line starts (after radar established)
-  var T_LINE_DUR  = 3400;   // line draws slowly
-  var T_FADEOUT   = 7000;   // radar begins easing into pulse
-  var T_FADE_DUR  = 3500;   // long, gradual transition into pulse
-  var T_PULSE     = T_FADEOUT + T_FADE_DUR; // pure pulse phase begins
-  var T_RESTORE   = T_PULSE + 600;  // page brightens back once pulse settled
-
-  var rings = {br:[], am:[], ch:[]};
-  var restored = false;
-  var t0 = null;
-
-  function drawLabel(x, y, l1, l2, pos, alpha){
-    if(alpha<=0) return;
-    ctx.save(); ctx.globalAlpha=alpha;
-    var pad=8, fs1=Math.round(W*0.014), fs2=Math.round(W*0.011);
-    ctx.font='600 '+fs1+'px sans-serif';
-    var w1=ctx.measureText(l1).width;
-    ctx.font=fs2+'px sans-serif';
-    var w2=l2?ctx.measureText(l2).width:0;
-    var bw=Math.max(w1,w2)+pad*2;
-    var bh=l2?fs1+fs2+pad*2+5:fs1+pad*2;
-    var bx,by;
-    if(pos==='left'){bx=x-bw-16;by=y-bh/2;}
-    else if(pos==='right'){bx=x+16;by=y-bh/2;}
-    else{bx=x-bw/2;by=y-bh-16;}
-    ctx.fillStyle='rgba(0,0,0,0.9)';
-    ctx.beginPath();
-    if(ctx.roundRect)ctx.roundRect(bx,by,bw,bh,6);else ctx.rect(bx,by,bw,bh);
-    ctx.fill();
-    ctx.fillStyle='#fff';ctx.font='600 '+fs1+'px sans-serif';ctx.textAlign='left';
-    ctx.fillText(l1,bx+pad,by+pad+fs1);
-    if(l2){ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font=fs2+'px sans-serif';ctx.fillText(l2,bx+pad,by+pad+fs1+5+fs2);}
-    ctx.restore();
-  }
-
-  function drawDot(x,y){
-    ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);ctx.fillStyle=GREEN;ctx.fill();
-    ctx.beginPath();ctx.arc(x,y,13,0,Math.PI*2);ctx.fillStyle=GREENA+'0.12)';ctx.fill();
-  }
-
-  function frame(ts){
-    if(myGen !== mapGen){ if(ov.parentNode) ov.parentNode.removeChild(ov); return; }
-    if(!t0) t0=ts;
-    var e=ts-t0;
-
-    var labelA = e>T_LABELS ? Math.min(1,ease((e-T_LABELS)/T_LDUR)) : 0;
-    var lineP  = e>T_LINE   ? Math.min(1,ease((e-T_LINE)/T_LINE_DUR)) : 0;
-
-    // Single transition factor 0->1 as radar calms into a steady pulse.
-    // 0 = energetic radar, 1 = calm continuous pulse. Never snaps.
-    var calm = e > T_FADEOUT ? Math.min(1, ease((e-T_FADEOUT)/T_FADE_DUR)) : 0;
-
-    // Ring properties interpolate smoothly between radar and pulse character
-    var interval = 420 + calm*620;      // emit slower as it calms (420ms -> ~1040ms)
-    var maxR     = 58  - calm*23;        // smaller reach when calm (58 -> 35)
-    var dur      = 1800 + calm*1000;     // rings live a bit longer when calm
-    var baseA    = 0.8 - calm*0.32;      // dimmer when calm (0.8 -> ~0.48)
-
-    // Emit rings continuously at all three hubs (forever)
-    if(e > T_RADAR){
-      ['br','am','ch'].forEach(function(k){
-        var last=rings[k].length?rings[k][rings[k].length-1].t:-999;
-        if(e-last>interval) rings[k].push({t:e, dur:dur, maxR:maxR, baseA:baseA});
-      });
-    }
-    // Trim old rings so arrays don't grow unbounded
-    ['br','am','ch'].forEach(function(k){
-      rings[k]=rings[k].filter(function(r){ return (e-r.t)/r.dur < 1; });
-    });
-
-    ctx.clearRect(0,0,W,H);
-
-    // Draw rings
-    var hubPts = {br:BR,am:AM,ch:CH};
-    Object.keys(hubPts).forEach(function(k){
-      var p=hubPts[k];
-      rings[k].forEach(function(r){
-        var age=(e-r.t)/r.dur;
-        if(age>1) return;
-        var rad=8+age*r.maxR;
-        var a=(1-age)*r.baseA;
-        if(a<=0) return;
-        ctx.beginPath();
-        ctx.arc(p[0],p[1],rad,0,Math.PI*2);
-        ctx.strokeStyle=GREENA+a+')';
-        ctx.lineWidth=1.4;
-        ctx.stroke();
-      });
-    });
-
-    // Straight line Brazil -> China
-    if(lineP>0){
-      ctx.beginPath();
-      ctx.moveTo(BR[0],BR[1]);
-      ctx.lineTo(BR[0]+(CH[0]-BR[0])*lineP, BR[1]+(CH[1]-BR[1])*lineP);
-      ctx.strokeStyle=GREENA+'0.85)';
-      ctx.lineWidth=2;
-      ctx.setLineDash([6,4]);
-      ctx.stroke();
-      ctx.setLineDash([]);
-    }
-
-    // Dots always visible after labels start
-    if(labelA>0){
-      drawDot(BR[0],BR[1]);
-      drawDot(AM[0],AM[1]);
-      drawDot(CH[0],CH[1]);
-    }
-
-    // Labels
-    drawLabel(BR[0],BR[1],'Brazil','Loading port','left',labelA);
-    drawLabel(AM[0],AM[1],'Amsterdam','Aventum International','top',labelA);
-    drawLabel(CH[0],CH[1],'China','Destination ports','right',labelA);
-
-    // Restore page once the pulse has settled, but keep pulsing forever
-    if(e > T_RESTORE && !restored){
-      restored = true;
-      ov.style.transition='background 1.5s ease';
-      ov.style.background='transparent';
-      setTimeout(function(){
-        if(ov.parentNode) ov.parentNode.removeChild(ov);
-        scene.style.zIndex='1';
-        replay.style.display='flex';
-        mapAnimating=false;
-      },1500);
-    }
-
-    requestAnimationFrame(frame);
-  }
-
-  requestAnimationFrame(frame);
-}
-
-function mapReplay(){
-  // mapGen bump in mapRunAnimation cancels the old loop; just clear and restart
-  mapAnimating = false;
-  var canvas = document.getElementById('map-canvas');
-  if(canvas){ var c = canvas.getContext('2d'); c && c.clearRect(0,0,canvas.width,canvas.height); }
-  var card=document.getElementById('map-card');
-  card.scrollIntoView({behavior:'smooth',block:'center'});
-  setTimeout(mapRunAnimation,700);
-}
-window.mapReplay=mapReplay;
-
-var obs=new IntersectionObserver(function(entries){
-  if(entries[0].isIntersecting){mapRunAnimation();obs.disconnect();}
-},{threshold:0.5});
-obs.observe(document.getElementById('map-card'));
-</script>
+<!-- ============ ROUTE ============ -->
+<section class="section section-dark" id="route" aria-labelledby="route-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal"><span class="eyebrow-num">04</span><span class="lang-en">Route</span><span class="lang-cn">航线</span></p>
+        <h2 id="route-title" class="reveal"><span class="lang-en">From a Brazilian port to yours.</span><span class="lang-cn">从巴西港口，到您的港口。</span></h2>
+      </div>
+      <p class="lead reveal d1"><span class="lang-en">Cargo is loaded at a Brazilian port, FOB as standard. On request we quote CIF to a named destination port, for example CIF Shanghai Port. Aventum coordinates from Amsterdam.</span><span class="lang-cn">货物在巴西港口装船，标准条款为 FOB。如有需要，我们可报指定目的港的 CIF 价格，例如 CIF 上海港。Aventum 在阿姆斯特丹负责全程协调。</span></p>
     </div>
-  </div>
-</div>
 
-<!-- SPEC -->
-<div class="spec-bg">
-  <div class="section-wrap">
-    <div class="section-tag reveal"><span class="lang-en">Icumsa 45 Specification</span><span class="lang-cn">45号糖产品规格</span></div>
-    <h2 class="reveal"><span class="lang-en">White Refined Sugar —<br>Full Specification</span><span class="lang-cn">白砂糖完整规格说明</span></h2>
-    <p class="lead reveal"><span class="lang-en">All shipments are third-party inspected by SGS or Intertek at the Brazilian loading port before departure.</span><span class="lang-cn">所有货物在巴西装货港由SGS或Intertek进行第三方检验后方可发货。</span></p>
+    <figure class="reveal">
+      <div class="map-frame" id="map-frame">
+        <picture>
+          <source srcset="world-map.webp" type="image/webp">
+          <img class="map-img" src="world-map.png" width="1661" height="866" loading="lazy" decoding="async" alt="World map showing the indicative sea route from Brazil to China, coordinated from Amsterdam" data-alt-en="World map showing the indicative sea route from Brazil to China, coordinated from Amsterdam" data-alt-cn="世界地图：显示从巴西到中国的示意海运航线，由阿姆斯特丹协调">
+        </picture>
+        <canvas id="map-canvas" aria-hidden="true"></canvas>
+        <button type="button" class="map-replay" id="map-replay" data-aria-en="Replay animation" data-aria-cn="重新播放动画" aria-label="Replay animation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></button>
+      </div>
+      <figcaption>
+        <ul class="map-legend">
+          <li><span class="legend-line" aria-hidden="true"></span><span class="lang-en">Indicative sea route</span><span class="lang-cn">示意海运航线</span></li>
+          <li><span class="legend-line coord" aria-hidden="true"></span><span class="lang-en">Coordination from Amsterdam</span><span class="lang-cn">阿姆斯特丹协调</span></li>
+        </ul>
+      </figcaption>
+    </figure>
+
+    <ul class="route-terms">
+      <li class="reveal"><strong>FOB</strong><span class="desc"><span class="lang-en">Standard. Free on board at the Brazilian loading port.</span><span class="lang-cn">标准条款：巴西装货港船上交货。</span></span></li>
+      <li class="reveal d1"><strong><span class="lang-en">CIF named port</span><span class="lang-cn">CIF 指定港</span></strong><span class="desc"><span class="lang-en">On request, always quoted to a named destination port, e.g. CIF Shanghai Port.</span><span class="lang-cn">按需提供，始终按指定目的港报价，例如 CIF 上海港。</span></span></li>
+      <li class="reveal d2"><strong><span class="lang-en">Destination</span><span class="lang-cn">目的地</span></strong><span class="desc"><span class="lang-en">Major Chinese ports, confirmed per contract.</span><span class="lang-cn">中国主要港口，按合同确认。</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SPECIFICATION ============ -->
+<section class="section section-light" id="spec" aria-labelledby="spec-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal"><span class="eyebrow-num">05</span><span class="lang-en">Specification</span><span class="lang-cn">产品规格</span></p>
+        <h2 id="spec-title" class="reveal"><span class="lang-en">Icumsa 45: <em>typical specification.</em></span><span class="lang-cn">ICUMSA 45：<em>典型规格。</em></span></h2>
+      </div>
+      <p class="lead reveal d1"><span class="lang-en">Typical values for Icumsa 45 white refined sugar. Final specification, packaging and inspection terms are confirmed by the supplier and fixed in the contract.</span><span class="lang-cn">以下为 ICUMSA 45 精制白砂糖的典型指标。最终规格、包装及检验条款由供应商确认，并写入合同。</span></p>
+    </div>
+
     <div class="spec-grid">
-      <div class="reveal">
+      <div class="spec-sheet reveal">
+        <div class="spec-sheet-head"><span class="lang-en">Product data sheet</span><span class="lang-cn">产品数据表</span><span>ICUMSA 45</span></div>
         <table class="spec-table">
-          <tr><td><span class="lang-en">Origin</span><span class="lang-cn">产地</span></td><td>Brazil </td></tr>
-          <tr><td><span class="lang-en">Type</span><span class="lang-cn">类型</span></td><td>Icumsa 45 White Refined</td></tr>
-          <tr><td>Icumsa Value</td><td>≤ 45 IU</td></tr>
-          <tr><td><span class="lang-en">Moisture</span><span class="lang-cn">含水量</span></td><td>≤ 0.04%</td></tr>
-          <tr><td><span class="lang-en">Ash Content</span><span class="lang-cn">灰分</span></td><td>≤ 0.04%</td></tr>
-          <tr><td><span class="lang-en">Polarization</span><span class="lang-cn">偏振度</span></td><td>≥ 99.80°</td></tr>
-          <tr><td><span class="lang-en">Packaging</span><span class="lang-cn">包装</span></td><td>50kg PP Bags / Bulk</td></tr>
-          <tr><td><span class="lang-en">Monthly MOQ</span><span class="lang-cn">月度最低订量</span></td><td>50,000 MT</td></tr>
-          <tr><td><span class="lang-en">Trial Volume</span><span class="lang-cn">试单量</span></td><td><span class="lang-en">Negotiable — on request</span><span class="lang-cn">可协商，请联系洽谈</span></td></tr>
-          <tr><td><span class="lang-en">Payment</span><span class="lang-cn">支付方式</span></td><td>L/C, T/T, SBLC</td></tr>
-          <tr><td><span class="lang-en">Inspection</span><span class="lang-cn">检验</span></td><td>SGS / Intertek</td></tr>
-          <tr><td>Incoterms</td><td><span class="lang-en">FOB Brazilian Port — other terms negotiable</span><span class="lang-cn">FOB巴西港口，其他贸易条款可协商</span></td></tr>
+          <caption class="visually-hidden"><span class="lang-en">Typical specification of Icumsa 45 white refined sugar</span><span class="lang-cn">ICUMSA 45 精制白砂糖典型规格</span></caption>
+          <tbody>
+            <tr><th scope="row"><span class="lang-en">Origin</span><span class="lang-cn">产地</span></th><td><span class="lang-en">Brazil</span><span class="lang-cn">巴西</span></td></tr>
+            <tr><th scope="row"><span class="lang-en">Type</span><span class="lang-cn">类型</span></th><td><span class="lang-en">Icumsa 45 white refined cane sugar</span><span class="lang-cn">ICUMSA 45 精制白砂糖（甘蔗糖）</span></td></tr>
+            <tr><th scope="row"><span class="lang-en">Colour (ICUMSA)</span><span class="lang-cn">色值（ICUMSA）</span></th><td>≤ 45 IU</td></tr>
+            <tr><th scope="row"><span class="lang-en">Polarisation</span><span class="lang-cn">旋光度</span></th><td>≥ 99.80°</td></tr>
+            <tr><th scope="row"><span class="lang-en">Moisture</span><span class="lang-cn">水分</span></th><td>≤ 0.04%</td></tr>
+            <tr><th scope="row"><span class="lang-en">Ash</span><span class="lang-cn">灰分</span></th><td>≤ 0.04%</td></tr>
+            <tr><th scope="row"><span class="lang-en">Packaging</span><span class="lang-cn">包装</span></th><td><span class="lang-en">50 kg PP bags or bulk</span><span class="lang-cn">50 公斤 PP 编织袋或散装</span></td></tr>
+            <tr><th scope="row"><span class="lang-en">Monthly capacity</span><span class="lang-cn">月供应能力</span></th><td><span class="lang-en">Up to 50,000+ MT</span><span class="lang-cn">每月最高 50,000+ 吨</span><small><span class="lang-en">Available capacity, not a minimum order</span><span class="lang-cn">此为可供应能力，并非最低起订量</span></small></td></tr>
+            <tr><th scope="row"><span class="lang-en">Trial shipment</span><span class="lang-cn">试单</span></th><td><span class="lang-en">Available, by arrangement</span><span class="lang-cn">可安排，数量协商</span></td></tr>
+            <tr><th scope="row"><span class="lang-en">Payment</span><span class="lang-cn">付款方式</span></th><td><span class="lang-en">L/C preferred; other terms negotiable</span><span class="lang-cn">优先信用证（L/C），其他方式可协商</span></td></tr>
+            <tr><th scope="row"><span class="lang-en">Inspection</span><span class="lang-cn">检验</span></th><td><span class="lang-en">Independent inspector (e.g. SGS) at the loading port</span><span class="lang-cn">装货港独立检验机构（如 SGS）</span><small><span class="lang-en">As agreed in the contract</span><span class="lang-cn">按合同约定</span></small></td></tr>
+            <tr><th scope="row"><span class="lang-en">Incoterms</span><span class="lang-cn">贸易术语</span></th><td><span class="lang-en">FOB Brazilian port (standard)</span><span class="lang-cn">巴西港口 FOB（标准）</span><small><span class="lang-en">CIF to a named destination port on request, e.g. CIF Shanghai Port</span><span class="lang-cn">可按需报指定目的港 CIF，例如 CIF 上海港</span></small></td></tr>
+          </tbody>
         </table>
-        <div class="cert-badges">
-          <span class="badge">SGS Ready</span><span class="badge">Brazil Origin</span>
-          <span class="badge">Food Grade</span><span class="badge">HACCP</span><span class="badge">Phytosanitary</span>
-        </div>
+        <ul class="chips">
+          <li><span class="lang-en">Brazil origin</span><span class="lang-cn">巴西原产</span></li>
+          <li><span class="lang-en">Food grade</span><span class="lang-cn">食品级</span></li>
+          <li><span class="lang-en">Independent inspection</span><span class="lang-cn">独立检验</span></li>
+          <li><span class="lang-en">Trial available</span><span class="lang-cn">可试单</span></li>
+        </ul>
       </div>
-      <div class="reveal reveal-delay-1">
-        <div class="vol-cards">
-          <div class="vol-card">
-            <div class="vol-label"><span class="lang-en">Trial Volume / 试单量</span></div>
-            <div class="vol-num"><span class="lang-en">Negotiable — on request</span><span class="lang-cn">可协商，请联系洽谈</span></div>
-          </div>
-          <div class="vol-card">
-            <div class="vol-label"><span class="lang-en">Monthly MOQ / 月度最低量</span></div>
-            <div class="vol-num">50,000+ MT</div>
-          </div>
-          <div class="vol-card">
-            <div class="vol-label"><span class="lang-en">Payment Security</span><span class="lang-cn">付款保障</span></div>
-            <p style="font-size:0.83rem;color:rgba(0,0,0,0.6);line-height:1.75;font-weight:300"><span class="lang-en">All transactions via confirmed, irrevocable Letter of Credit (L/C). Payment released only upon full shipping documentation. Zero financial risk for the buyer before delivery.</span><span class="lang-cn">所有交易通过不可撤销信用证进行，仅在提供完整装运文件后付款，买方在交货前零财务风险。</span></p>
-          </div>
+
+      <div class="spec-side">
+        <div class="card is-accent reveal d1">
+          <p class="card-label"><span class="lang-en">Monthly capacity</span><span class="lang-cn">月供应能力</span></p>
+          <p class="card-value"><span class="lang-en">50,000+ MT</span><span class="lang-cn">50,000+ 吨</span></p>
+          <p><span class="lang-en">Available capacity, not a minimum order quantity. Volumes are agreed per contract.</span><span class="lang-cn">此为可供应能力，并非最低起订量。具体数量按合同约定。</span></p>
+        </div>
+        <div class="card reveal d2">
+          <p class="card-label"><span class="lang-en">Trial shipment</span><span class="lang-cn">试单</span></p>
+          <p class="card-value"><span class="lang-en">On request</span><span class="lang-cn">可协商</span></p>
+          <p><span class="lang-en">Start with a smaller volume to verify quality, documents and logistics.</span><span class="lang-cn">可先小批量试单，验证质量、单据与物流。</span></p>
+        </div>
+        <div class="card reveal d3">
+          <p class="card-label"><span class="lang-en">Payment</span><span class="lang-cn">付款方式</span></p>
+          <p class="card-value"><span class="lang-en">L/C preferred</span><span class="lang-cn">优先信用证</span></p>
+          <p><span class="lang-en">Our preferred instrument is a confirmed, irrevocable Letter of Credit, with payment against shipping documents. Other terms are negotiable.</span><span class="lang-cn">我们优先采用保兑不可撤销信用证，凭装运单据付款。其他付款方式可协商。</span></p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- DOCUMENTS -->
-<div id="documents" style="background:#0a0a0a;border-top:none">
-  <div class="section-wrap">
-    <div class="section-tag reveal"><span class="lang-en">Full Documentation</span></div>
-    <h2 class="reveal"><span class="lang-en">Every shipment, fully<br>documented.</span></h2>
-    <p class="lead reveal"><span class="lang-en">We provide the complete documentation package required for Chinese customs clearance and L/C release on every shipment. No missing documents, no delays.</span></p>
-    <div class="docs-grid">
-      <div class="doc-card reveal"><div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D2545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h4>Bill of Lading</h4><p><span class="lang-en">Issued by carrier confirming cargo is on board.</span></p></div>
-      <div class="doc-card reveal reveal-delay-1"><div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D2545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="4"/><path d="M9 5V2"/><path d="M5 9H2"/><path d="M21 21l-6-6"/><path d="M15 21H3"/><path d="M9 13v8"/></svg></div><h4>SGS Report</h4><p><span class="lang-en">Independent quality inspection at loading port.</span></p></div>
-      <div class="doc-card reveal reveal-delay-2"><div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D2545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div><h4>Certificate of Origin</h4><p><span class="lang-en">Official government certificate confirming Brazilian origin.</span></p></div>
-      <div class="doc-card reveal reveal-delay-3"><div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D2545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.32A1 1 0 004.69 21C8 20 16 19 17 8z"/><path d="M17 8l-5.09 5.09"/></svg></div><h4>Phytosanitary Cert.</h4><p><span class="lang-en">Brazilian government health certificate for food import.</span></p></div>
-      <div class="doc-card reveal reveal-delay-4"><div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D2545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l10 6.5v7L12 22 2 15.5v-7L12 2z"/><line x1="12" y1="22" x2="12" y2="9"/><path d="M2 8.5l10 6 10-6"/></svg></div><h4>Packing List</h4><p><span class="lang-en">Detailed cargo manifest with weight and quantity.</span></p></div>
-      <div class="doc-card reveal reveal-delay-4"><div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D2545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 10 5 21"/><polyline points="19 10 19 21"/><polyline points="9 10 9 21"/><polyline points="15 10 15 21"/><polyline points="3 7 12 3 21 7"/></svg></div><h4>Commercial Invoice</h4><p><span class="lang-en">Required for L/C settlement and customs valuation.</span></p></div>
-    </div>
-  </div>
-</div>
-
-<!-- PROCESS -->
-<div style="background:#f5f5f3;border-top:none" id="process">
-  <div class="section-wrap">
-    <div class="section-tag reveal"><span class="lang-en">How It Works</span><span class="lang-cn">合作流程</span></div>
-    <h2 class="reveal"><span class="lang-en">Simple. Transparent.<br>No surprises.</span><span class="lang-cn">简单透明，无任何隐患</span></h2>
-    <p class="lead reveal"><span class="lang-en">From first enquiry to delivery at your port — every step documented, verifiable and structured to protect both parties.</span><span class="lang-cn">从首次询价到交货，每一步均有文件记录，可核实，保障双方利益。</span></p>
-    <div class="process-steps">
-      <div class="step reveal"><div class="step-num">1</div><div><h4><span class="lang-en">Enquiry & NDA</span><span class="lang-cn">询价与保密协议</span></h4><p><span class="lang-en">Submit your enquiry. We issue an NDA to protect all parties — including our supply chain. All information treated with strict confidentiality.</span><span class="lang-cn">提交询价，我们签发保密协议保护各方利益，包括我们的供应链，所有信息严格保密。</span></p></div></div>
-      <div class="step reveal reveal-delay-1"><div class="step-num">2</div><div><h4><span class="lang-en">Letter of Intent (LOI)</span><span class="lang-cn">意向书</span></h4><p><span class="lang-en">You submit a formal LOI confirming product, volume, destination port and payment terms. This allows us to confirm supply availability on our end.</span><span class="lang-cn">您提交正式意向书，确认产品、数量、目的港和付款条款，我们随即确认供应可用性。</span></p></div></div>
-      <div class="step reveal reveal-delay-2"><div class="step-num">3</div><div><h4><span class="lang-en">Sales & Purchase Agreement</span><span class="lang-cn">买卖合同</span></h4><p><span class="lang-en">We issue a formal SPA covering all terms. Payment via confirmed, irrevocable L/C — funds released only on presentation of full shipping documentation.</span><span class="lang-cn">我们签发涵盖所有条款的正式合同，付款通过不可撤销信用证进行，提交完整装运文件后放款。</span></p></div></div>
-      <div class="step reveal reveal-delay-3"><div class="step-num">4</div><div><h4><span class="lang-en">SGS Inspection & Shipment</span><span class="lang-cn">检验与装运</span></h4><p><span class="lang-en">Independent SGS or Intertek inspection at the Brazilian loading port. Full document package: B/L, COO, SGS Report, Phytosanitary Certificate, Packing List.</span><span class="lang-cn">在巴西装货港进行SGS独立检验，出具完整文件包：提单、原产地证书、SGS报告、植物检疫证书、装箱单。</span></p></div></div>
-      <div class="step reveal reveal-delay-4"><div class="step-num">5</div><div><h4><span class="lang-en">Delivery & Ongoing Supply</span><span class="lang-cn">交货与持续供应</span></h4><p><span class="lang-en">Trial shipment delivered to your port. Upon satisfaction, long-term monthly supply commences. We aim to be your permanent Brazilian sourcing partner.</span><span class="lang-cn">试单交货至您的港口，确认满意后开始长期月度供应，致力于成为您永久的巴西采购合作伙伴。</span></p></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- CONTACT -->
-<div style="background:#0a0a0a;border-top:none" id="contact">
-  <div class="section-wrap">
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <div class="section-tag"><span class="lang-en">Get In Touch</span></div>
-        <h2><span class="lang-en">Ready to start?<br>Let's talk.</span><span class="lang-cn">准备好了吗？<br>欢迎联系</span></h2>
-        <p><span class="lang-en">Whether sourcing for the first time or looking for a reliable long-term partner — we respond to all serious enquiries within 48 hours.</span></p>
-        <div class="contact-detail"><div class="contact-detail-label">Email</div><div class="contact-detail-val">info@aventuminternational.com</div></div>
-        <div class="contact-detail"><div class="contact-detail-label"><span class="lang-en">Registered Office</span></div><div class="contact-detail-val">Amsterdam, Netherlands </div></div>
-        <div class="contact-detail"><div class="contact-detail-label">WeChat</div><div class="contact-detail-val"><span class="lang-en">Available on request</span></div></div>
-        <div class="contact-detail"><div class="contact-detail-label"><span class="lang-en">Response Time</span></div><div class="contact-detail-val"><span class="lang-en">Within 48 hours</span></div></div>
+<!-- ============ PROCESS ============ -->
+<section class="section section-dark" id="process" aria-labelledby="process-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal"><span class="eyebrow-num">06</span><span class="lang-en">How it works</span><span class="lang-cn">合作流程</span></p>
+        <h2 id="process-title" class="reveal"><span class="lang-en">Clear roles, <em>step by step.</em></span><span class="lang-cn">角色清晰，<em>循序推进。</em></span></h2>
       </div>
-      <form class="form-card reveal reveal-delay-1" action="https://formspree.io/f/maqzpvgn" method="POST" id="contact-form">
-        <div class="form-row">
-          <div class="form-group"><label><span class="lang-en">Full Name</span></label><input type="text" name="name" placeholder="Your name" required></div>
-          <div class="form-group"><label><span class="lang-en">Company</span></label><input type="text" name="company" placeholder="Company name"></div>
+      <p class="lead reveal d1"><span class="lang-en">Every stage is put in writing. Here is who does what, and how a deal moves from first enquiry to delivery at your port.</span><span class="lang-cn">每个环节均以书面形式确认。以下说明各方职责，以及一笔交易如何从首次询价推进到货物抵达您的港口。</span></p>
+    </div>
+
+    <h3 class="visually-hidden"><span class="lang-en">Roles</span><span class="lang-cn">各方职责</span></h3>
+    <div class="roles">
+      <article class="card role reveal">
+        <h3><small><span class="lang-en">Brazil</span><span class="lang-cn">巴西</span></small><span class="lang-en">Supplier</span><span class="lang-cn">供应商</span></h3>
+        <ul>
+          <li><span class="lang-en">Production and product quality</span><span class="lang-cn">生产及产品质量</span></li>
+          <li><span class="lang-en">Export documentation</span><span class="lang-cn">出口单据</span></li>
+          <li><span class="lang-en">Loading at the Brazilian port (FOB)</span><span class="lang-cn">在巴西港口装船（FOB）</span></li>
+        </ul>
+      </article>
+      <article class="card role is-us reveal d1">
+        <h3><small><span class="lang-en">Amsterdam</span><span class="lang-cn">阿姆斯特丹</span></small>Aventum International</h3>
+        <ul>
+          <li><span class="lang-en">Matching your requirements to supply</span><span class="lang-cn">匹配您的需求与货源</span></li>
+          <li><span class="lang-en">Coordinating LOI, offer and contract</span><span class="lang-cn">协调意向书、报价及合同</span></li>
+          <li><span class="lang-en">Following up inspection and documents</span><span class="lang-cn">跟进检验及单据</span></li>
+        </ul>
+      </article>
+      <article class="card role reveal d2">
+        <h3><small><span class="lang-en">China</span><span class="lang-cn">中国</span></small><span class="lang-en">Importer</span><span class="lang-cn">进口商</span></h3>
+        <ul>
+          <li><span class="lang-en">Import licence and TRQ quota allocation</span><span class="lang-cn">进口许可证及关税配额（TRQ）</span></li>
+          <li><span class="lang-en">GACC import compliance (Decree 280)</span><span class="lang-cn">海关总署（GACC）进口合规（第 280 号令）</span></li>
+          <li><span class="lang-en">Payment instrument and customs clearance</span><span class="lang-cn">开立付款工具及办理清关</span></li>
+        </ul>
+      </article>
+    </div>
+    <p class="role-note reveal"><span class="lang-en">Aventum does not own the cargo. We act as intermediary and earn a commission.</span><span class="lang-cn">Aventum 不拥有货物，我们以中间方身份提供服务并收取佣金。</span></p>
+
+    <h3 class="visually-hidden"><span class="lang-en">Steps</span><span class="lang-cn">步骤</span></h3>
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step-num" aria-hidden="true">01</span>
+        <h4><span class="lang-en">Enquiry &amp; NDA</span><span class="lang-cn">询价与保密协议</span></h4>
+        <p><span class="lang-en">Tell us the product, volume, destination port and preferred Incoterm. Where needed, both sides sign an NDA before details are exchanged.</span><span class="lang-cn">请告知产品、数量、目的港及首选贸易术语。如有需要，双方在交换详细信息前签署保密协议。</span></p>
+      </li>
+      <li class="step reveal d1">
+        <span class="step-num" aria-hidden="true">02</span>
+        <h4><span class="lang-en">Letter of Intent (LOI)</span><span class="lang-cn">意向书（LOI）</span></h4>
+        <p><span class="lang-en">You send a formal LOI on company letterhead. We check it against supplier availability before anything else happens.</span><span class="lang-cn">您以公司抬头纸出具正式意向书。我们据此与供应商核对供货情况，再推进后续步骤。</span></p>
+      </li>
+      <li class="step reveal d2">
+        <span class="step-num" aria-hidden="true">03</span>
+        <h4><span class="lang-en">Offer &amp; contract (SPA)</span><span class="lang-cn">报价与合同（SPA）</span></h4>
+        <p><span class="lang-en">The supplier confirms price and terms in a formal offer. Once agreed, the Sales &amp; Purchase Agreement fixes specification, volume, inspection, Incoterm and payment.</span><span class="lang-cn">供应商以正式报价确认价格和条款。双方达成一致后，签订买卖合同（SPA），明确规格、数量、检验、贸易术语及付款方式。</span></p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num" aria-hidden="true">04</span>
+        <h4><span class="lang-en">Payment instrument</span><span class="lang-cn">开立付款工具</span></h4>
+        <p><span class="lang-en">The importer opens the agreed payment instrument (L/C preferred), with payment against shipping documents.</span><span class="lang-cn">进口商开立约定的付款工具（优先信用证），凭装运单据付款。</span></p>
+      </li>
+      <li class="step reveal d1">
+        <span class="step-num" aria-hidden="true">05</span>
+        <h4><span class="lang-en">Inspection &amp; shipment</span><span class="lang-cn">检验与装运</span></h4>
+        <p><span class="lang-en">Independent inspection at the loading port, then loading and departure. You receive the full set: commercial invoice, bill of lading, inspection report, certificate of origin, phytosanitary certificate and packing list.</span><span class="lang-cn">在装货港完成独立检验后装船启运。您将收到全套单据：商业发票、提单、检验报告、原产地证书、植物检疫证书及装箱单。</span></p>
+      </li>
+      <li class="step reveal d2">
+        <span class="step-num" aria-hidden="true">06</span>
+        <h4><span class="lang-en">Delivery &amp; ongoing supply</span><span class="lang-cn">交货与持续供应</span></h4>
+        <p><span class="lang-en">After a successful trial shipment, we move to regular monthly supply on agreed terms.</span><span class="lang-cn">试单顺利完成后，按约定条款转入定期月度供应。</span></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ DOCUMENTS ============ -->
+<section class="section section-light" id="documents" aria-labelledby="docs-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal"><span class="eyebrow-num">07</span><span class="lang-en">Documentation</span><span class="lang-cn">单据文件</span></p>
+        <h2 id="docs-title" class="reveal"><span class="lang-en">A complete document set, <em>every shipment.</em></span><span class="lang-cn">每批货物，<em>单据齐全。</em></span></h2>
+      </div>
+      <p class="lead reveal d1"><span class="lang-en">The standard export package for Chinese customs clearance and L/C presentation. The exact list is confirmed in the contract.</span><span class="lang-cn">用于中国海关清关及信用证交单的标准出口单据。具体清单以合同为准。</span></p>
+    </div>
+
+    <ul class="docs-grid">
+      <li class="card doc reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+        <div><h3><span class="lang-en">Commercial invoice</span><span class="lang-cn">商业发票</span></h3><p><span class="lang-en">Basis for L/C settlement and customs valuation.</span><span class="lang-cn">信用证结算及海关估价的依据。</span></p></div>
+      </li>
+      <li class="card doc reveal d1">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 20c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M4 16l1.5-6h13L20 16"/><path d="M9 10V6h6v4"/></svg></div>
+        <div><h3><span class="lang-en">Bill of lading</span><span class="lang-cn">提单</span></h3><p><span class="lang-en">Issued by the carrier, confirming the cargo is on board.</span><span class="lang-cn">由承运人签发，确认货物已装船。</span></p></div>
+      </li>
+      <li class="card doc reveal d2">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M8 11l2 2 4-4"/></svg></div>
+        <div><h3><span class="lang-en">Inspection report</span><span class="lang-cn">检验报告</span></h3><p><span class="lang-en">Independent quality and quantity inspection at the loading port (e.g. SGS).</span><span class="lang-cn">装货港独立质量与数量检验（如 SGS）。</span></p></div>
+      </li>
+      <li class="card doc reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <div><h3><span class="lang-en">Certificate of origin</span><span class="lang-cn">原产地证书</span></h3><p><span class="lang-en">Confirms the Brazilian origin of the goods.</span><span class="lang-cn">证明货物为巴西原产。</span></p></div>
+      </li>
+      <li class="card doc reveal d1">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 19.32A1 1 0 0 0 4.69 21C8 20 16 19 17 8z"/><path d="M17 8l-5 5"/></svg></div>
+        <div><h3><span class="lang-en">Phytosanitary certificate</span><span class="lang-cn">植物检疫证书</span></h3><p><span class="lang-en">Issued by the Brazilian authorities where required for import.</span><span class="lang-cn">如进口需要，由巴西主管机关签发。</span></p></div>
+      </li>
+      <li class="card doc reveal d2">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M3 7l9 5 9-5"/></svg></div>
+        <div><h3><span class="lang-en">Packing list</span><span class="lang-cn">装箱单</span></h3><p><span class="lang-en">Cargo details, including weight and number of packages.</span><span class="lang-cn">货物明细，包括重量及件数。</span></p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section-dark" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div class="contact-intro">
+      <p class="eyebrow reveal"><span class="eyebrow-num">08</span><span class="lang-en">Contact</span><span class="lang-cn">联系我们</span></p>
+      <h2 id="contact-title" class="reveal"><span class="lang-en">Send us your requirements.</span><span class="lang-cn">请告诉我们您的需求。</span></h2>
+      <p class="lead reveal d1"><span class="lang-en">Whether it is your first purchase from Brazil or you are looking for a long-term partner, we reply to every serious enquiry within 48 hours.</span><span class="lang-cn">无论您是首次从巴西采购，还是在寻找长期合作伙伴，我们都会在 48 小时内回复每一份正式询价。</span></p>
+      <dl class="contact-list reveal d2">
+        <div><dt><span class="lang-en">Email</span><span class="lang-cn">电子邮箱</span></dt><dd><a href="mailto:info@aventuminternational.com">info@aventuminternational.com</a></dd></div>
+        <div><dt><span class="lang-en">Office</span><span class="lang-cn">办公地点</span></dt><dd><span class="lang-en">Amsterdam, Netherlands</span><span class="lang-cn">荷兰阿姆斯特丹</span></dd></div>
+        <div><dt><span class="lang-en">WeChat</span><span class="lang-cn">微信</span></dt><dd><span class="lang-en">Available on request</span><span class="lang-cn">可应要求提供</span></dd></div>
+        <div><dt><span class="lang-en">Response time</span><span class="lang-cn">回复时间</span></dt><dd><span class="lang-en">Within 48 hours</span><span class="lang-cn">48 小时内</span></dd></div>
+      </dl>
+    </div>
+
+    <form class="form-card reveal d1" id="contact-form" action="https://formspree.io/f/maqzpvgn" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="New enquiry via aventuminternational.com">
+      <input type="hidden" name="language" id="f-language" value="en">
+      <div class="hp" aria-hidden="true"><label for="f-gotcha">Leave empty</label><input type="text" id="f-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="f-name"><span class="lang-en">Full name</span><span class="lang-cn">姓名</span><span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="f-name" name="name" autocomplete="name" required data-ph-en="Your name" data-ph-cn="您的姓名" placeholder="Your name">
         </div>
-        <div class="form-row">
-          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="your@company.com" required></div>
-          <div class="form-group"><label><span class="lang-en">Product Interest</span></label>
-            <input type="hidden" name="product_interest" id="product-input" value="Icumsa 45 Sugar">
-            <div class="custom-select" id="cs-product">
-              <div class="cs-trigger" onclick="csToggle('cs-product')">Icumsa 45 Sugar</div>
-              <div class="cs-dropdown">
-                <div class="cs-option selected" onclick="csSelect('cs-product','Icumsa 45 Sugar',this)">Icumsa 45 Sugar</div>
-                <div class="cs-option" onclick="csSelect('cs-product','Soybeans',this)">Soybeans</div>
-                <div class="cs-option" onclick="csSelect('cs-product','Maize / Corn',this)">Maize / Corn</div>
-                <div class="cs-option" onclick="csSelect('cs-product','Coffee',this)">Coffee</div>
-                <div class="cs-option" onclick="csSelect('cs-product','Other',this)">Other</div>
-              </div>
-            </div>
+        <div class="field">
+          <label for="f-company"><span class="lang-en">Company</span><span class="lang-cn">公司</span></label>
+          <input type="text" id="f-company" name="company" autocomplete="organization" data-ph-en="Company name" data-ph-cn="公司名称" placeholder="Company name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-email"><span class="lang-en">Email</span><span class="lang-cn">电子邮箱</span><span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="f-email" name="email" autocomplete="email" required placeholder="you@company.com">
+        </div>
+        <div class="field">
+          <label for="f-wechat"><span class="lang-en">WeChat / phone</span><span class="lang-cn">微信 / 电话</span></label>
+          <input type="text" id="f-wechat" name="wechat_phone" autocomplete="tel" data-ph-en="Optional" data-ph-cn="选填" placeholder="Optional">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-product"><span class="lang-en">Product</span><span class="lang-cn">产品</span></label>
+          <div class="select-wrap">
+            <select id="f-product" name="product_interest">
+              <option value="Icumsa 45 sugar" data-en="Icumsa 45 sugar" data-cn="ICUMSA 45 白砂糖">Icumsa 45 sugar</option>
+              <option value="Soybeans" data-en="Soybeans" data-cn="大豆">Soybeans</option>
+              <option value="Maize / corn" data-en="Maize / corn" data-cn="玉米">Maize / corn</option>
+              <option value="Green coffee" data-en="Green coffee" data-cn="生咖啡豆">Green coffee</option>
+              <option value="Other" data-en="Other" data-cn="其他">Other</option>
+            </select>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group"><label><span class="lang-en">Required Volume</span></label>
-            <input type="hidden" name="required_volume" id="volume-input" value="Trial — on request">
-            <div class="custom-select" id="cs-volume">
-              <div class="cs-trigger" onclick="csToggle('cs-volume')">Trial — on request</div>
-              <div class="cs-dropdown">
-                <div class="cs-option selected" onclick="csSelect('cs-volume','Trial — on request',this)">Trial — on request</div>
-                <div class="cs-option" onclick="csSelect('cs-volume','50,000 MT / month',this)">50,000 MT / month</div>
-                <div class="cs-option" onclick="csSelect('cs-volume','Other',this)">Other</div>
-              </div>
-            </div>
+        <div class="field">
+          <label for="f-incoterm"><span class="lang-en">Preferred Incoterm</span><span class="lang-cn">首选贸易术语</span></label>
+          <div class="select-wrap">
+            <select id="f-incoterm" name="incoterm">
+              <option value="FOB Brazilian port" data-en="FOB Brazilian port" data-cn="巴西港口 FOB">FOB Brazilian port</option>
+              <option value="CIF named destination port" data-en="CIF named destination port" data-cn="CIF 指定目的港">CIF named destination port</option>
+              <option value="Not sure yet" data-en="Not sure yet" data-cn="尚未确定">Not sure yet</option>
+            </select>
           </div>
-          <div class="form-group"><label><span class="lang-en">Destination Port</span></label><input type="text" name="destination_port" placeholder="e.g. Guangzhou, Shanghai"></div>
         </div>
-        <div class="form-group"><label><span class="lang-en">Message</span></label><textarea name="message" placeholder="Describe your requirements..."></textarea></div>
-        <div class="form-submit"><button type="submit"><span class="lang-en">Send Enquiry →</span></button></div>
-        <div class="form-note"><span class="lang-en">48h response · Strict confidentiality guaranteed</span></div>
-        <div id="form-success" style="display:none;color:#32ff64;font-size:0.85rem;text-align:center;margin-top:1rem">✓ Message sent! We'll respond within 48 hours.</div>
-      </form>
-    </div>
-  </div>
-</div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-volume"><span class="lang-en">Estimated volume</span><span class="lang-cn">预计数量</span></label>
+          <input type="text" id="f-volume" name="required_volume" data-ph-en="e.g. trial first, then monthly" data-ph-cn="例如：先试单，再月度供应" placeholder="e.g. trial first, then monthly">
+        </div>
+        <div class="field">
+          <label for="f-port"><span class="lang-en">Destination port</span><span class="lang-cn">目的港</span></label>
+          <input type="text" id="f-port" name="destination_port" data-ph-en="e.g. Shanghai, Guangzhou" data-ph-cn="例如：上海、广州" placeholder="e.g. Shanghai, Guangzhou">
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-message"><span class="lang-en">Message</span><span class="lang-cn">留言</span></label>
+        <textarea id="f-message" name="message" data-ph-en="Describe your requirements…" data-ph-cn="请描述您的需求……" placeholder="Describe your requirements…"></textarea>
+      </div>
 
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo"><img src="logo.png" style="height:70px;width:auto;filter:brightness(1)" alt="Aventum International"/></div>
-      <div class="footer-info" style="margin-top:1rem;line-height:1.9">
-        <span style="display:block;color:rgba(255,255,255,0.55);font-size:0.78rem">Brazilian Agricultural Commodity Broker</span>
-        <span style="display:block;color:rgba(255,255,255,0.55);font-size:0.78rem">Amsterdam, Netherlands</span>
-        <span style="display:block;color:rgba(255,255,255,0.35);font-size:0.78rem">Chamber of Commerce nr. — (pending)</span>
+      <button type="submit" class="btn btn-primary form-submit" id="form-submit"><span class="lang-en">Send enquiry</span><span class="lang-cn">发送询价</span></button>
+      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+      <p class="form-note"><span class="lang-en">We reply within 48 hours. Your details are treated confidentially and used only to answer your enquiry. See our <a href="privacy.html">privacy notice</a>.</span><span class="lang-cn">我们将在 48 小时内回复。您的信息将被保密处理，仅用于回复您的询价。详见<a href="privacy.html?lang=zh">隐私声明</a>。</span></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" width="610" height="484" alt="Aventum International" loading="lazy">
+        <p><span class="lang-en">Brokerage in Brazilian agricultural commodities</span><span class="lang-cn">巴西农产品大宗商品经纪</span><br>
+        <span class="lang-en">Amsterdam, Netherlands</span><span class="lang-cn">荷兰阿姆斯特丹</span></p>
+        <p class="footer-muted"><span class="lang-en">Chamber of Commerce nr. (pending)</span><span class="lang-cn">荷兰商会注册号：（待定）</span></p>
+      </div>
+      <div class="footer-col">
+        <h2><span class="lang-en">Navigate</span><span class="lang-cn">导航</span></h2>
+        <ul>
+          <li><a href="#why"><span class="lang-en">Why Aventum</span><span class="lang-cn">为何选择我们</span></a></li>
+          <li><a href="#products"><span class="lang-en">Products</span><span class="lang-cn">产品</span></a></li>
+          <li><a href="#route"><span class="lang-en">Route</span><span class="lang-cn">航线</span></a></li>
+          <li><a href="#spec"><span class="lang-en">Specification</span><span class="lang-cn">规格</span></a></li>
+          <li><a href="#process"><span class="lang-en">Process</span><span class="lang-cn">流程</span></a></li>
+          <li><a href="#documents"><span class="lang-en">Documentation</span><span class="lang-cn">单据文件</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2><span class="lang-en">Contact</span><span class="lang-cn">联系</span></h2>
+        <ul>
+          <li><a href="mailto:info@aventuminternational.com">info@aventuminternational.com</a></li>
+          <li><a href="#contact"><span class="lang-en">Enquiry form</span><span class="lang-cn">询价表单</span></a></li>
+          <li><a href="privacy.html" data-href-cn="privacy.html?lang=zh"><span class="lang-en">Privacy notice</span><span class="lang-cn">隐私声明</span></a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-right" style="text-align:right">
-      <div class="footer-links"><a href="#why">Why Us</a><a href="#products">Products</a><a href="#route">Route</a><a href="#documents">Documentation</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
-      <div class="footer-info" style="margin-top:1.5rem;text-align:right">© 2026 Aventum International. All rights reserved.</div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Aventum International. <span class="lang-en">All rights reserved.</span><span class="lang-cn">保留所有权利。</span></span>
+      <span class="lang-en">Product information is indicative and subject to supplier confirmation and contract.</span><span class="lang-cn">产品信息仅供参考，以供应商确认及合同为准。</span>
     </div>
   </div>
 </footer>
-<button class="back-to-top" id="backTop" title="Back to top">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
 
-<script>
-// Force video play on iOS - multiple attempts
-(function(){
-  function tryPlay(){
-    var v = document.getElementById('heroVideo');
-    if(!v) return;
-    v.muted = true;
-    v.controls = false;
-    v.setAttribute('playsinline','');
-    v.setAttribute('webkit-playsinline','');
-    var p = v.play();
-    if(p !== undefined) p.catch(function(){});
-  }
-  // Try immediately
-  tryPlay();
-  // Try on load
-  window.addEventListener('load', tryPlay);
-  // Try on first interaction as fallback
-  ['touchstart','touchend','click'].forEach(function(evt){
-    document.addEventListener(evt, function h(){ tryPlay(); document.removeEventListener(evt,h); }, {once:true, passive:true});
-  });
-})();
+<button type="button" class="back-to-top" id="back-to-top" data-aria-en="Back to top" data-aria-cn="返回顶部" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg></button>
 
-// Hero video alternation
-(function(){
-  var videos=['hero-video-1.mp4','hero-video-2.mp4'];
-  var current=0;
-  var vid=document.getElementById('heroVideo');
-  if(!vid)return;
-  vid.muted=true;
-  var playPromise=vid.play();
-  if(playPromise!==undefined){
-    playPromise.catch(function(){
-      vid.muted=true;
-      vid.play();
-    });
-  }
-  vid.addEventListener('ended',function(){
-    current=(current+1)%videos.length;
-    vid.src=videos[current];
-    vid.muted=true;
-    vid.play();
-  });
-})();
-
-// Smooth anchor scroll
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var target=document.querySelector(this.getAttribute('href'));
-    if(!target)return;
-    e.preventDefault();
-    var navH=0;
-    var trustH=0;
-    var top=target.getBoundingClientRect().top+window.scrollY-navH-trustH;
-    var start=window.scrollY;
-    var dist=top-start;
-    var dur=600;
-    var t0=performance.now();
-    function step(now){
-      var p=Math.min((now-t0)/dur,1);
-      var ease=1-Math.pow(1-p,3);
-      window.scrollTo(0,start+dist*ease);
-      if(p<1)requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  });
-});
-
-// Nav
-
-
-
-// Reveal
-const revObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
-
-// Count-up
-function countUp(el){
-  const target=parseInt(el.dataset.target);
-  const suffix=el.dataset.suffix||'';
-  const dur=1800,start=performance.now();
-  function tick(now){
-    const p=Math.min((now-start)/dur,1);
-    const ease=1-Math.pow(1-p,3);
-    const cur=Math.round(ease*target);
-    el.textContent=cur>=1000?cur.toLocaleString('en-US')+suffix:cur+suffix;
-    if(p<1)requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-}
-const cntObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){countUp(x.target);cntObs.unobserve(x.target)}})},{threshold:0.5});
-document.querySelectorAll('[data-target]').forEach(el=>cntObs.observe(el));
-
-// SVG MAP ANIMATION
-(function(){
-  const line=document.getElementById('rline');
-  const pts=document.getElementById('map-pts');
-  if(!line||!pts)return;
-  const len=line.getTotalLength();
-  line.style.strokeDasharray=len+' '+len;
-  line.style.strokeDashoffset=len;
-  let done=false;
-  function run(){
-    if(done)return; done=true;
-    const dur=2800,t0=performance.now();
-    function tick(now){
-      const p=Math.min((now-t0)/dur,1);
-      const e=1-Math.pow(1-p,3);
-      line.style.strokeDashoffset=len*(1-e);
-      if(p<1){requestAnimationFrame(tick);}
-      else{pts.style.transition='opacity 0.5s';pts.style.opacity='1';}
-    }
-    requestAnimationFrame(tick);
-  }
-  const obs=new IntersectionObserver(function(entries){
-    if(entries[0].isIntersecting){run();obs.disconnect();}
-  },{threshold:0.3});
-  const outer=document.getElementById('map-outer');
-  if(outer)obs.observe(outer);
-})();
-
-// Language
-function setLang(lang){
-  var isEn=lang==='en';
-  document.querySelectorAll('.lang-en').forEach(function(el){
-    el.style.display=isEn?'inline':'none';
-  });
-  document.querySelectorAll('.lang-cn').forEach(function(el){
-    el.style.display=isEn?'none':'inline';
-  });
-  document.getElementById('btn-en').classList.toggle('active',isEn);
-  document.getElementById('btn-cn').classList.toggle('active',!isEn);
-}
-setLang('en');
-
-// Back to top
-const backTop=document.getElementById('backTop');
-window.addEventListener('scroll',()=>backTop.classList.toggle('visible',scrollY>400));
-if(backTop){backTop.addEventListener('click',function(){
-  var start=window.scrollY;
-  var duration=600;
-  var t0=performance.now();
-  function step(now){
-    var p=Math.min((now-t0)/duration,1);
-    var ease=1-Math.pow(1-p,3);
-    window.scrollTo(0,start*(1-ease));
-    if(p<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-});}
-</script>
-
-
-
-<script>
-function csToggle(id){
-  var cs=document.getElementById(id);
-  var dd=cs.querySelector('.cs-dropdown');
-  var isOpen=dd.classList.contains('open');
-  document.querySelectorAll('.cs-dropdown').forEach(function(d){d.classList.remove('open');});
-  if(!isOpen) dd.classList.add('open');
-}
-function csSelect(id,val,el){
-  var cs=document.getElementById(id);
-  cs.querySelector('.cs-trigger').childNodes[0].textContent=val;
-  cs.querySelectorAll('.cs-option').forEach(function(o){o.classList.remove('selected');});
-  el.classList.add('selected');
-  cs.querySelector('.cs-dropdown').classList.remove('open');
-  // Update hidden input for form submission
-  if(id==='cs-product'){var inp=document.getElementById('product-input');if(inp)inp.value=val;}
-  if(id==='cs-volume'){var inp2=document.getElementById('volume-input');if(inp2)inp2.value=val;}
-}
-document.addEventListener('click',function(e){
-  if(!e.target.closest('.custom-select')){
-    document.querySelectorAll('.cs-dropdown').forEach(function(d){d.classList.remove('open');});
-  }
-});
-var form = document.getElementById('contact-form');
-if(form){
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    fetch('https://formspree.io/f/maqzpvgn', {
-      method: 'POST',
-      body: new FormData(form),
-      headers: {'Accept': 'application/json'}
-    }).then(function(r){
-      if(r.ok){
-        form.reset();
-        document.getElementById('form-success').style.display='block';
-        btn.textContent='Sent ✓';
-        // Reset after 4 seconds so form can be used again
-        setTimeout(function(){
-          btn.textContent='Send Enquiry →';
-          btn.disabled=false;
-          document.getElementById('form-success').style.display='none';
-        }, 4000);
-      } else {
-        btn.textContent='Send Enquiry →';
-        btn.disabled=false;
-        alert('Something went wrong. Please email us at info@aventuminternational.com');
-      }
-    }).catch(function(){
-      btn.textContent='Send Enquiry →';
-      btn.disabled=false;
-      alert('Something went wrong. Please email us at info@aventuminternational.com');
-    });
-  });
-}
-
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>

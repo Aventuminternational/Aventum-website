@@ -2,7 +2,9 @@
    Priority: ?lang= in the URL, then the visitor's saved choice, then the browser language. */
 (function () {
   var lang = 'en';
-  try {
+  var locked = document.documentElement.hasAttribute('data-lang-lock');
+  if (locked) lang = 'cn';
+  else try {
     var q = new URLSearchParams(location.search).get('lang');
     var saved = localStorage.getItem('aventum-lang');
     if (q) lang = /^(zh|cn)/i.test(q) ? 'cn' : 'en';

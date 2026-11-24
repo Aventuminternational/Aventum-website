@@ -247,7 +247,7 @@
   /* ------------------------------------------------------------------
      Scroll reveal + count-up
      ------------------------------------------------------------------ */
-  var reveals = document.querySelectorAll('.reveal');
+  var reveals = document.querySelectorAll('.reveal, .photo-band');
   if (hasIO && !reduceMotion) {
     var revObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
